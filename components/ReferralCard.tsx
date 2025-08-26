@@ -1,0 +1,5 @@
+import Link from "next/link";
+type Props={title:string;description:string;href:string;tag?:string;features?:string[]};
+export default function ReferralCard({title,description,href,tag,features=[]}:Props){
+  return(<div className="card"><div className="flex items-start justify-between gap-4"><div><div className="text-xl font-bold">{title}</div>{tag&&<div className="mt-1 badge">{tag}</div>}</div></div><p className="mt-3 text-gray-700">{description}</p>{features.length>0&&(<ul className="mt-4 list-disc pl-5 space-y-1 text-gray-700">{features.map((f,i)=><li key={i}>{f}</li>)}</ul>)}<Link href={href} className="btn btn-primary mt-6 w-full" target="_blank" rel="noopener noreferrer">Apply now</Link><p className="mt-3 text-xs text-gray-500">This is a referral link. If you open an account using it, you may receive a bonus and the author may receive a commission/cashback. No extra cost for you.</p></div>);
+}

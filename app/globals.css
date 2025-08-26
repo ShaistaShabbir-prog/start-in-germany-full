@@ -1,0 +1,28 @@
+@import "tailwindcss";
+
+
+@theme {
+  --color-brand-50: #f3f8ff;
+  --color-brand-100: #e6f0ff;
+  --color-brand-200: #c4daff;
+  --color-brand-300: #9ec2ff;
+  --color-brand-400: #6ea2ff;
+  --color-brand-500: #3d80ff;
+  --color-brand-600: #1c5fe6;
+  --color-brand-700: #1348b4;
+  --color-brand-800: #0d3586;
+  --color-brand-900: #072153;
+}
+
+/* same utilities as before, but with focus:ring-brand-500 focus:ring-opacity-50 */
+
+:root{ --radius: 16px; }
+body { @apply bg-white text-gray-900 antialiased; }
+.container-narrow { @apply max-w-5xl mx-auto px-4 md:px-6; }
+.btn { @apply inline-flex items-center justify-center rounded-2xl px-5 py-3 font-semibold shadow-sm transition hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-brand-500/50; }
+.btn-primary { @apply bg-brand-600 text-white hover:bg-brand-700; }
+.btn-ghost { @apply bg-white text-brand-700 ring-1 ring-brand-200 hover:bg-brand-50; }
+.card { @apply rounded-2xl border border-gray-200 bg-white p-6 shadow-sm; }
+.badge { @apply inline-flex items-center rounded-full bg-brand-50 px-3 py-1 text-sm font-medium text-brand-700 ring-1 ring-brand-200; }
+nav a.active { @apply text-brand-700 font-semibold; }
+
