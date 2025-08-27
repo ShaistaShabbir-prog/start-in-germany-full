@@ -1,1 +1,26 @@
-import ReferralCard from '@/components/ReferralCard';export default function Finances(){return(<div className='container-narrow py-12'><h1 className='text-4xl font-extrabold tracking-tight'>Money: Bank Account & Free Credit Card</h1><p className='mt-4 text-lg text-gray-700'>New to Germany? Sorting your money early makes everything else easier. Below are recommendations we personally like. These include referral links that may grant you a bonus and may support this site.</p><section className='mt-8 grid gap-6 md:grid-cols-2'><ReferralCard title='Commerzbank Girokonto (50€ starting credit)' tag='Current account' href='https://www.commerzbank.de/girokonto-antrag?path=/pk/de/Abschluss/GD51_Girokonto_DD_MCD_TGK_50Start_KwK&x-werbecode=PNGHRA' description='A classic German current account with a promotional starting credit. Great for salary payments, rent and everyday spending.' features={['Promotional 50€ starting credit (conditions may apply)','German IBAN for salary and bills','Online banking & mobile app']}/><ReferralCard title='Advanzia Gebührenfrei Mastercard Gold' tag='Fee‑free credit card' href='https://refer.gebuhrenfrei.com/shaistas-45' description='A popular fee‑free credit card. Useful for online purchases and travel. Please read the conditions—e.g., interest rules and payment deadlines.' features={['No annual fee','Good for online and travel payments','Fast application process']}/></section><section className='mt-10 card'><h2 className='text-xl font-bold'>Important notes</h2><ul className='mt-3 list-disc pl-5 space-y-1 text-gray-700'><li>Promotions can change at any time. Always verify the offer details on the provider’s page before applying.</li><li>Credit cards require responsible use. Avoid interest by paying on time and in full where possible.</li><li>This site is independent and not a bank. We link to trusted providers based on personal satisfaction.</li></ul></section></div>)}
+import Link from "next/link";
+export default function Finances() {
+  return (
+    <div className="section">
+      <h1 className="h1">Money & Banking</h1>
+      <p className="lead">
+        Set up your banking quickly with options we like. These are referral links that support the site at no extra cost to you.
+      </p>
+
+      <section className="mt-8 grid gap-6 md:grid-cols-2">
+        <div className="card">
+          <h2 className="h2">Advanzia — Fee-free Credit Card</h2>
+          <p className="mt-2 text-gray-700">No annual fee. Great for online payments and emergencies.</p>
+          <Link href="https://refer.gebuhrenfrei.com/shaistas-45" target="_blank" className="btn btn-primary mt-4">Open Advanzia card</Link>
+        </div>
+        <div className="card">
+          <h2 className="h2">Commerzbank — €50 Starting Credit</h2>
+          <p className="mt-2 text-gray-700">Solid current account with welcome bonus.</p>
+          <Link href="https://www.commerzbank.de/girokonto-antrag?path=/pk/de/Abschluss/GD51_Girokonto_DD_MCD_TGK_50Start_KwK&x-werbecode=PNGHRA" target="_blank" className="btn btn-primary mt-4">
+            Open Commerzbank account
+          </Link>
+        </div>
+      </section>
+    </div>
+  );
+}

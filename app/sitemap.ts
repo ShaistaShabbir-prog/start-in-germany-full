@@ -1,8 +1,6 @@
 import { MetadataRoute } from "next";
-
 export default function sitemap(): MetadataRoute.Sitemap {
-  const base = "https://start-in-germany-full.vercel.app"; // change later if you add a custom domain
-
+  const base = "https://start-in-germany-full.vercel.app";
   return [
     { url: base, lastModified: new Date() },
     { url: `${base}/work`, lastModified: new Date() },
@@ -14,6 +12,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/about`, lastModified: new Date() },
     { url: `${base}/imprint`, lastModified: new Date() },
     { url: `${base}/privacy`, lastModified: new Date() },
-    { url: `${base}/affiliate-disclosure`, lastModified: new Date() },
+    { url: `${base}/affiliate-disclosure`, lastModified: new Date() }
   ];
 }

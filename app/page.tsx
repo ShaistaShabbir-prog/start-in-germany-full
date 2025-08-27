@@ -1,3 +1,56 @@
-import Hero from "@/components/Hero";
+import HotspotImage from "@/components/HotspotImage";
+import Image from "next/image";
 import Link from "next/link";
-export default function Page(){return(<div><Hero/><section className="container-narrow py-16 grid gap-6 md:grid-cols-3"><div className="card"><h3 className="text-xl font-bold">Work in Germany</h3><p className="mt-2 text-gray-700">Discover shortage occupations, how to apply, recognition of qualifications and workplace basics.</p><Link href="/work" className="btn btn-ghost mt-4 w-full">Explore Work</Link></div><div className="card"><h3 className="text-xl font-bold">Study & Vocational Training</h3><p className="mt-2 text-gray-700">Choose between university studies and Ausbildung, understand requirements and find programs.</p><Link href="/study" className="btn btn-ghost mt-4 w-full">Explore Study</Link></div><div className="card"><h3 className="text-xl font-bold">Visa & Residence</h3><p className="mt-2 text-gray-700">From EU Blue Card to Opportunity Card—see which path fits your profile and how to apply.</p><Link href="/visa" className="btn btn-ghost mt-4 w-full">Explore Visa</Link></div></section><section className="container-narrow pb-20"><div className="rounded-2xl bg-brand-600 p-8 text-white"><h2 className="text-2xl md:text-3xl font-extrabold">Set up your money in minutes</h2><p className="mt-2 opacity-90">Open a free current account and get a fee-free credit card recommended by our team.</p><div className="mt-4 flex flex-wrap gap-3"><Link className="btn bg-white text-brand-700 hover:bg-brand-50" href="/finances">See offers</Link><Link className="btn btn-ghost" href="/affiliate-disclosure">Affiliate Disclosure</Link></div></div></section></div>);}
+
+export default function Home() {
+  return (
+    <div>
+      <div className="relative">
+        <HotspotImage
+          src="/images/hero.jpg"
+          alt="Start in Germany"
+          height={560}
+          spots={[ { left: 24, top: 70, href: "/visa", label: "Get Started" } ]}
+        />
+        <div className="absolute inset-0 pointer-events-none">
+          <div className="container-narrow h-full flex items-center">
+            <div className="max-w-2xl text-white">
+              <h1 className="text-5xl md:text-6xl font-extrabold tracking-tight drop-shadow">Start in Germany</h1>
+              <p className="mt-4 text-white/90 text-lg drop-shadow">
+                Original, friendly guidance for moving to Germany — visas, residence routes, finding a job,
+                study options, banking, tips and more.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <section className="section">
+        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+          {[
+            { href: "/work", title: "Working in Germany", img: "/images/work.jpg",
+              text: "Shortage jobs across fields and tips for your application" },
+            { href: "/study", title: "Study in Germany", img: "/images/study.jpg",
+              text: "Offerings in English, costs and applying to German programs" },
+            { href: "/visa", title: "Visa & Residence", img: "/images/visa.jpg",
+              text: "Choose a route based on your background and plans" },
+            { href: "/living", title: "Living Essentials", img: "/images/living.jpg",
+              text: "Accounts, health insurance, housing, cost of living" }
+          ].map(card => (
+            <Link key={card.href} href={card.href} className="card hover:no-underline">
+              <div className="relative h-40 rounded-xl overflow-hidden mb-4">
+                <Image src={card.img} alt={card.title} fill className="object-cover" />
+              </div>
+              <div className="text-lg font-bold">{card.title}</div>
+              <p className="mt-1 text-gray-700">{card.text}</p>
+            </Link>
+          ))}
+        </div>
+
+        <div className="mt-8">
+          <Link href="/service" className="btn btn-ghost">Get official advice</Link>
+        </div>
+      </section>
+    </div>
+  );
+}

@@ -1,4 +1,15 @@
 import Link from "next/link";
 export default function Footer(){
-  return(<footer className="border-t border-gray-200 bg-white mt-16"><div className="container-narrow py-10 grid gap-6 md:grid-cols-4 text-sm"><div><div className="text-lg font-bold">Start in Germany</div><p className="mt-2 text-gray-600">Independent, friendly guidance for moving, working, and studying in Germany. Original content; not affiliated with the German government.</p></div><div><div className="font-semibold">Explore</div><ul className="mt-2 space-y-1"><li><Link href="/work">Work</Link></li><li><Link href="/study">Study & Training</Link></li><li><Link href="/visa">Visa & Residence</Link></li><li><Link href="/living">Living</Link></li><li><Link href="/finances">Money</Link></li></ul></div><div><div className="font-semibold">Legal</div><ul className="mt-2 space-y-1"><li><Link href="/imprint">Imprint (Impressum)</Link></li><li><Link href="/privacy">Privacy Policy</Link></li><li><Link href="/affiliate-disclosure">Affiliate Disclosure</Link></li></ul></div><div><div className="font-semibold">Contact</div><p className="mt-2 text-gray-600">Questions? Email: <a className="text-brand-700" href="mailto:shaista.s.shabbir@gmail.com">shaista.s.shabbir@gmail.com</a></p></div></div><div className="border-t border-gray-100 py-4 text-center text-xs text-gray-500">© {new Date().getFullYear()} Start in Germany — All rights reserved.</div></footer>);
+  return (
+    <footer className="mt-16 border-t border-gray-100">
+      <div className="container-narrow py-8 text-sm text-gray-600 flex flex-wrap gap-4 items-center justify-between">
+        <div>© {new Date().getFullYear()} Start in Germany</div>
+        <nav className="flex gap-4">
+          <Link href="/imprint">Imprint</Link>
+          <Link href="/privacy">Privacy</Link>
+          <Link href="/affiliate-disclosure">Affiliate Disclosure</Link>
+        </nav>
+      </div>
+    </footer>
+  );
 }

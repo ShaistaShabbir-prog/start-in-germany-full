@@ -1,1 +1,15 @@
-{"name": "Start in Germany", "short_name": "StartDE", "start_url": "/", "display": "standalone"}
+{
+  "name": "Start in Germany",
+  "short_name": "SiG",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#1c5fe6",
+  "icons": [
+    {
+      "src": "/favicon.png",
+      "type": "image/png",
+      "sizes": "64x64"
+    }
+  ]
+}

@@ -1,9 +1,18 @@
-# Start in Germany — full site
+# Start in Germany (Responsive)
 
-Install deps and run dev server:
+Next.js App Router + TailwindCSS v3, responsive layout, clickable hero hotspot, consistent banners,
+and a minimal password-protected `/admin` route via middleware basic auth.
 
-```
+## Run locally
+```bash
 npm install
-npm install next@14 react@18 react-dom@18 tailwindcss postcss autoprefixer typescript @types/react @types/node
 npm run dev
 ```
+
+## Deploy
+Push to GitHub; connect to Vercel. Add env vars to protect /admin:
+- `ADMIN_USER` (default: admin)
+- `ADMIN_PASS` (default: changeme)
+
+## Images
+Replace the placeholders in `/public/images/` with your own JPGs (keep < 500KB each).
