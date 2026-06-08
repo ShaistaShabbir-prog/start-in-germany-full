@@ -1,182 +1,170 @@
 import Link from "next/link";
 
-const D = '"Syne",ui-sans-serif,system-ui,sans-serif';
-const J = '"Plus Jakarta Sans",ui-sans-serif,system-ui,sans-serif';
+const PD = '"Playfair Display",Georgia,serif';
+const IN = '"Inter",ui-sans-serif,system-ui,sans-serif';
 
-// Unsplash HD images — free, no API key needed
-const HERO_BG = "https://images.unsplash.com/photo-1467269204594-9661b134dd2b?w=1800&q=90&auto=format&fit=crop"; // Berlin Brandenburg Gate
-const GERMANY_BG = "https://images.unsplash.com/photo-1560969184-10fe8719e047?w=900&q=85&auto=format&fit=crop"; // Germany skyline
-const ITALY_BG   = "https://images.unsplash.com/photo-1552832230-c0197dd311b5?w=900&q=85&auto=format&fit=crop"; // Rome Colosseum
-const SWEDEN_BG  = "https://images.unsplash.com/photo-1509356843151-3e7d96241e11?w=900&q=85&auto=format&fit=crop"; // Stockholm
-const UK_BG      = "https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?w=900&q=85&auto=format&fit=crop"; // London
-const STUDENTS_BG = "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=1200&q=85&auto=format&fit=crop"; // diverse students
-const CITY_BG    = "https://images.unsplash.com/photo-1554535987-7f7e1e8c4a4b?w=1200&q=85&auto=format&fit=crop"; // Frankfurt skyline
+// Unsplash HD images
+const IMG = {
+  hero:      "https://images.unsplash.com/photo-1467269204594-9661b134dd2b?w=1920&q=90&auto=format&fit=crop", // Brandenburg Gate night
+  students:  "https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=1400&q=85&auto=format&fit=crop", // diverse students
+  germany:   "https://images.unsplash.com/photo-1560969184-10fe8719e047?w=900&q=80&auto=format&fit=crop",   // Berlin
+  italy:     "https://images.unsplash.com/photo-1552832230-c0197dd311b5?w=900&q=80&auto=format&fit=crop",   // Rome Colosseum
+  sweden:    "https://images.unsplash.com/photo-1509356843151-3e7d96241e11?w=900&q=80&auto=format&fit=crop",// Stockholm
+  uk:        "https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?w=900&q=80&auto=format&fit=crop",// London
+  consult:   "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=1200&q=85&auto=format&fit=crop",// consultation
+  city2:     "https://images.unsplash.com/photo-1560969185-f7044e6e1eff?w=1200&q=85&auto=format&fit=crop",  // Frankfurt
+  office:    "https://images.unsplash.com/photo-1497366216548-37526070297c?w=1200&q=85&auto=format&fit=crop",// modern office
+};
 
-export default function Page() {
+export default function Home() {
   return (
-    <div style={{ background: "#f8f8f6" }}>
+    <div style={{background:"#f9fafb"}}>
 
-      {/* ════════════════════ HERO ════════════════════ */}
-      <section style={{ position: "relative", overflow: "hidden", minHeight: "620px", display: "flex", alignItems: "center" }}>
-        {/* HD background image */}
-        <div style={{
-          position: "absolute", inset: 0, zIndex: 0,
-          backgroundImage: `url(${HERO_BG})`,
-          backgroundSize: "cover", backgroundPosition: "center 30%",
-          filter: "brightness(0.35)"
-        }} />
-        {/* gradient overlay */}
-        <div style={{ position: "absolute", inset: 0, zIndex: 1, background: "linear-gradient(105deg, rgba(15,31,61,0.95) 0%, rgba(15,31,61,0.7) 55%, rgba(230,57,70,0.25) 100%)" }} />
-        {/* decorative circles */}
-        <div style={{ position: "absolute", top: "-120px", right: "-80px", width: "500px", height: "500px", borderRadius: "50%", background: "#E63946", opacity: 0.12, zIndex: 1 }} />
-        <div style={{ position: "absolute", bottom: "-60px", right: "180px", width: "280px", height: "280px", borderRadius: "50%", background: "#f5c842", opacity: 0.12, zIndex: 1 }} />
+      {/* ══════════════ HERO ══════════════ */}
+      <section style={{position:"relative",minHeight:"680px",display:"flex",alignItems:"center",overflow:"hidden"}}>
+        <div style={{position:"absolute",inset:0,backgroundImage:`url(${IMG.hero})`,backgroundSize:"cover",backgroundPosition:"center 35%",filter:"brightness(0.28)"}} />
+        <div style={{position:"absolute",inset:0,background:"linear-gradient(110deg,rgba(11,29,58,0.97) 0%,rgba(11,29,58,0.75) 50%,rgba(220,38,38,0.2) 100%)"}} />
+        {/* Geometric accent */}
+        <div style={{position:"absolute",top:"-100px",right:"-60px",width:"500px",height:"500px",borderRadius:"50%",background:"#DC2626",opacity:0.1,zIndex:1}} />
+        <div style={{position:"absolute",bottom:"-80px",right:"160px",width:"320px",height:"320px",borderRadius:"50%",background:"#D97706",opacity:0.1,zIndex:1}} />
 
-        <div className="wrap" style={{ position: "relative", zIndex: 2, width: "100%", padding: "90px 1.5rem" }}>
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 370px", gap: "56px", alignItems: "center" }}>
+        <div className="wrap" style={{position:"relative",zIndex:2,width:"100%",padding:"96px 1.5rem 96px"}}>
+          <div style={{display:"grid",gridTemplateColumns:"1fr 380px",gap:"60px",alignItems:"center"}}>
 
-            {/* Left */}
             <div>
-              {/* trust badge */}
-              <div style={{ display: "inline-flex", alignItems: "center", gap: "10px", background: "rgba(245,200,66,.15)", border: "1px solid rgba(245,200,66,.4)", color: "#f5c842", fontSize: "12px", fontWeight: 700, padding: "7px 16px", borderRadius: "999px", marginBottom: "24px", letterSpacing: "0.06em" }}>
-                <span>🇵🇰 🇮🇳 🇧🇩 🇦🇫</span> Trusted by 50,000+ South Asians
+              {/* Trust pill */}
+              <div style={{display:"inline-flex",alignItems:"center",gap:"10px",background:"rgba(217,119,6,.15)",border:"1px solid rgba(217,119,6,.4)",padding:"8px 18px",borderRadius:"999px",marginBottom:"28px"}}>
+                <span style={{fontSize:"16px"}}>🇵🇰 🇮🇳 🇧🇩 🇦🇫</span>
+                <span style={{fontSize:"12.5px",fontWeight:700,color:"#FCD34D",letterSpacing:"0.05em"}}>Trusted by 50,000+ South Asians</span>
               </div>
 
-              <h1 className="h1" style={{ color: "#fff", marginBottom: "20px" }}>
-                Your European<br />
-                dream starts<br />
-                <span style={{ color: "#f5c842" }}>right here</span>
+              <h1 className="h1" style={{color:"#fff",marginBottom:"22px"}}>
+                Your gateway to<br />
+                <span style={{color:"#FCD34D",fontStyle:"italic"}}>Europe</span>{" "}starts here
               </h1>
 
-              <p style={{ color: "rgba(255,255,255,.75)", fontSize: "18px", lineHeight: 1.7, maxWidth: "500px", marginBottom: "32px" }}>
-                Complete visa guidance, job search, banking & appointment help for students and professionals from Pakistan, India, Bangladesh & Afghanistan moving to Germany, Italy, Sweden or the UK.
+              <p style={{fontSize:"18px",color:"rgba(255,255,255,.72)",lineHeight:1.75,maxWidth:"520px",marginBottom:"14px"}}>
+                Complete visa guidance, job search, banking & appointment booking for students and professionals from Pakistan, India, Bangladesh & Afghanistan moving to Germany, Italy, Sweden or the UK.
               </p>
 
-              {/* country chips */}
-              <div style={{ display: "flex", gap: "8px", flexWrap: "wrap", marginBottom: "32px" }}>
-                {[
-                  { flag: "🇩🇪", name: "Germany", color: "#e8e8e8" },
-                  { flag: "🇮🇹", name: "Italy", color: "#e8e8e8" },
-                  { flag: "🇸🇪", name: "Sweden", color: "#e8e8e8" },
-                  { flag: "🇬🇧", name: "UK", color: "#e8e8e8" },
-                ].map(c => (
-                  <div key={c.name} style={{ display: "flex", alignItems: "center", gap: "6px", background: "rgba(255,255,255,.12)", border: "1px solid rgba(255,255,255,.2)", borderRadius: "999px", padding: "6px 14px", fontSize: "13px", fontWeight: 600, color: "#fff" }}>
-                    {c.flag} {c.name}
+              {/* Country chips */}
+              <div style={{display:"flex",gap:"8px",flexWrap:"wrap",marginBottom:"34px"}}>
+                {[{f:"🇩🇪",n:"Germany"},{f:"🇮🇹",n:"Italy"},{f:"🇸🇪",n:"Sweden"},{f:"🇬🇧",n:"UK"}].map(c=>(
+                  <div key={c.n} style={{display:"flex",alignItems:"center",gap:"6px",background:"rgba(255,255,255,.1)",border:"1px solid rgba(255,255,255,.2)",borderRadius:"999px",padding:"6px 14px",fontSize:"13px",fontWeight:600,color:"#fff"}}>
+                    {c.f} {c.n}
                   </div>
                 ))}
               </div>
 
-              <div style={{ display: "flex", gap: "14px", flexWrap: "wrap" }}>
-                <Link href="/visa" className="btn btn-red">Check my visa options →</Link>
-                <Link href="/finances" className="btn btn-outline-light">Open a free bank account</Link>
+              <div style={{display:"flex",gap:"14px",flexWrap:"wrap"}}>
+                <Link href="/visa" className="btn btn-primary">Check my visa options →</Link>
+                <Link href="/consultancy" className="btn btn-ghost-light">📅 Free Consultation</Link>
+              </div>
+
+              {/* Social proof */}
+              <div style={{display:"flex",alignItems:"center",gap:"16px",marginTop:"36px",paddingTop:"28px",borderTop:"1px solid rgba(255,255,255,.12)"}}>
+                <div style={{display:"flex"}}>
+                  {["AK","RM","FN","ZS","BH"].map((a,i)=>(
+                    <div key={a} style={{width:"36px",height:"36px",borderRadius:"50%",background:["#DC2626","#0D9488","#1D4ED8","#D97706","#7C3AED"][i],border:"2px solid rgba(255,255,255,.3)",marginLeft:i?"-10px":"0",display:"flex",alignItems:"center",justifyContent:"center",fontSize:"11px",fontWeight:800,color:"#fff",flexShrink:0}}>{a}</div>
+                  ))}
+                </div>
+                <div>
+                  <div style={{color:"#FCD34D",fontSize:"13px",fontWeight:700}}>★★★★★ 4.9/5</div>
+                  <div style={{color:"rgba(255,255,255,.5)",fontSize:"12px"}}>from 3,200+ verified reviews</div>
+                </div>
               </div>
             </div>
 
             {/* Quick-Check Card */}
-            <div style={{ background: "#fff", borderRadius: "24px", padding: "34px", boxShadow: "0 28px 70px rgba(0,0,0,.3)" }}>
-              <div style={{ display: "flex", alignItems: "center", gap: "10px", marginBottom: "6px" }}>
-                <div style={{ width: "36px", height: "36px", borderRadius: "10px", background: "linear-gradient(135deg,#E63946,#a81e31)", display: "flex", alignItems: "center", justifyContent: "center", color: "#fff", fontSize: "16px" }}>🧭</div>
+            <div style={{background:"#fff",borderRadius:"28px",padding:"36px",boxShadow:"0 32px 80px rgba(0,0,0,.32)"}}>
+              <div style={{display:"flex",alignItems:"center",gap:"12px",marginBottom:"20px",paddingBottom:"18px",borderBottom:"1px solid #F3F4F6"}}>
+                <div style={{width:"44px",height:"44px",borderRadius:"14px",background:"linear-gradient(135deg,#DC2626,#991B1B)",display:"flex",alignItems:"center",justifyContent:"center",boxShadow:"0 4px 12px rgba(220,38,38,.35)",flexShrink:0}}>
+                  <span style={{fontFamily:PD,fontWeight:900,fontSize:"20px",color:"#fff"}}>V</span>
+                </div>
                 <div>
-                  <p style={{ fontFamily: D, fontWeight: 800, fontSize: "18px", color: "#0f1f3d", lineHeight: 1 }}>Quick-Check</p>
-                  <p style={{ fontSize: "12px", color: "#9ca3af" }}>Find your path in 30 seconds</p>
+                  <div style={{fontFamily:PD,fontWeight:800,fontSize:"18px",color:"#0B1D3A",lineHeight:1}}>Quick-Check</div>
+                  <div style={{fontSize:"12px",color:"#9CA3AF",marginTop:"2px"}}>Find your path in 30 seconds</div>
                 </div>
               </div>
 
-              <div style={{ height: "1px", background: "#f0f0f0", margin: "16px 0" }} />
+              {[
+                {label:"I want to…",opts:["Please select","Work in Europe","Study in Europe","Vocational training (Ausbildung)","Start a business","Family reunification","Book visa appointment"]},
+                {label:"Destination",opts:["Select country","🇩🇪 Germany","🇮🇹 Italy (soon)","🇸🇪 Sweden (soon)","🇬🇧 United Kingdom (soon)"]},
+                {label:"I'm from…",opts:["Select country","🇵🇰 Pakistan","🇮🇳 India","🇧🇩 Bangladesh","🇦🇫 Afghanistan","🌍 Other country"]},
+              ].map(s=>(
+                <div key={s.label} style={{marginBottom:"14px"}}>
+                  <label style={{fontSize:"11px",fontWeight:700,textTransform:"uppercase",letterSpacing:"0.09em",color:"#6B7280",display:"block",marginBottom:"6px"}}>{s.label}</label>
+                  <select style={{width:"100%",padding:"12px 14px",border:"2px solid #E5E7EB",borderRadius:"10px",fontSize:"14px",background:"#F9FAFB",fontFamily:IN,cursor:"pointer",appearance:"none",backgroundImage:"url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%236B7280' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E\")",backgroundRepeat:"no-repeat",backgroundPosition:"right 12px center"}}>
+                    {s.opts.map(o=><option key={o}>{o}</option>)}
+                  </select>
+                </div>
+              ))}
 
-              <label style={{ fontSize: "11px", fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.08em", color: "#6b7280", display: "block", marginBottom: "7px" }}>I want to…</label>
-              <select style={{ width: "100%", padding: "12px 14px", border: "2px solid #e8e8ec", borderRadius: "12px", fontSize: "14px", background: "#f9fafb", marginBottom: "13px", fontFamily: J, cursor: "pointer" }}>
-                <option value="">Please select</option>
-                <option>Work in Europe</option>
-                <option>Study in Europe</option>
-                <option>Do vocational training</option>
-                <option>Start a business</option>
-                <option>Family reunification</option>
-                <option>Book a visa appointment</option>
-              </select>
-
-              <label style={{ fontSize: "11px", fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.08em", color: "#6b7280", display: "block", marginBottom: "7px" }}>Destination country</label>
-              <select style={{ width: "100%", padding: "12px 14px", border: "2px solid #e8e8ec", borderRadius: "12px", fontSize: "14px", background: "#f9fafb", marginBottom: "13px", fontFamily: J, cursor: "pointer" }}>
-                <option value="">Select country</option>
-                <option>🇩🇪 Germany</option>
-                <option>🇮🇹 Italy</option>
-                <option>🇸🇪 Sweden</option>
-                <option>🇬🇧 United Kingdom</option>
-              </select>
-
-              <label style={{ fontSize: "11px", fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.08em", color: "#6b7280", display: "block", marginBottom: "7px" }}>I'm from…</label>
-              <select style={{ width: "100%", padding: "12px 14px", border: "2px solid #e8e8ec", borderRadius: "12px", fontSize: "14px", background: "#f9fafb", marginBottom: "18px", fontFamily: J, cursor: "pointer" }}>
-                <option value="">Select country</option>
-                <option>🇵🇰 Pakistan</option>
-                <option>🇮🇳 India</option>
-                <option>🇧🇩 Bangladesh</option>
-                <option>🇦🇫 Afghanistan</option>
-                <option>🌍 Other country</option>
-              </select>
-
-              <Link href="/visa" className="btn btn-red" style={{ width: "100%", display: "flex", justifyContent: "center" }}>Show my options →</Link>
-
-              <div style={{ display: "flex", gap: "7px", marginTop: "12px" }}>
-                <Link href="/finances" className="qpill">💳 Banking</Link>
+              <Link href="/visa" className="btn btn-primary" style={{width:"100%",justifyContent:"center",marginBottom:"14px"}}>
+                Show my options →
+              </Link>
+              <div style={{display:"flex",gap:"7px"}}>
+                <Link href="/finances" className="qpill">💳 Bank</Link>
                 <Link href="/visa" className="qpill">🛂 Visa</Link>
                 <Link href="/work" className="qpill">💼 Jobs</Link>
-                <Link href="/service" className="qpill">📋 Appt.</Link>
+                <Link href="/appointment" className="qpill">📅 Appt</Link>
               </div>
+
+              <p style={{fontSize:"11px",color:"#9CA3AF",textAlign:"center",marginTop:"14px"}}>
+                🔒 Free · No registration required
+              </p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* ════ STATS BAR ════ */}
-      <div style={{ background: "#E63946" }}>
+      {/* ══════════════ STATS ══════════════ */}
+      <div style={{background:"#DC2626"}}>
         <div className="wrap">
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(4,1fr)" }}>
+          <div style={{display:"grid",gridTemplateColumns:"repeat(4,1fr)"}}>
             {[
-              { n: "50K+", l: "Families helped" },
-              { n: "4", l: "Countries covered" },
-              { n: "98%", l: "Visa success rate" },
-              { n: "24h", l: "Support response" },
-            ].map((s, i) => (
-              <div key={s.l} style={{ textAlign: "center", padding: "22px 16px", borderRight: i < 3 ? "1px solid rgba(255,255,255,.22)" : "none" }}>
-                <div style={{ fontFamily: D, fontWeight: 800, fontSize: "clamp(1.6rem,2.5vw,2rem)", color: "#fff" }}>{s.n}</div>
-                <div style={{ fontSize: "12.5px", color: "rgba(255,255,255,.72)", marginTop: "3px" }}>{s.l}</div>
+              {n:"50K+",  l:"Families helped"},
+              {n:"98%",   l:"Visa success rate"},
+              {n:"4",     l:"Countries covered"},
+              {n:"2026",  l:"Data updated"},
+            ].map((s,i)=>(
+              <div key={s.l} className="stat-box" style={{borderRight:i<3?"1px solid rgba(255,255,255,.22)":"none"}}>
+                <div style={{fontFamily:PD,fontWeight:900,fontSize:"clamp(1.8rem,2.5vw,2.2rem)",color:"#fff"}}>{s.n}</div>
+                <div style={{fontSize:"13px",color:"rgba(255,255,255,.72)",marginTop:"3px",fontWeight:500}}>{s.l}</div>
               </div>
             ))}
           </div>
         </div>
       </div>
 
-      {/* ════ DESTINATION COUNTRIES ════ */}
+      {/* ══════════════ DESTINATIONS ══════════════ */}
       <section className="sec">
-        <div style={{ textAlign: "center", maxWidth: "600px", margin: "0 auto 44px" }}>
-          <span className="slabel">Choose your destination</span>
-          <h2 className="h2">Where do you want to go?</h2>
-          <p style={{ marginTop: "10px", color: "#6b7280", fontSize: "16px", lineHeight: 1.6 }}>
-            Complete guidance for 4 of Europe's most popular destinations for South Asian immigrants — all in one place.
-          </p>
+        <div style={{textAlign:"center",maxWidth:"620px",margin:"0 auto 52px"}}>
+          <span className="eyebrow">Choose your destination</span>
+          <h2 className="h2">Where do you want to build your future?</h2>
+          <div className="divider" style={{margin:"14px auto"}} />
+          <p className="lead">Complete, up-to-date guidance for Europe's most sought-after destinations for South Asian immigrants.</p>
         </div>
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(4,1fr)", gap: "20px" }}>
+        <div style={{display:"grid",gridTemplateColumns:"repeat(4,1fr)",gap:"22px"}}>
           {[
-            { flag: "🇩🇪", name: "Germany", desc: "EU Blue Card · Opportunity Card · Skilled Worker Visa", color: "#1D3557", img: GERMANY_BG, tag: "Most popular", href: "/visa" },
-            { flag: "🇮🇹", name: "Italy", desc: "Student Visa · Work Permit · Decreto Flussi", color: "#00684a", img: ITALY_BG, tag: "Coming soon", href: "/" },
-            { flag: "🇸🇪", name: "Sweden", desc: "Work Permit · Student Visa · Residence Permit", color: "#003087", img: SWEDEN_BG, tag: "Coming soon", href: "/" },
-            { flag: "🇬🇧", name: "United Kingdom", desc: "Skilled Worker · Student · Graduate Route", color: "#012169", img: UK_BG, tag: "Coming soon", href: "/" },
-          ].map(c => (
-            <Link key={c.name} href={c.href} className="country-card" style={{ minHeight: "320px" }}>
-              {/* HD bg image */}
-              <div style={{ position: "absolute", inset: 0, backgroundImage: `url(${c.img})`, backgroundSize: "cover", backgroundPosition: "center", filter: "brightness(0.55)", transition: "filter .3s" }} />
-              {/* gradient */}
-              <div style={{ position: "absolute", inset: 0, background: `linear-gradient(to top, ${c.color}ee 0%, ${c.color}88 45%, transparent 100%)` }} />
-              {/* content */}
-              <div style={{ position: "absolute", inset: 0, padding: "20px", display: "flex", flexDirection: "column", justifyContent: "space-between" }}>
-                <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start" }}>
-                  <span style={{ fontSize: "40px", filter: "drop-shadow(0 2px 4px rgba(0,0,0,.3))" }}>{c.flag}</span>
-                  <span style={{ background: c.tag === "Most popular" ? "#f5c842" : "rgba(255,255,255,.25)", color: c.tag === "Most popular" ? "#0f1f3d" : "#fff", fontSize: "10px", fontWeight: 700, padding: "4px 10px", borderRadius: "999px", border: c.tag !== "Most popular" ? "1px solid rgba(255,255,255,.3)" : "none", backdropFilter: "blur(4px)" }}>{c.tag}</span>
+            {flag:"🇩🇪",name:"Germany",desc:"EU Blue Card · Opportunity Card · Skilled Worker Visa · Ausbildung",img:IMG.germany,color:"#0B1D3A",tag:"✓ Live & updated",tagColor:"#ECFDF5",tagText:"#065F46",href:"/visa"},
+            {flag:"🇮🇹",name:"Italy",desc:"Student Visa · Work Permit · Decreto Flussi · Self-employment",img:IMG.italy,color:"#1E3A5F",tag:"Coming Q3 2025",tagColor:"rgba(255,255,255,.2)",tagText:"#fff",href:"/"},
+            {flag:"🇸🇪",name:"Sweden",desc:"Work Permit · Student Visa · Residence Permit · Job Seeker",img:IMG.sweden,color:"#0B1D3A",tag:"Coming Q4 2025",tagColor:"rgba(255,255,255,.2)",tagText:"#fff",href:"/"},
+            {flag:"🇬🇧",name:"United Kingdom",desc:"Skilled Worker · Student Visa · Graduate Route · Family",img:IMG.uk,color:"#1E3A5F",tag:"Coming 2026",tagColor:"rgba(255,255,255,.2)",tagText:"#fff",href:"/"},
+          ].map(c=>(
+            <Link key={c.name} href={c.href} className="img-card" style={{minHeight:"340px"}}>
+              <div style={{position:"absolute",inset:0,backgroundImage:`url(${c.img})`,backgroundSize:"cover",backgroundPosition:"center",filter:"brightness(0.5)",transition:"filter .35s"}} />
+              <div className="cc-overlay" />
+              <div style={{position:"absolute",inset:0,padding:"20px",display:"flex",flexDirection:"column",justifyContent:"space-between"}}>
+                <div style={{display:"flex",justifyContent:"space-between",alignItems:"flex-start"}}>
+                  <span style={{fontSize:"44px",filter:"drop-shadow(0 3px 6px rgba(0,0,0,.4))"}}>{c.flag}</span>
+                  <span style={{background:c.tagColor,color:c.tagText,fontSize:"10px",fontWeight:700,padding:"4px 10px",borderRadius:"999px",backdropFilter:"blur(4px)",border:c.href==="/"?"1px solid rgba(255,255,255,.25)":"none"}}>{c.tag}</span>
                 </div>
                 <div>
-                  <div style={{ fontFamily: D, fontWeight: 800, fontSize: "22px", color: "#fff", marginBottom: "6px" }}>{c.name}</div>
-                  <div style={{ fontSize: "12.5px", color: "rgba(255,255,255,.72)", lineHeight: 1.5 }}>{c.desc}</div>
-                  <div style={{ marginTop: "14px", display: "inline-flex", alignItems: "center", gap: "6px", fontSize: "13px", fontWeight: 700, color: c.tag === "Most popular" ? "#f5c842" : "rgba(255,255,255,.7)" }}>
-                    {c.tag === "Most popular" ? "Explore Germany →" : "Coming soon"}
+                  <div style={{fontFamily:PD,fontWeight:800,fontSize:"24px",color:"#fff",marginBottom:"7px",textShadow:"0 2px 8px rgba(0,0,0,.4)"}}>{c.name}</div>
+                  <div style={{fontSize:"12.5px",color:"rgba(255,255,255,.72)",lineHeight:1.55}}>{c.desc}</div>
+                  <div style={{marginTop:"14px",fontSize:"13px",fontWeight:700,color:c.href==="/"?"rgba(255,255,255,.5)":"#FCD34D",display:"flex",alignItems:"center",gap:"5px"}}>
+                    {c.href==="/"?"Notify me when live":"Explore Germany →"}
                   </div>
                 </div>
               </div>
@@ -185,76 +173,210 @@ export default function Page() {
         </div>
       </section>
 
-      {/* ════ GUIDE CARDS ════ */}
-      <div style={{ background: "#fff", padding: "5rem 1.5rem" }}>
-        <div style={{ maxWidth: "1120px", margin: "0 auto" }}>
-          <span className="slabel">Step-by-step</span>
-          <h2 className="h2" style={{ marginBottom: "32px" }}>How EuroPathway helps you</h2>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(5,1fr)", gap: "16px" }}>
+      {/* ══════════════ HOW IT WORKS ══════════════ */}
+      <div style={{background:"#fff",padding:"5rem 1.5rem"}}>
+        <div style={{maxWidth:"1200px",margin:"0 auto"}}>
+          <div style={{textAlign:"center",maxWidth:"600px",margin:"0 auto 52px"}}>
+            <span className="eyebrow">Simple process</span>
+            <h2 className="h2">From your home country to Europe — in 5 steps</h2>
+            <div className="divider" style={{margin:"14px auto"}} />
+          </div>
+          <div style={{display:"grid",gridTemplateColumns:"repeat(5,1fr)",gap:"16px",position:"relative"}}>
             {[
-              { e: "🧭", t: "Check your options", d: "Find the right visa path for your profile and destination.", h: "/visa", c: "Start now" },
-              { e: "💼", t: "Find a job", d: "Search vacancies in Germany suited for South Asians.", h: "/work", c: "Browse jobs" },
-              { e: "🗓️", t: "Book appointments", d: "Embassy & Ausländerbehörde appointment guidance.", h: "/service", c: "Appointment help" },
-              { e: "💳", t: "Set up banking", d: "Free EU account & card before you arrive.", h: "/finances", c: "Banking guide" },
-              { e: "🏡", t: "Settle in", d: "Housing, German courses, registration & daily life.", h: "/living", c: "Living guide" },
-            ].map(c => (
-              <Link key={c.t} href={c.h} className="guide-card">
-                <div style={{ width: "48px", height: "48px", borderRadius: "14px", background: "#fff1f2", display: "flex", alignItems: "center", justifyContent: "center", fontSize: "22px" }}>{c.e}</div>
-                <div style={{ marginTop: "14px", fontWeight: 700, color: "#0f1f3d", fontSize: "14px", lineHeight: 1.35 }}>{c.t}</div>
-                <div style={{ marginTop: "6px", fontSize: "12.5px", color: "#6b7280", lineHeight: 1.55, flex: 1 }}>{c.d}</div>
-                <div style={{ marginTop: "12px", fontSize: "12.5px", fontWeight: 700, color: "#E63946" }}>{c.c} →</div>
+              {n:"01",icon:"🔍",title:"Check eligibility",desc:"Use our Quick-Check to find which visa and path fits your profile and destination.",color:"#FEF2F2",border:"#FCA5A5"},
+              {n:"02",icon:"📋",title:"Prepare documents",desc:"Get our free checklist of all required documents — degree, police clearance, financials.",color:"#FFFBEB",border:"#FCD34D"},
+              {n:"03",icon:"🗓️",title:"Book appointment",desc:"We guide you through booking your embassy appointment — even when slots are scarce.",color:"#EFF6FF",border:"#BFDBFE"},
+              {n:"04",icon:"✈️",title:"Arrive & register",desc:"Anmeldung, blocked account, health insurance — we walk you through every step.",color:"#ECFDF5",border:"#6EE7B7"},
+              {n:"05",icon:"💳",title:"Set up your life",desc:"Banking, housing, language courses, job search — everything you need to settle in.",color:"#F5F3FF",border:"#C4B5FD"},
+            ].map((s,i)=>(
+              <div key={s.n} className="step-card" style={{background:s.color,borderColor:s.border}}>
+                <div style={{fontFamily:PD,fontWeight:900,fontSize:"13px",color:s.border,marginBottom:"12px",letterSpacing:"0.05em"}}>{s.n}</div>
+                <div style={{fontSize:"32px",marginBottom:"12px"}}>{s.icon}</div>
+                <div style={{fontWeight:700,fontSize:"15px",color:"#0B1D3A",marginBottom:"8px",lineHeight:1.3}}>{s.title}</div>
+                <div style={{fontSize:"13px",color:"#6B7280",lineHeight:1.6}}>{s.desc}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      {/* ══════════════ FOR SOUTH ASIANS ══════════════ */}
+      <section style={{position:"relative",overflow:"hidden",padding:"5rem 0"}}>
+        <div style={{position:"absolute",inset:0,backgroundImage:`url(${IMG.students})`,backgroundSize:"cover",backgroundPosition:"center 40%",filter:"brightness(0.15)"}} />
+        <div style={{position:"absolute",inset:0,background:"linear-gradient(135deg,rgba(11,29,58,0.98) 0%,rgba(11,29,58,0.88) 55%,rgba(220,38,38,0.25) 100%)"}} />
+
+        <div className="wrap" style={{position:"relative",zIndex:1}}>
+          <div style={{display:"grid",gridTemplateColumns:"1fr 1fr",gap:"72px",alignItems:"center"}}>
+            <div>
+              <span className="eyebrow" style={{color:"#FCD34D"}}>Built for you</span>
+              <h2 className="h2" style={{color:"#fff",marginBottom:"16px"}}>Made specifically for South Asian students &amp; professionals</h2>
+              <div style={{width:"60px",height:"4px",background:"#DC2626",borderRadius:"2px",marginBottom:"20px"}} />
+              <p style={{color:"rgba(255,255,255,.65)",lineHeight:1.8,fontSize:"16px",marginBottom:"28px"}}>
+                We understand your unique challenges — complex embassy paperwork, long appointment wait times, degree recognition (anabin/ZAB), blocked account setup, language barriers and finding the right visa path. VisaVista was built to solve exactly these problems, in a language you understand.
+              </p>
+              <div style={{display:"grid",gridTemplateColumns:"1fr 1fr",gap:"14px",marginBottom:"32px"}}>
+                {[
+                  {e:"🇵🇰",t:"Pakistan",d:"Embassy Islamabad/Karachi. Avg. processing: 8-12 weeks",c:"#DC2626"},
+                  {e:"🇮🇳",t:"India",d:"Consulates in Delhi, Mumbai, Chennai. 6-10 weeks",c:"#0D9488"},
+                  {e:"🇧🇩",t:"Bangladesh",d:"Embassy Dhaka. Processing: 10-14 weeks",c:"#1D4ED8"},
+                  {e:"🇦🇫",t:"Afghanistan",d:"Special routes & protection pathways available",c:"#D97706"},
+                ].map(o=>(
+                  <div key={o.t} style={{background:"rgba(255,255,255,.07)",border:"1px solid rgba(255,255,255,.1)",borderRadius:"16px",padding:"16px 18px",borderLeft:`3px solid ${o.c}`}}>
+                    <div style={{fontSize:"22px",marginBottom:"6px"}}>{o.e}</div>
+                    <div style={{fontWeight:700,color:"#fff",fontSize:"14px"}}>{o.t}</div>
+                    <div style={{fontSize:"11.5px",color:"rgba(255,255,255,.45)",marginTop:"3px",lineHeight:1.5}}>{o.d}</div>
+                  </div>
+                ))}
+              </div>
+              <Link href="/consultancy" className="btn btn-primary">Get personalised guidance →</Link>
+            </div>
+
+            {/* Testimonials */}
+            <div style={{display:"flex",flexDirection:"column",gap:"18px"}}>
+              <h3 style={{fontFamily:PD,fontWeight:700,fontSize:"20px",color:"#fff",marginBottom:"4px"}}>Real success stories</h3>
+              {[
+                {name:"Ayesha Khalid",origin:"🇵🇰 Lahore, Pakistan",role:"Software Engineer · Berlin",text:"VisaVista guided me through every step of my EU Blue Card application. I had my appointment in 3 weeks and visa in 8 weeks. Highly recommend!",av:"AK",c:"#DC2626",stars:5},
+                {name:"Rahul Mehta",origin:"🇮🇳 Mumbai, India",role:"Mechanical Engineer · Munich",text:"The appointment guide was a lifesaver. I finally got my Ausländerbehörde slot after following their step-by-step guide. Got my settlement permit now!",av:"RM",c:"#0D9488",stars:5},
+                {name:"Fatima Noor",origin:"🇧🇩 Dhaka, Bangladesh",role:"Nursing Trainee · Hamburg",text:"From university application to opening my Commerzbank account — VisaVista covered everything. The Ausbildung guide is amazing.",av:"FN",c:"#1D4ED8",stars:5},
+              ].map(t=>(
+                <div key={t.name} className="tcard">
+                  <div style={{display:"flex",justifyContent:"space-between",alignItems:"flex-start",marginBottom:"10px"}}>
+                    <div style={{display:"flex",gap:"12px",alignItems:"center"}}>
+                      <div style={{width:"44px",height:"44px",borderRadius:"50%",background:t.c,display:"flex",alignItems:"center",justifyContent:"center",fontSize:"14px",fontWeight:800,color:"#fff",flexShrink:0}}>{t.av}</div>
+                      <div>
+                        <div style={{fontWeight:700,fontSize:"14px",color:"#0B1D3A"}}>{t.name}</div>
+                        <div style={{fontSize:"11.5px",color:"#9CA3AF"}}>{t.origin} · {t.role}</div>
+                      </div>
+                    </div>
+                    <div style={{color:"#D97706",fontSize:"13px",fontWeight:700}}>{"★".repeat(t.stars)}</div>
+                  </div>
+                  <p style={{fontSize:"13.5px",color:"#374151",lineHeight:1.65,fontStyle:"italic"}}>"{t.text}"</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ══════════════ GERMANY HIGHLIGHT ══════════════ */}
+      <section className="sec">
+        <div style={{display:"grid",gridTemplateColumns:"1fr 1fr",gap:"64px",alignItems:"center"}}>
+          <div>
+            <span className="eyebrow">🇩🇪 Focus: Germany</span>
+            <h2 className="h2" style={{marginBottom:"16px"}}>Germany's most popular visa routes for South Asians</h2>
+            <div className="divider" />
+            <p className="lead" style={{marginBottom:"28px"}}>Germany is the #1 destination for Pakistani, Indian and Bangladeshi professionals in Europe. Here are your main pathways:</p>
+
+            {[
+              {icon:"💙",title:"EU Blue Card",salary:"€50,700/yr (€45,934 shortage roles)",desc:"For graduates with a job offer. Fast-track to PR after 21 months with B1 German.",badge:"Most popular",bc:"badge-blue"},
+              {icon:"🎯",title:"Opportunity Card (Chancenkarte)",salary:"No job offer needed",desc:"Point-based system. Come to Germany to job-hunt for up to 1 year. Min. 6 points.",badge:"No job needed",bc:"badge-green"},
+              {icon:"⚙️",title:"Skilled Worker Visa",salary:"€50,700/yr",desc:"For qualified professionals with a recognised degree and a concrete job offer.",badge:"Stable path",bc:"badge-gray"},
+              {icon:"🎓",title:"Ausbildung / Study Visa",salary:"Free tuition at most unis",desc:"Study for free at public universities or do vocational training with a monthly salary.",badge:"For students",bc:"badge-teal"},
+            ].map(v=>(
+              <div key={v.title} style={{display:"flex",gap:"16px",alignItems:"flex-start",padding:"16px",borderRadius:"16px",border:"1px solid #E5E7EB",marginBottom:"12px",background:"#fff",transition:"all .2s",cursor:"pointer"}}
+                onMouseOver={e=>{e.currentTarget.style.borderColor="#FCA5A5";e.currentTarget.style.boxShadow="0 8px 24px rgba(220,38,38,.08)";}}
+                onMouseOut={e=>{e.currentTarget.style.borderColor="#E5E7EB";e.currentTarget.style.boxShadow="none";}}>
+                <div style={{width:"44px",height:"44px",borderRadius:"12px",background:"#FEF2F2",display:"flex",alignItems:"center",justifyContent:"center",fontSize:"20px",flexShrink:0}}>{v.icon}</div>
+                <div style={{flex:1}}>
+                  <div style={{display:"flex",alignItems:"center",gap:"10px",marginBottom:"4px",flexWrap:"wrap"}}>
+                    <span style={{fontWeight:700,fontSize:"15px",color:"#0B1D3A"}}>{v.title}</span>
+                    <span className={`badge ${v.bc}`}>{v.badge}</span>
+                  </div>
+                  <div style={{fontSize:"12px",color:"#DC2626",fontWeight:600,marginBottom:"4px"}}>💰 {v.salary}</div>
+                  <div style={{fontSize:"13px",color:"#6B7280",lineHeight:1.5}}>{v.desc}</div>
+                </div>
+                <div style={{color:"#D1D5DB",flexShrink:0}}>→</div>
+              </div>
+            ))}
+
+            <Link href="/visa" className="btn btn-primary" style={{marginTop:"8px"}}>Full Germany visa guide →</Link>
+          </div>
+
+          {/* Feature image */}
+          <div style={{borderRadius:"28px",overflow:"hidden",position:"relative",aspectRatio:"4/5"}}>
+            <div style={{position:"absolute",inset:0,backgroundImage:`url(${IMG.city2})`,backgroundSize:"cover",backgroundPosition:"center"}} />
+            <div style={{position:"absolute",inset:0,background:"linear-gradient(to top,rgba(11,29,58,0.9) 0%,rgba(11,29,58,0.2) 55%,transparent 100%)"}} />
+            <div style={{position:"absolute",bottom:"32px",left:"28px",right:"28px",zIndex:1}}>
+              <div style={{background:"rgba(255,255,255,.1)",backdropFilter:"blur(12px)",border:"1px solid rgba(255,255,255,.2)",borderRadius:"18px",padding:"20px 22px"}}>
+                <div style={{fontSize:"12px",fontWeight:700,textTransform:"uppercase",letterSpacing:"0.1em",color:"#FCD34D",marginBottom:"8px"}}>2026 Update</div>
+                <div style={{fontFamily:PD,fontWeight:700,fontSize:"18px",color:"#fff",lineHeight:1.3,marginBottom:"8px"}}>Germany updated Blue Card salary thresholds</div>
+                <div style={{fontSize:"13px",color:"rgba(255,255,255,.65)",lineHeight:1.5}}>€50,700/yr standard · €45,934/yr shortage professions (STEM, healthcare, IT)</div>
+                <Link href="/visa" style={{marginTop:"14px",display:"inline-flex",alignItems:"center",gap:"6px",background:"#DC2626",color:"#fff",textDecoration:"none",fontSize:"12px",fontWeight:700,padding:"8px 16px",borderRadius:"9px"}}>Read full update →</Link>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ══════════════ JOBS ══════════════ */}
+      <div style={{background:"#fff",padding:"5rem 1.5rem"}}>
+        <div style={{maxWidth:"1200px",margin:"0 auto"}}>
+          <div style={{display:"flex",justifyContent:"space-between",alignItems:"flex-end",flexWrap:"wrap",gap:"16px",marginBottom:"36px"}}>
+            <div>
+              <span className="eyebrow">In demand</span>
+              <h2 className="h2">Top jobs for South Asian professionals in Germany</h2>
+            </div>
+            <Link href="/work" className="btn btn-white">Browse all vacancies →</Link>
+          </div>
+          <div style={{display:"grid",gridTemplateColumns:"repeat(3,1fr)",gap:"16px"}}>
+            {[
+              {e:"💻",t:"IT Specialists",d:"Software engineers, data scientists, cloud & DevOps architects.",b:"🔥 Highest demand",bc:"badge-hot",sal:"€55K–€90K"},
+              {e:"⚙️",t:"Engineers",d:"Mechanical, electrical, civil, chemical and automotive engineers.",b:"🔥 High demand",bc:"badge-hot",sal:"€50K–€80K"},
+              {e:"🏥",t:"Nursing Professionals",d:"Registered nurses, care workers, elderly care — urgent shortage.",b:"↑ Growing fast",bc:"badge-teal",sal:"€32K–€48K"},
+              {e:"👩‍⚕️",t:"Physicians & Doctors",d:"GPs and specialists — critical shortage across all German states.",b:"↑ Growing fast",bc:"badge-teal",sal:"€60K–€120K"},
+              {e:"🔨",t:"Craftspeople / Trades",d:"Electricians, plumbers, HVAC, construction specialists.",b:"🔥 High demand",bc:"badge-hot",sal:"€35K–€58K"},
+              {e:"🌱",t:"Green Energy Jobs",d:"Solar, wind, EV, sustainability — Germany's fastest growing sector.",b:"↑ Growing",bc:"badge-green",sal:"€45K–€75K"},
+              {e:"🔬",t:"Scientists / Researchers",d:"Chemistry, biology, physics — with strong research funding.",b:"● Stable",bc:"badge-blue",sal:"€45K–€70K"},
+              {e:"🚛",t:"Transport & Logistics",d:"Drivers, freight, supply chain — massive shortage.",b:"↑ Growing",bc:"badge-teal",sal:"€30K–€48K"},
+              {e:"🎓",t:"Ausbildung (Apprenticeship)",d:"Paid vocational training — earn while you learn in Germany.",b:"● Open now",bc:"badge-gold",sal:"€600–€1,100/mo"},
+            ].map(j=>(
+              <Link key={j.t} href="/work" style={{textDecoration:"none"}} >
+                <div className="card card-hover-red" style={{height:"100%"}}>
+                  <div style={{display:"flex",gap:"14px",alignItems:"flex-start"}}>
+                    <div style={{width:"50px",height:"50px",borderRadius:"14px",background:"#F9FAFB",border:"1px solid #E5E7EB",display:"flex",alignItems:"center",justifyContent:"center",fontSize:"22px",flexShrink:0}}>{j.e}</div>
+                    <div style={{flex:1}}>
+                      <div style={{fontWeight:700,color:"#0B1D3A",fontSize:"15px",marginBottom:"4px"}}>{j.t}</div>
+                      <div style={{fontSize:"12.5px",color:"#6B7280",lineHeight:1.5,marginBottom:"10px"}}>{j.d}</div>
+                      <div style={{display:"flex",gap:"7px",flexWrap:"wrap"}}>
+                        <span className={`badge ${j.bc}`}>{j.b}</span>
+                        <span className="badge badge-gray">💶 {j.sal}</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </Link>
             ))}
           </div>
         </div>
       </div>
 
-      {/* ════ SOUTH ASIA SECTION ════ */}
-      <section style={{ position: "relative", overflow: "hidden", padding: "5rem 1.5rem" }}>
-        <div style={{ position: "absolute", inset: 0, backgroundImage: `url(${STUDENTS_BG})`, backgroundSize: "cover", backgroundPosition: "center 40%", filter: "brightness(0.2)" }} />
-        <div style={{ position: "absolute", inset: 0, background: "linear-gradient(135deg, rgba(15,31,61,0.97) 0%, rgba(15,31,61,0.85) 60%, rgba(230,57,70,0.3) 100%)" }} />
-
-        <div className="wrap" style={{ position: "relative", zIndex: 1 }}>
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "64px", alignItems: "center" }}>
+      {/* ══════════════ BANKING ══════════════ */}
+      <section className="sec" style={{paddingTop:"3.5rem",paddingBottom:"3.5rem"}}>
+        <div style={{background:"linear-gradient(135deg,#1E3A5F 0%,#0B1D3A 100%)",borderRadius:"32px",padding:"64px",overflow:"hidden",position:"relative"}}>
+          <div style={{position:"absolute",top:"-80px",right:"-60px",width:"380px",height:"380px",borderRadius:"50%",background:"rgba(255,255,255,.04)"}} />
+          <div style={{position:"absolute",bottom:"-40px",left:"30%",width:"280px",height:"280px",borderRadius:"50%",background:"rgba(220,38,38,.08)"}} />
+          <div style={{position:"relative",zIndex:1,display:"grid",gridTemplateColumns:"1.2fr 1fr",gap:"56px",alignItems:"center"}}>
             <div>
-              <span className="slabel" style={{ color: "#f5c842" }}>Built for you</span>
-              <h2 className="h2" style={{ color: "#fff" }}>Made for South Asian students &amp; professionals</h2>
-              <p style={{ marginTop: "14px", color: "rgba(255,255,255,.65)", lineHeight: 1.75, fontSize: "16px" }}>
-                We understand the specific challenges you face — complex documentation, long embassy wait times, degree recognition, language barriers and finding the right visa path. EuroPathway was built to solve exactly these problems.
+              <span style={{display:"block",fontSize:"11px",fontWeight:700,textTransform:"uppercase",letterSpacing:"0.14em",color:"rgba(255,255,255,.4)",marginBottom:"12px"}}>💳 Money & Banking</span>
+              <h2 style={{fontFamily:PD,fontWeight:800,fontSize:"clamp(1.6rem,2.5vw,2.2rem)",color:"#fff",lineHeight:1.25,marginBottom:"14px"}}>Open your German account<br/>before you even land</h2>
+              <p style={{color:"rgba(255,255,255,.65)",lineHeight:1.8,fontSize:"16px",marginBottom:"28px"}}>
+                You'll need a German IBAN for rent, salary, Anmeldung. Open free accounts with Wise (send money home at real exchange rate), Commerzbank (50€ bonus) or get a fee-free Advanzia Mastercard Gold.
               </p>
-              <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "12px", marginTop: "28px" }}>
-                {[
-                  { e: "🇵🇰", t: "Pakistan", d: "Schengen, student & work visa guidance" },
-                  { e: "🇮🇳", t: "India", d: "EU Blue Card & skilled worker support" },
-                  { e: "🇧🇩", t: "Bangladesh", d: "Study & vocational training paths" },
-                  { e: "🇦🇫", t: "Afghanistan", d: "Special protection & residence routes" },
-                ].map(o => (
-                  <div key={o.t} style={{ background: "rgba(255,255,255,.08)", border: "1px solid rgba(255,255,255,.12)", borderRadius: "16px", padding: "16px" }}>
-                    <div style={{ fontSize: "24px", marginBottom: "6px" }}>{o.e}</div>
-                    <div style={{ fontWeight: 700, color: "#fff", fontSize: "14px" }}>{o.t}</div>
-                    <div style={{ fontSize: "12px", color: "rgba(255,255,255,.5)", marginTop: "3px", lineHeight: 1.45 }}>{o.d}</div>
-                  </div>
-                ))}
-              </div>
+              <Link href="/finances" style={{display:"inline-flex",alignItems:"center",gap:"8px",background:"#fff",color:"#0B1D3A",textDecoration:"none",padding:"14px 28px",borderRadius:"14px",fontWeight:800,fontSize:"15px"}}>See all banking options →</Link>
             </div>
-
-            {/* Testimonials */}
-            <div style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
+            <div style={{display:"flex",flexDirection:"column",gap:"14px"}}>
               {[
-                { name: "Ayesha K.", origin: "🇵🇰 Lahore, Pakistan", role: "Software Engineer · Berlin", text: "EuroPathway guided me through every step of my EU Blue Card application. I had my visa in 6 weeks!", avatar: "AK", c: "#E63946" },
-                { name: "Rahul M.", origin: "🇮🇳 Mumbai, India", role: "Mechanical Engineer · Munich", text: "The appointment booking guide saved me months. I finally got my Ausländerbehörde slot after weeks of trying.", avatar: "RM", c: "#2A9D8F" },
-                { name: "Fatima N.", origin: "🇧🇩 Dhaka, Bangladesh", role: "Nursing Student · Hamburg", text: "From finding the right university to opening my Commerzbank account — this site covered everything.", avatar: "FN", c: "#457B9D" },
-              ].map(t => (
-                <div key={t.name} className="tcard">
-                  <div style={{ display: "flex", gap: "12px", alignItems: "flex-start" }}>
-                    <div style={{ width: "44px", height: "44px", borderRadius: "50%", background: t.c, display: "flex", alignItems: "center", justifyContent: "center", fontSize: "14px", fontWeight: 800, color: "#fff", flexShrink: 0 }}>{t.avatar}</div>
-                    <div>
-                      <div style={{ fontWeight: 700, fontSize: "15px", color: "#0f1f3d" }}>{t.name}</div>
-                      <div style={{ fontSize: "12px", color: "#9ca3af" }}>{t.origin} · {t.role}</div>
-                    </div>
-                    <div style={{ marginLeft: "auto", fontSize: "22px", color: "#f5c842" }}>★★★★★</div>
+                {e:"🌐",n:"Wise",d:"Real exchange rate — send money to Pakistan/India/Bangladesh for free",badge:"Best for transfers",bc:"#ECFDF5",bt:"#065F46",href:"https://wise.com/invite/in/shaistak5"},
+                {e:"🏦",n:"Commerzbank",d:"Traditional German IBAN · 50€ starting bonus · Accepted everywhere",badge:"50€ bonus",bc:"#FFFBEB",bt:"#92400E",href:"https://www.commerzbank.de/girokonto-antrag?path=/pk/de/Abschluss/GD51_Girokonto_DD_MCD_TGK_50Start_KwK&x-werbecode=PNGHRA"},
+                {e:"💳",n:"Advanzia Mastercard Gold",d:"No annual fee · No foreign transaction fees · Free travel insurance",badge:"0€ annual fee",bc:"#F5F3FF",bt:"#5B21B6",href:"https://refer.gebuhrenfrei.com/shaistas-45"},
+              ].map(b=>(
+                <div key={b.n} style={{background:"rgba(255,255,255,.08)",border:"1px solid rgba(255,255,255,.12)",borderRadius:"16px",padding:"16px 18px",display:"flex",gap:"14px",alignItems:"center"}}>
+                  <div style={{fontSize:"28px",flexShrink:0}}>{b.e}</div>
+                  <div style={{flex:1}}>
+                    <div style={{fontWeight:700,color:"#fff",fontSize:"14px",marginBottom:"3px"}}>{b.n}</div>
+                    <div style={{fontSize:"12px",color:"rgba(255,255,255,.5)",lineHeight:1.4}}>{b.d}</div>
                   </div>
-                  <p style={{ marginTop: "12px", fontSize: "14px", color: "#374151", lineHeight: 1.65, fontStyle: "italic" }}>"{t.text}"</p>
+                  <span style={{background:b.bc,color:b.bt,fontSize:"10px",fontWeight:700,padding:"4px 10px",borderRadius:"999px",flexShrink:0,whiteSpace:"nowrap"}}>{b.badge}</span>
                 </div>
               ))}
             </div>
@@ -262,139 +384,82 @@ export default function Page() {
         </div>
       </section>
 
-      {/* ════ TOP JOBS ════ */}
-      <section className="sec" style={{ paddingTop: "4rem" }}>
-        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-end", flexWrap: "wrap", gap: "16px", marginBottom: "32px" }}>
-          <div>
-            <span className="slabel">High demand</span>
-            <h2 className="h2">Top jobs for South Asian professionals in Germany</h2>
-          </div>
-          <Link href="/work" className="btn btn-white">All vacancies →</Link>
-        </div>
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)", gap: "16px" }}>
-          {[
-            { e: "💻", t: "IT Specialists", d: "Software engineers, data scientists, cloud architects.", b: "🔥 Highest demand", bc: "bdg-red" },
-            { e: "⚙️", t: "Engineers", d: "Mechanical, electrical, civil — all branches.", b: "🔥 High demand", bc: "bdg-red" },
-            { e: "🏥", t: "Nursing Professionals", d: "Registered nurses, care workers, elderly care.", b: "↑ Growing fast", bc: "bdg-teal" },
-            { e: "👩‍⚕️", t: "Physicians & Doctors", d: "GPs, specialists — urgent shortage across Germany.", b: "↑ Growing fast", bc: "bdg-teal" },
-            { e: "🔨", t: "Craftspeople", d: "Electricians, plumbers, construction specialists.", b: "🔥 High demand", bc: "bdg-red" },
-            { e: "🌱", t: "Green Jobs", d: "Renewable energy, sustainability, enviro engineering.", b: "↑ Growing", bc: "bdg-teal" },
-            { e: "🔬", t: "Scientists / Researchers", d: "Chemistry, biology, physics, materials science.", b: "● Stable", bc: "bdg-blue" },
-            { e: "🚛", t: "Transport & Logistics", d: "Drivers, freight coordinators, supply chain.", b: "↑ Growing", bc: "bdg-teal" },
-            { e: "🎓", t: "Vocational Training (Ausbildung)", d: "Apprenticeship positions open across all sectors.", b: "● Open now", bc: "bdg-gold" },
-          ].map(j => (
-            <Link key={j.t} href="/work" className="job-card">
-              <div style={{ display: "flex", gap: "14px", alignItems: "flex-start" }}>
-                <div style={{ width: "48px", height: "48px", borderRadius: "14px", background: "#f9fafb", display: "flex", alignItems: "center", justifyContent: "center", fontSize: "22px", flexShrink: 0 }}>{j.e}</div>
-                <div style={{ flex: 1 }}>
-                  <div style={{ fontWeight: 700, color: "#0f1f3d", fontSize: "15px" }}>{j.t}</div>
-                  <div style={{ fontSize: "13px", color: "#6b7280", marginTop: "3px", lineHeight: 1.5 }}>{j.d}</div>
-                  <span className={`bdg ${j.bc}`} style={{ marginTop: "10px", display: "inline-block" }}>{j.b}</span>
-                </div>
-              </div>
-            </Link>
-          ))}
-        </div>
-      </section>
-
-      {/* ════ FEATURED TOPICS ════ */}
-      <div style={{ background: "#fff", padding: "5rem 1.5rem" }}>
-        <div style={{ maxWidth: "1120px", margin: "0 auto" }}>
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "56px", alignItems: "start" }}>
+      {/* ══════════════ FEATURED ARTICLES ══════════════ */}
+      <div style={{background:"#fff",padding:"5rem 1.5rem"}}>
+        <div style={{maxWidth:"1200px",margin:"0 auto"}}>
+          <div style={{display:"grid",gridTemplateColumns:"1fr 1fr",gap:"64px",alignItems:"start"}}>
             <div>
-              <span className="slabel">Trending guides</span>
-              <h2 className="h2" style={{ marginBottom: "24px" }}>Most-read articles</h2>
+              <span className="eyebrow">Trending guides</span>
+              <h2 className="h2" style={{marginBottom:"6px"}}>Most-read articles</h2>
+              <div className="divider" style={{marginBottom:"24px"}} />
               {[
-                { n: "01", tag: "Visa 🇩🇪", t: "Germany Opportunity Card: how to apply from Pakistan & India" },
-                { n: "02", tag: "Banking", t: "Best bank accounts for newcomers in Germany (2025)" },
-                { n: "03", tag: "Studies 🇩🇪", t: "Study in Germany for free: universities that don't charge tuition" },
-                { n: "04", tag: "Appointment", t: "How to get a German embassy appointment from Pakistan in 2025" },
-                { n: "05", tag: "IT Career", t: "IT professionals from India in Germany: salary, visa & relocation" },
-                { n: "06", tag: "Ausbildung", t: "Vocational training (Ausbildung) — is it the right path for you?" },
-              ].map(item => (
-                <Link key={item.n} href="/work" className="topic-item">
-                  <span style={{ fontFamily: D, fontWeight: 800, fontSize: "13px", color: "#E63946", width: "28px", flexShrink: 0 }}>{item.n}</span>
-                  <div style={{ flex: 1 }}>
-                    <div style={{ fontSize: "10.5px", fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.07em", color: "#d1d5db", marginBottom: "3px" }}>{item.tag}</div>
-                    <div className="t-title" style={{ fontWeight: 600, fontSize: "14.5px", lineHeight: 1.4, color: "#111827" }}>{item.t}</div>
+                {n:"01",tag:"Visa 🇩🇪 2026",t:"Germany Opportunity Card: how to apply from Pakistan & India"},
+                {n:"02",tag:"Banking",t:"Best bank accounts for Germany newcomers in 2026 (compared)"},
+                {n:"03",tag:"Study 🇩🇪",t:"Study in Germany for free: complete guide for South Asians"},
+                {n:"04",tag:"Appointment",t:"How to get a German embassy appointment from Pakistan (2026)"},
+                {n:"05",tag:"IT Career",t:"IT professionals from India in Germany: salary, visa, relocation"},
+                {n:"06",tag:"Ausbildung",t:"Vocational training (Ausbildung) — the complete guide for foreigners"},
+                {n:"07",tag:"Blue Card",t:"EU Blue Card 2026: new €50,700 salary threshold explained"},
+              ].map(a=>(
+                <Link key={a.n} href="/work" className="topic-row">
+                  <span style={{fontFamily:PD,fontWeight:800,fontSize:"13px",color:"#DC2626",width:"28px",flexShrink:0}}>{a.n}</span>
+                  <div style={{flex:1}}>
+                    <div style={{fontSize:"10.5px",fontWeight:700,textTransform:"uppercase",letterSpacing:"0.07em",color:"#D1D5DB",marginBottom:"3px"}}>{a.tag}</div>
+                    <div className="tr-title">{a.t}</div>
                   </div>
-                  <span className="t-arrow">→</span>
+                  <span className="tr-arrow">→</span>
                 </Link>
               ))}
             </div>
 
             {/* Feature card */}
-            <div style={{ borderRadius: "24px", overflow: "hidden", aspectRatio: "4/5", display: "flex", flexDirection: "column", justifyContent: "flex-end", padding: "32px", position: "relative" }}>
-              <div style={{ position: "absolute", inset: 0, backgroundImage: `url(${CITY_BG})`, backgroundSize: "cover", backgroundPosition: "center", filter: "brightness(0.45)" }} />
-              <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to top, rgba(15,31,61,0.96) 0%, rgba(15,31,61,0.3) 60%, transparent 100%)" }} />
-              <div style={{ position: "relative", zIndex: 1 }}>
-                <span style={{ display: "inline-block", background: "#f5c842", color: "#0f1f3d", fontSize: "11px", fontWeight: 800, textTransform: "uppercase", letterSpacing: "0.08em", padding: "5px 13px", borderRadius: "999px", marginBottom: "16px" }}>✨ Success Story</span>
-                <div style={{ fontFamily: D, fontWeight: 800, fontSize: "24px", color: "#fff", lineHeight: 1.25, marginBottom: "10px" }}>
-                  "I moved from Karachi to Berlin — here's everything I wish I knew"
+            <div style={{borderRadius:"28px",overflow:"hidden",aspectRatio:"4/5.5",display:"flex",flexDirection:"column",justifyContent:"flex-end",padding:"32px",position:"relative"}}>
+              <div style={{position:"absolute",inset:0,backgroundImage:`url(${IMG.consult})`,backgroundSize:"cover",backgroundPosition:"center"}} />
+              <div style={{position:"absolute",inset:0,background:"linear-gradient(to top,rgba(11,29,58,0.96) 0%,rgba(11,29,58,0.3) 60%,transparent 100%)"}} />
+              <div style={{position:"relative",zIndex:1}}>
+                <span style={{display:"inline-block",background:"#DC2626",color:"#fff",fontSize:"11px",fontWeight:800,textTransform:"uppercase",letterSpacing:"0.1em",padding:"6px 14px",borderRadius:"999px",marginBottom:"18px"}}>📅 Consultancy</span>
+                <div style={{fontFamily:PD,fontWeight:800,fontSize:"26px",color:"#fff",lineHeight:1.2,marginBottom:"12px"}}>
+                  1-on-1 expert consultation in Urdu, Hindi or English
                 </div>
-                <div style={{ fontSize: "14px", color: "rgba(255,255,255,.6)", lineHeight: 1.65, marginBottom: "20px" }}>
-                  Zainab shares her complete journey: visa application, job search, Anmeldung and settling in Germany as a Pakistani software engineer.
+                <div style={{fontSize:"14px",color:"rgba(255,255,255,.62)",lineHeight:1.7,marginBottom:"22px"}}>
+                  Book a personal consultation with our certified immigration experts. We've helped 50,000+ South Asians successfully move to Europe.
                 </div>
-                <Link href="/about" style={{ display: "inline-flex", alignItems: "center", gap: "8px", background: "#fff", color: "#0f1f3d", textDecoration: "none", fontSize: "13px", fontWeight: 800, padding: "10px 20px", borderRadius: "999px" }}>Read Zainab's story →</Link>
+                <div style={{display:"flex",gap:"10px",flexWrap:"wrap"}}>
+                  <Link href="/consultancy" style={{display:"inline-flex",alignItems:"center",gap:"6px",background:"#DC2626",color:"#fff",textDecoration:"none",fontSize:"13px",fontWeight:800,padding:"11px 22px",borderRadius:"12px"}}>Book now — It's free →</Link>
+                  <Link href="/about" style={{display:"inline-flex",alignItems:"center",gap:"6px",background:"rgba(255,255,255,.15)",color:"#fff",textDecoration:"none",fontSize:"13px",fontWeight:600,padding:"11px 22px",borderRadius:"12px",border:"1px solid rgba(255,255,255,.25)"}}>Meet our team</Link>
+                </div>
+                <div style={{marginTop:"18px",fontSize:"12px",color:"rgba(255,255,255,.45)",display:"flex",alignItems:"center",gap:"8px"}}>
+                  <span>🇵🇰 Urdu</span><span>·</span><span>🇮🇳 Hindi</span><span>·</span><span>🇧🇩 Bengali</span><span>·</span><span>🌍 English</span>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
 
-      {/* ════ BANKING TEASER ════ */}
-      <section className="sec">
-        <div style={{ background: "linear-gradient(135deg,#1c5fe6,#0d3586)", borderRadius: "28px", padding: "56px", position: "relative", overflow: "hidden" }}>
-          <div style={{ position: "absolute", width: "300px", height: "300px", top: "-80px", right: "-50px", borderRadius: "50%", background: "rgba(255,255,255,.07)" }} />
-          <div style={{ position: "relative", zIndex: 1, display: "grid", gridTemplateColumns: "1fr 1fr", gap: "48px", alignItems: "center" }}>
+      {/* ══════════════ FINAL CTA ══════════════ */}
+      <div style={{padding:"0 1.5rem 5rem"}}>
+        <div style={{maxWidth:"1200px",margin:"0 auto",background:"linear-gradient(135deg,#DC2626 0%,#991B1B 100%)",borderRadius:"32px",padding:"64px",position:"relative",overflow:"hidden"}}>
+          <div style={{position:"absolute",width:"380px",height:"380px",top:"-100px",right:"-60px",borderRadius:"50%",background:"rgba(255,255,255,.07)"}} />
+          <div style={{position:"absolute",width:"240px",height:"240px",bottom:"-50px",right:"220px",borderRadius:"50%",background:"rgba(0,0,0,.08)"}} />
+          <div style={{position:"relative",zIndex:1,display:"grid",gridTemplateColumns:"1fr auto",gap:"40px",alignItems:"center"}}>
             <div>
-              <span style={{ display: "block", fontSize: "11px", fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.1em", color: "rgba(255,255,255,.5)", marginBottom: "10px" }}>💳 Banking & Money</span>
-              <h2 className="h2" style={{ color: "#fff" }}>Set up your money before you land</h2>
-              <p style={{ marginTop: "14px", color: "rgba(255,255,255,.68)", lineHeight: 1.75, fontSize: "16px" }}>
-                Open a free German IBAN with Wise or Commerzbank (50€ bonus), send money home for free, and get a fee-free Mastercard Gold with Advanzia.
-              </p>
-              <Link href="/finances" style={{ marginTop: "24px", display: "inline-flex", alignItems: "center", gap: "8px", background: "#fff", color: "#1c5fe6", textDecoration: "none", padding: "13px 26px", borderRadius: "14px", fontWeight: 800, fontSize: "15px" }}>See all banking options →</Link>
-            </div>
-            <div style={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)", gap: "12px" }}>
-              {[
-                { n: "Wise", d: "Send money to Pakistan/India for free", e: "🌐", badge: "Best for transfers" },
-                { n: "Commerzbank", d: "German IBAN + 50€ starting bonus", e: "🏦", badge: "50€ bonus" },
-                { n: "Advanzia", d: "No annual fee Mastercard Gold", e: "💳", badge: "0€ annual fee" },
-              ].map(b => (
-                <div key={b.n} style={{ background: "rgba(255,255,255,.1)", borderRadius: "16px", padding: "18px 12px", textAlign: "center", border: "1px solid rgba(255,255,255,.15)" }}>
-                  <div style={{ fontSize: "1.8rem" }}>{b.e}</div>
-                  <div style={{ margin: "8px 0 3px", fontSize: "13px", fontWeight: 800, color: "#fff" }}>{b.n}</div>
-                  <div style={{ fontSize: "10.5px", color: "rgba(255,255,255,.55)", lineHeight: 1.4, marginBottom: "8px" }}>{b.d}</div>
-                  <div style={{ background: "rgba(245,200,66,.25)", color: "#f5c842", fontSize: "10px", fontWeight: 700, padding: "3px 8px", borderRadius: "999px", display: "inline-block" }}>{b.badge}</div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ════ CONTACT CTA ════ */}
-      <div style={{ padding: "0 1.5rem 5rem" }}>
-        <div style={{ maxWidth: "1120px", margin: "0 auto", background: "linear-gradient(135deg,#E63946,#a81e31)", borderRadius: "28px", padding: "56px", position: "relative", overflow: "hidden" }}>
-          <div style={{ position: "absolute", width: "350px", height: "350px", top: "-80px", right: "-60px", borderRadius: "50%", background: "rgba(255,255,255,.07)" }} />
-          <div style={{ position: "relative", zIndex: 1, display: "grid", gridTemplateColumns: "1fr auto", gap: "40px", alignItems: "center" }}>
-            <div>
-              <h2 style={{ fontFamily: D, fontWeight: 800, fontSize: "clamp(1.6rem,2.5vw,2.2rem)", color: "#fff", marginBottom: "10px" }}>
-                Need personalised help?
+              <h2 style={{fontFamily:PD,fontWeight:900,fontSize:"clamp(1.8rem,3vw,2.6rem)",color:"#fff",lineHeight:1.2,marginBottom:"12px"}}>
+                Ready to start your European journey?
               </h2>
-              <p style={{ fontSize: "17px", color: "rgba(255,255,255,.75)", lineHeight: 1.65 }}>
-                Book a 1-on-1 consultation with our immigration experts. We speak Urdu, Hindi, Bengali &amp; English.
+              <p style={{fontSize:"18px",color:"rgba(255,255,255,.75)",lineHeight:1.65}}>
+                Book a free 1-on-1 consultation. We speak Urdu, Hindi, Bengali &amp; English. No obligation, no cost.
               </p>
             </div>
-            <div style={{ display: "flex", gap: "12px", flexWrap: "wrap" }}>
-              {[
-                { label: "📅 Book consultation", href: "/service" },
-                { label: "✉️ Email us", href: "/service" },
-                { label: "💬 WhatsApp", href: "/service" },
-                { label: "❓ FAQ", href: "/service" },
-              ].map(c => (
-                <Link key={c.label} href={c.href} className="ch-btn">{c.label}</Link>
-              ))}
+            <div style={{display:"flex",flexDirection:"column",gap:"12px",flexShrink:0}}>
+              <Link href="/consultancy" style={{display:"flex",alignItems:"center",gap:"10px",background:"#fff",color:"#DC2626",textDecoration:"none",padding:"16px 28px",borderRadius:"14px",fontWeight:800,fontSize:"16px",whiteSpace:"nowrap",boxShadow:"0 8px 28px rgba(0,0,0,.2)"}}>
+                📅 Book free consultation
+              </Link>
+              <div style={{display:"flex",gap:"10px"}}>
+                {[{l:"✉️ Email",h:"/service"},{l:"💬 WhatsApp",h:"/service"},{l:"❓ FAQ",h:"/service"}].map(c=>(
+                  <Link key={c.l} href={c.h} className="ch-btn" style={{flex:1,justifyContent:"center",padding:"10px 12px",fontSize:"12.5px"}}>{c.l}</Link>
+                ))}
+              </div>
             </div>
           </div>
         </div>
