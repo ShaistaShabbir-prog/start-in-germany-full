@@ -135,7 +135,7 @@ export default function WorkPage() {
                     const v = [c.sal,c.rent,c.best,c.eng][i];
                     return (
                       <React.Fragment key={k}>
-                        <span style={{fontSize:"10px",fontWeight:700,color:"#9CA3AF",textTransform:"uppercase",paddingTop:"3px"}}>{k}:</span>
+                        <span style={{fontSize:"10px",fontWeight:700,color:"#9CA3AF",textTransform:"uppercase" as const,paddingTop:"3px"}}>{k}:</span>
                         <span style={{fontSize:"12.5px",color:"#374151"}}>{v}</span>
                       </React.Fragment>
                     );
@@ -182,7 +182,7 @@ export default function WorkPage() {
               <div style={{position:"absolute",inset:0,background:"linear-gradient(to top,rgba(11,29,58,.9) 0%,transparent 55%)"}}/>
               <div style={{position:"absolute",bottom:"20px",left:"20px",right:"20px",zIndex:1}}>
                 <div style={{background:"rgba(255,255,255,.12)",backdropFilter:"blur(12px)",border:"1px solid rgba(255,255,255,.2)",borderRadius:"14px",padding:"16px 18px"}}>
-                  <div style={{fontSize:"11px",fontWeight:700,color:"#FCD34D",textTransform:"uppercase",letterSpacing:"0.08em",marginBottom:"8px"}}>Average gross salaries 2026</div>
+                  <div style={{fontSize:"11px",fontWeight:700,color:"#FCD34D",textTransform:"uppercase" as const,letterSpacing:"0.08em",marginBottom:"8px"}}>Average gross salaries 2026</div>
                   {[["IT Engineer (senior)","€78,000"],["Software Developer","€65,000"],["Mechanical Engineer","€58,000"],["Physician (GP)","€85,000"],["Registered Nurse","€42,000"],["Electrician (Meister)","€52,000"],["Ausbildung (IT)","€900/mo"]].map(([r,sv])=>(
                     <div key={r} style={{display:"flex",justifyContent:"space-between",padding:"5px 0",borderBottom:"1px solid rgba(255,255,255,.1)"}}>
                       <span style={{fontSize:"12.5px",color:"rgba(255,255,255,.7)"}}>{r}</span>
