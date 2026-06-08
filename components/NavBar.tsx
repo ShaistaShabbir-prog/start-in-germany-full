@@ -20,72 +20,86 @@ export default function NavBar() {
 
   return (
     <>
-      {/* top announcement bar */}
-      <div className="bg-navy py-2 text-center text-xs text-white/70">
+      {/* Announcement bar */}
+      <div style={{background:"#1D3557",padding:"8px 0",textAlign:"center",fontSize:"12px",color:"rgba(255,255,255,0.65)"}}>
         🇩🇪 Independent guidance portal for moving to Germany &nbsp;·&nbsp;
-        <Link href="/finances" className="font-semibold text-amber-400 underline-offset-2 hover:underline">
+        <Link href="/finances" style={{fontWeight:700,color:"#F7C948",textDecoration:"underline",textUnderlineOffset:"2px"}}>
           Open a free bank account →
         </Link>
       </div>
 
-      <header className="sticky top-0 z-50 border-b border-gray-200 bg-white/90 backdrop-blur">
-        <div className="container-narrow flex items-center justify-between py-3">
-          {/* logo */}
-          <Link href="/" className="flex items-center gap-2.5 text-lg font-extrabold tracking-tight">
-            <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-brand-600 text-white text-sm font-black">
-              S
-            </div>
-            <span className="text-navy">Start</span>
-            <span className="text-brand-600">in</span>
-            <span className="text-navy">Germany</span>
+      {/* Main nav */}
+      <header style={{
+        position:"sticky",top:0,zIndex:50,
+        background:"rgba(255,255,255,0.95)",
+        backdropFilter:"blur(12px)",
+        borderBottom:"1px solid #e8e8f0"
+      }}>
+        <div className="container-narrow" style={{display:"flex",alignItems:"center",justifyContent:"space-between",padding:"12px 1.25rem"}}>
+          {/* Logo */}
+          <Link href="/" style={{display:"flex",alignItems:"center",gap:"10px",textDecoration:"none",fontFamily:"var(--font-display)",fontWeight:800,fontSize:"18px"}}>
+            <div style={{
+              width:"36px",height:"36px",borderRadius:"10px",background:"#E63946",
+              display:"flex",alignItems:"center",justifyContent:"center",
+              color:"#fff",fontSize:"15px",fontWeight:900,flexShrink:0
+            }}>S</div>
+            <span style={{color:"#1D3557"}}>Start</span>
+            <span style={{color:"#1c5fe6"}}>in</span>
+            <span style={{color:"#1D3557"}}>Germany</span>
           </Link>
 
-          {/* desktop nav */}
-          <nav className="hidden items-center gap-1 md:flex">
-            {links.map((l) => (
+          {/* Desktop nav */}
+          <nav style={{display:"flex",alignItems:"center",gap:"2px"}}>
+            {links.map(l => (
               <Link
                 key={l.href}
                 href={l.href}
-                className={`rounded-xl px-3 py-2 text-sm transition hover:bg-brand-50 hover:text-brand-700 ${
-                  pathname === l.href
-                    ? "bg-brand-50 font-semibold text-brand-700"
-                    : "text-gray-600"
-                }`}
+                style={{
+                  fontSize:"13.5px",
+                  fontWeight: pathname === l.href ? 700 : 500,
+                  color: pathname === l.href ? "#1c5fe6" : "#555570",
+                  padding:"7px 12px",
+                  borderRadius:"10px",
+                  background: pathname === l.href ? "#f0f4ff" : "transparent",
+                  textDecoration:"none",
+                  transition:"all 0.15s",
+                }}
               >
                 {l.label}
               </Link>
             ))}
           </nav>
 
-          {/* mobile hamburger */}
+          {/* Mobile hamburger */}
           <button
-            className="rounded-lg p-2 text-gray-600 hover:bg-gray-100 md:hidden"
             onClick={() => setOpen(!open)}
+            style={{background:"none",border:"none",cursor:"pointer",padding:"8px",color:"#555"}}
             aria-label="Toggle menu"
           >
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-              {open ? (
-                <path d="M18 6L6 18M6 6l12 12" />
-              ) : (
-                <path d="M3 12h18M3 6h18M3 18h18" />
-              )}
+              {open
+                ? <path d="M18 6L6 18M6 6l12 12"/>
+                : <path d="M3 12h18M3 6h18M3 18h18"/>
+              }
             </svg>
           </button>
         </div>
 
-        {/* mobile dropdown */}
+        {/* Mobile dropdown */}
         {open && (
-          <div className="border-t border-gray-100 bg-white px-4 pb-4 md:hidden">
-            {links.map((l) => (
+          <div style={{borderTop:"1px solid #ebebf0",background:"#fff",padding:"8px 16px 16px"}}>
+            {links.map(l => (
               <Link
                 key={l.href}
                 href={l.href}
                 onClick={() => setOpen(false)}
-                className={`block rounded-xl px-4 py-2.5 text-sm ${
-                  pathname === l.href
-                    ? "bg-brand-50 font-semibold text-brand-700"
-                    : "text-gray-700 hover:bg-gray-50"
-                }`}
+                style={{
+                  display:"block",padding:"10px 14px",borderRadius:"12px",
+                  fontSize:"14px",fontWeight: pathname===l.href ? 600 : 400,
+                  color: pathname===l.href ? "#1c5fe6" : "#444",
+                  background: pathname===l.href ? "#f0f4ff" : "transparent",
+                  textDecoration:"none",marginBottom:"2px"
+                }}
               >
                 {l.label}
               </Link>
