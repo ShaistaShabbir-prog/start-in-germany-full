@@ -1,3 +1,4 @@
+import React from "react";
 import Link from "next/link";
 
 const PD = '"Playfair Display",Georgia,serif';
@@ -130,10 +131,15 @@ export default function WorkPage() {
                 onMouseOut={e=>{e.currentTarget.style.borderColor="#E5E7EB";e.currentTarget.style.background="#F9FAFB";e.currentTarget.style.boxShadow="none";}}>
                 <div style={{fontFamily:PD,fontWeight:800,fontSize:"18px",color:"#0B1D3A",marginBottom:"12px"}}>{c.flag} {c.city}</div>
                 <div style={{display:"grid",gridTemplateColumns:"auto 1fr",gap:"3px 10px",marginBottom:"12px"}}>
-                  {[["Salary",c.sal],["Rent (1-bed)",c.rent],["Best for",c.best],["English",c.eng]].map(([k,v])=>(
-                    <><span key={k+"k"} style={{fontSize:"10px",fontWeight:700,color:"#9CA3AF",textTransform:"uppercase",paddingTop:"3px"}}>{k}:</span>
-                    <span key={k+"v"} style={{fontSize:"12.5px",color:"#374151"}}>{v}</span></>
-                  ))}
+                  {(["Salary","Rent","Best for","English"] as string[]).map((k,i) => {
+                    const v = [c.sal,c.rent,c.best,c.eng][i];
+                    return (
+                      <React.Fragment key={k}>
+                        <span style={{fontSize:"10px",fontWeight:700,color:"#9CA3AF",textTransform:"uppercase",paddingTop:"3px"}}>{k}:</span>
+                        <span style={{fontSize:"12.5px",color:"#374151"}}>{v}</span>
+                      </React.Fragment>
+                    );
+                  })}
                 </div>
                 <div style={{fontSize:"11.5px",color:"#DC2626",fontWeight:600,marginBottom:"3px"}}>🌍 South Asian community:</div>
                 <div style={{fontSize:"12px",color:"#6B7280",lineHeight:1.55,marginBottom:"8px"}}>{c.south}</div>
