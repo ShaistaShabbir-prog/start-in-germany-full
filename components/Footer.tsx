@@ -2,97 +2,72 @@ import Link from "next/link";
 
 export default function Footer() {
   return (
-    <footer className="bg-navy mt-16 text-white">
-      <div className="container-narrow py-12">
-        <div className="grid gap-8 md:grid-cols-4">
-          {/* brand */}
-          <div className="md:col-span-1">
-            <div className="flex items-center gap-2.5 text-lg font-extrabold">
-              <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-brand-600 text-sm font-black">
-                S
-              </div>
+    <footer style={{background:"#1D3557",marginTop:"0",color:"#fff"}}>
+      <div className="container-narrow" style={{padding:"56px 1.25rem 0"}}>
+        <div style={{display:"grid",gridTemplateColumns:"2fr 1fr 1fr 1fr",gap:"40px",paddingBottom:"48px",borderBottom:"1px solid rgba(255,255,255,0.1)"}}>
+
+          {/* Brand */}
+          <div>
+            <div style={{display:"flex",alignItems:"center",gap:"10px",fontFamily:"var(--font-display)",fontWeight:800,fontSize:"18px",marginBottom:"14px"}}>
+              <div style={{width:"34px",height:"34px",borderRadius:"9px",background:"#E63946",display:"flex",alignItems:"center",justifyContent:"center",fontSize:"14px",fontWeight:900,color:"#fff"}}>S</div>
               <span>StartinGermany</span>
             </div>
-            <p className="mt-3 text-sm text-white/55 leading-relaxed">
-              Independent, friendly guidance for moving, working and studying in
-              Germany. Not affiliated with the German government.
+            <p style={{fontSize:"13.5px",color:"rgba(255,255,255,0.5)",lineHeight:1.7,maxWidth:"280px",marginBottom:"18px"}}>
+              Independent, friendly guidance for moving, working and studying in Germany. Not affiliated with the German government.
             </p>
-            <div className="mt-4 flex gap-2">
-              {["in", "ig", "yt", "𝕏"].map((s) => (
-                <div
-                  key={s}
-                  className="flex h-8 w-8 items-center justify-center rounded-full bg-white/10 text-xs text-white/60 hover:bg-brand-600 hover:text-white cursor-pointer transition"
-                >
-                  {s}
-                </div>
+            <div style={{display:"flex",gap:"8px"}}>
+              {["in","ig","yt","𝕏"].map(s => (
+                <div key={s} style={{
+                  width:"34px",height:"34px",borderRadius:"50%",background:"rgba(255,255,255,0.1)",
+                  display:"flex",alignItems:"center",justifyContent:"center",
+                  fontSize:"12px",color:"rgba(255,255,255,0.55)",cursor:"pointer",transition:"all 0.2s"
+                }}>{s}</div>
               ))}
             </div>
           </div>
 
-          {/* explore */}
+          {/* Explore */}
           <div>
-            <div className="text-sm font-bold uppercase tracking-wider text-white/50 mb-3">Explore</div>
-            <ul className="space-y-2 text-sm">
-              {[
-                { href: "/work", label: "Work in Germany" },
-                { href: "/study", label: "Study & Training" },
-                { href: "/visa", label: "Visa & Residence" },
-                { href: "/living", label: "Living in Germany" },
-                { href: "/finances", label: "💳 Banking & Money" },
-              ].map((l) => (
-                <li key={l.href}>
-                  <Link href={l.href} className="text-white/60 hover:text-white transition">
-                    {l.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
+            <div style={{fontSize:"12px",fontWeight:700,textTransform:"uppercase",letterSpacing:"0.1em",color:"rgba(255,255,255,0.4)",marginBottom:"14px"}}>Explore</div>
+            {[
+              {href:"/work",label:"Work in Germany"},
+              {href:"/study",label:"Study & Training"},
+              {href:"/visa",label:"Visa & Residence"},
+              {href:"/living",label:"Living in Germany"},
+              {href:"/finances",label:"💳 Banking & Money"},
+            ].map(l => (
+              <Link key={l.href} href={l.href} style={{display:"block",fontSize:"13.5px",color:"rgba(255,255,255,0.55)",textDecoration:"none",marginBottom:"8px",transition:"color 0.15s"}}>{l.label}</Link>
+            ))}
           </div>
 
-          {/* banking */}
+          {/* Banking */}
           <div>
-            <div className="text-sm font-bold uppercase tracking-wider text-white/50 mb-3">Banking Picks</div>
-            <ul className="space-y-2 text-sm">
-              {[
-                { href: "https://wise.com/invite/in/shaistak5", label: "🌐 Wise Account" },
-                { href: "https://www.commerzbank.de/girokonto-antrag?path=/pk/de/Abschluss/GD51_Girokonto_DD_MCD_TGK_50Start_KwK&x-werbecode=PNGHRA", label: "🏦 Commerzbank (50€)" },
-                { href: "https://refer.gebuhrenfrei.com/shaistas-45", label: "💳 Advanzia Card" },
-                { href: "/affiliate-disclosure", label: "Affiliate Disclosure" },
-              ].map((l) => (
-                <li key={l.label}>
-                  <Link
-                    href={l.href}
-                    target={l.href.startsWith("http") ? "_blank" : undefined}
-                    rel={l.href.startsWith("http") ? "noopener noreferrer" : undefined}
-                    className="text-white/60 hover:text-white transition"
-                  >
-                    {l.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
+            <div style={{fontSize:"12px",fontWeight:700,textTransform:"uppercase",letterSpacing:"0.1em",color:"rgba(255,255,255,0.4)",marginBottom:"14px"}}>Banking Picks</div>
+            {[
+              {href:"https://wise.com/invite/in/shaistak5",label:"🌐 Wise Account",ext:true},
+              {href:"https://www.commerzbank.de/girokonto-antrag?path=/pk/de/Abschluss/GD51_Girokonto_DD_MCD_TGK_50Start_KwK&x-werbecode=PNGHRA",label:"🏦 Commerzbank (50€)",ext:true},
+              {href:"https://refer.gebuhrenfrei.com/shaistas-45",label:"💳 Advanzia Card",ext:true},
+              {href:"/affiliate-disclosure",label:"Affiliate Disclosure",ext:false},
+            ].map(l => (
+              <Link key={l.label} href={l.href} target={l.ext?"_blank":undefined} rel={l.ext?"noopener noreferrer":undefined}
+                style={{display:"block",fontSize:"13.5px",color:"rgba(255,255,255,0.55)",textDecoration:"none",marginBottom:"8px"}}>{l.label}</Link>
+            ))}
           </div>
 
-          {/* legal & contact */}
+          {/* Legal */}
           <div>
-            <div className="text-sm font-bold uppercase tracking-wider text-white/50 mb-3">Legal & Contact</div>
-            <ul className="space-y-2 text-sm">
-              {[
-                { href: "/imprint", label: "Imprint (Impressum)" },
-                { href: "/privacy", label: "Privacy Policy" },
-                { href: "/about", label: "About us" },
-                { href: "/service", label: "Service & FAQ" },
-              ].map((l) => (
-                <li key={l.href}>
-                  <Link href={l.href} className="text-white/60 hover:text-white transition">
-                    {l.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-            <div className="mt-4 text-sm text-white/55">
+            <div style={{fontSize:"12px",fontWeight:700,textTransform:"uppercase",letterSpacing:"0.1em",color:"rgba(255,255,255,0.4)",marginBottom:"14px"}}>Legal & Contact</div>
+            {[
+              {href:"/imprint",label:"Imprint (Impressum)"},
+              {href:"/privacy",label:"Privacy Policy"},
+              {href:"/about",label:"About us"},
+              {href:"/service",label:"Service & FAQ"},
+            ].map(l => (
+              <Link key={l.href} href={l.href} style={{display:"block",fontSize:"13.5px",color:"rgba(255,255,255,0.55)",textDecoration:"none",marginBottom:"8px"}}>{l.label}</Link>
+            ))}
+            <div style={{marginTop:"12px",fontSize:"13px",color:"rgba(255,255,255,0.45)"}}>
               Questions?{" "}
-              <a href="mailto:shaista.s.shabbir@gmail.com" className="text-amber-400 hover:underline">
+              <a href="mailto:shaista.s.shabbir@gmail.com" style={{color:"#F7C948",textDecoration:"underline"}}>
                 shaista.s.shabbir@gmail.com
               </a>
             </div>
@@ -100,7 +75,7 @@ export default function Footer() {
         </div>
       </div>
 
-      <div className="border-t border-white/10 py-4 text-center text-xs text-white/30">
+      <div style={{padding:"16px 0",textAlign:"center",fontSize:"12px",color:"rgba(255,255,255,0.28)"}}>
         © {new Date().getFullYear()} Start in Germany — All rights reserved. Independent, not government-affiliated.
       </div>
     </footer>
