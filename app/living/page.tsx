@@ -1,3 +1,4 @@
+import React from "react";
 import Link from "next/link";
 const PD = '"Playfair Display",Georgia,serif';
 const IN = '"Inter",ui-sans-serif,system-ui,sans-serif';
@@ -179,9 +180,9 @@ export default function LivingPage() {
               <div style={s.bar}/>
               <div style={{border:"1.5px solid #E5E7EB",borderRadius:"16px",overflow:"hidden"}}>
                 <div style={{background:"#0B1D3A",padding:"12px 18px",display:"grid",gridTemplateColumns:"1fr auto auto"}}>
-                  <span style={{color:"rgba(255,255,255,.5)",fontSize:"11px",fontWeight:700,textTransform:"uppercase"}}>City</span>
-                  <span style={{color:"rgba(255,255,255,.5)",fontSize:"11px",fontWeight:700,textTransform:"uppercase"}}>1-bed monthly</span>
-                  <span style={{color:"rgba(255,255,255,.5)",fontSize:"11px",fontWeight:700,textTransform:"uppercase",marginLeft:"16px"}}>Note</span>
+                  <span style={{color:"rgba(255,255,255,.5)",fontSize:"11px",fontWeight:700,textTransform:"uppercase" as const}}>City</span>
+                  <span style={{color:"rgba(255,255,255,.5)",fontSize:"11px",fontWeight:700,textTransform:"uppercase" as const}}>1-bed monthly</span>
+                  <span style={{color:"rgba(255,255,255,.5)",fontSize:"11px",fontWeight:700,textTransform:"uppercase" as const,marginLeft:"16px"}}>Note</span>
                 </div>
                 {rentData.map((r,i)=>(
                   <div key={r.city} style={{display:"grid",gridTemplateColumns:"1fr auto auto",padding:"11px 18px",background:i%2===0?"#F9FAFB":"#fff",borderBottom:"1px solid #E5E7EB",alignItems:"center",gap:"12px"}}>
