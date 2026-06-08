@@ -1,3 +1,4 @@
+import React from "react";
 import Link from "next/link";
 const PD = '"Playfair Display",Georgia,serif';
 const IN = '"Inter",ui-sans-serif,system-ui,sans-serif';
@@ -100,7 +101,7 @@ export default function StudyPage() {
                 </div>
               </div>
               <div style={{background:"rgba(0,0,0,.04)",borderRadius:"10px",padding:"8px 12px",marginBottom:"12px"}}>
-                <span style={{fontSize:"11px",fontWeight:700,color:"#6B7280",textTransform:"uppercase",letterSpacing:"0.07em"}}>Language: </span>
+                <span style={{fontSize:"11px",fontWeight:700,color:"#6B7280",textTransform:"uppercase" as const,letterSpacing:"0.07em"}}>Language: </span>
                 <span style={{fontSize:"13px",color:"#374151",fontWeight:600}}>{opt.lang}</span>
               </div>
               <p style={{fontSize:"13.5px",color:"#374151",lineHeight:1.7,marginBottom:"14px"}}>{opt.desc}</p>
