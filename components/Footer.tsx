@@ -1,112 +1,84 @@
 "use client";
 import Link from "next/link";
+const PD='"Playfair Display",Georgia,serif';
+const WA="https://wa.me/4915906171828?text="+encodeURIComponent("Hi VisaVista! I need help with my visa.");
 
-const PD = '"Playfair Display",Georgia,serif';
-
-export default function Footer() {
-  return (
+export default function Footer(){
+  return(
     <footer style={{background:"#0B1D3A",color:"#fff"}}>
-      <div className="wrap" style={{padding:"64px 1.5rem 0"}}>
-        <div style={{display:"grid",gridTemplateColumns:"2.5fr 1fr 1fr 1.2fr",gap:"48px",paddingBottom:"52px",borderBottom:"1px solid rgba(255,255,255,.08)"}}>
+      <div style={{maxWidth:"1200px",margin:"0 auto",padding:"56px 1.5rem 0"}}>
+        <div style={{display:"grid",gridTemplateColumns:"2fr 1fr 1fr 1fr 1fr",gap:"36px",paddingBottom:"48px",borderBottom:"1px solid rgba(255,255,255,.08)"}}>
 
           {/* Brand */}
           <div>
-            <div style={{display:"flex",alignItems:"center",gap:"12px",marginBottom:"16px"}}>
-              <div style={{width:"42px",height:"42px",borderRadius:"14px",background:"linear-gradient(135deg,#DC2626,#991B1B)",display:"flex",alignItems:"center",justifyContent:"center",boxShadow:"0 4px 14px rgba(220,38,38,.4)"}}>
-                <span style={{fontFamily:PD,fontWeight:900,fontSize:"20px",color:"#fff"}}>V</span>
+            <div style={{display:"flex",alignItems:"center",gap:"11px",marginBottom:"14px"}}>
+              <div style={{width:"40px",height:"40px",borderRadius:"12px",background:"linear-gradient(135deg,#DC2626,#991B1B)",display:"flex",alignItems:"center",justifyContent:"center",boxShadow:"0 4px 14px rgba(220,38,38,.4)"}}>
+                <span style={{fontFamily:PD,fontWeight:900,fontSize:"18px",color:"#fff"}}>V</span>
               </div>
               <div>
-                <div style={{fontFamily:PD,fontWeight:900,fontSize:"22px",letterSpacing:"-0.02em",lineHeight:1}}>VisaVista</div>
-                <div style={{fontSize:"10px",color:"rgba(255,255,255,.35)",letterSpacing:"0.1em",textTransform:"uppercase",marginTop:"2px"}}>Europe Immigration Guide</div>
+                <div style={{fontFamily:PD,fontWeight:900,fontSize:"20px",letterSpacing:"-0.02em",lineHeight:1}}>VisaVista</div>
+                <div style={{fontSize:"9.5px",color:"rgba(255,255,255,.35)",letterSpacing:"0.1em",textTransform:"uppercase",marginTop:"2px"}}>DE · IT · SE · UK</div>
               </div>
             </div>
-            <p style={{fontSize:"13.5px",color:"rgba(255,255,255,.45)",lineHeight:1.75,maxWidth:"300px",marginBottom:"20px"}}>
-              Trusted, independent immigration guidance for students and professionals from Pakistan, India, Bangladesh &amp; Afghanistan moving to Germany, Italy, Sweden and the UK. Not affiliated with any government or embassy.
-            </p>
-            <div style={{display:"flex",gap:"8px",marginBottom:"18px"}}>
-              {["🇵🇰","🇮🇳","🇧🇩","🇦🇫"].map(f=>(
-                <span key={f} style={{fontSize:"22px",filter:"drop-shadow(0 1px 3px rgba(0,0,0,.3))"}}>{f}</span>
-              ))}
+            <p style={{fontSize:"13px",color:"rgba(255,255,255,.45)",lineHeight:1.75,maxWidth:"260px",marginBottom:"16px"}}>Trusted immigration guidance for students and professionals from Pakistan, India, Bangladesh &amp; Afghanistan moving to Europe. Independent — not affiliated with any government.</p>
+            <div style={{display:"flex",gap:"6px",marginBottom:"16px"}}>
+              {["🇵🇰","🇮🇳","🇧🇩","🇦🇫"].map(f=><span key={f} style={{fontSize:"22px"}}>{f}</span>)}
             </div>
-            <div style={{display:"flex",gap:"8px"}}>
-              {[
-                {l:"in",href:"https://linkedin.com"},
-                {l:"ig",href:"https://instagram.com"},
-                {l:"yt",href:"https://youtube.com"},
-                {l:"𝕏", href:"https://twitter.com"},
-              ].map(s=>(
-                <a key={s.l} href={s.href} target="_blank" rel="noopener noreferrer" style={{width:"34px",height:"34px",borderRadius:"50%",background:"rgba(255,255,255,.08)",display:"flex",alignItems:"center",justifyContent:"center",fontSize:"12px",color:"rgba(255,255,255,.45)",textDecoration:"none",transition:"all .15s"}}
-                  onMouseOver={e=>{e.currentTarget.style.background="#DC2626";e.currentTarget.style.color="#fff";}}
-                  onMouseOut={e=>{e.currentTarget.style.background="rgba(255,255,255,.08)";e.currentTarget.style.color="rgba(255,255,255,.45)";}}>
-                  {s.l}
-                </a>
-              ))}
-            </div>
+            {/* WhatsApp CTA */}
+            <a href={WA} target="_blank" rel="noopener noreferrer" style={{display:"inline-flex",alignItems:"center",gap:"8px",padding:"10px 16px",borderRadius:"10px",background:"#25D366",color:"#fff",textDecoration:"none",fontSize:"13px",fontWeight:700,boxShadow:"0 3px 10px rgba(37,211,102,.3)"}}>
+              💬 WhatsApp: +49 159 06171828
+            </a>
           </div>
 
           {/* Destinations */}
           <div>
-            <div style={{fontSize:"11px",fontWeight:700,textTransform:"uppercase",letterSpacing:"0.12em",color:"rgba(255,255,255,.3)",marginBottom:"16px"}}>Destinations</div>
-            {[
-              {href:"/visa",l:"🇩🇪 Germany"},
-              {href:"/",l:"🇮🇹 Italy (soon)"},
-              {href:"/",l:"🇸🇪 Sweden (soon)"},
-              {href:"/",l:"🇬🇧 UK (soon)"},
-            ].map(l=><Link key={l.l} href={l.href} className="flink">{l.l}</Link>)}
+            <div style={{fontSize:"11px",fontWeight:700,textTransform:"uppercase",letterSpacing:"0.12em",color:"rgba(255,255,255,.3)",marginBottom:"14px"}}>Destinations</div>
+            {[{href:"/visa",l:"🇩🇪 Germany"},{href:"/italy",l:"🇮🇹 Italy"},{href:"/sweden",l:"🇸🇪 Sweden"},{href:"/uk",l:"🇬🇧 United Kingdom"}].map(l=>(
+              <Link key={l.href} href={l.href} style={{display:"block",fontSize:"13.5px",color:"rgba(255,255,255,.5)",textDecoration:"none",marginBottom:"8px"}}>{l.l}</Link>
+            ))}
           </div>
 
           {/* Resources */}
           <div>
-            <div style={{fontSize:"11px",fontWeight:700,textTransform:"uppercase",letterSpacing:"0.12em",color:"rgba(255,255,255,.3)",marginBottom:"16px"}}>Resources</div>
-            {[
-              {href:"/work",l:"Work in Germany"},
-              {href:"/study",l:"Study & Ausbildung"},
-              {href:"/visa",l:"Visa & Residence"},
-              {href:"/living",l:"Living in Germany"},
-              {href:"/finances",l:"💳 Banking"},
-              {href:"/appointment",l:"🗓️ Embassy Appointments"},
-              {href:"/consultancy",l:"📅 Consultancy"},
-            ].map(l=><Link key={l.href} href={l.href} className="flink">{l.l}</Link>)}
+            <div style={{fontSize:"11px",fontWeight:700,textTransform:"uppercase",letterSpacing:"0.12em",color:"rgba(255,255,255,.3)",marginBottom:"14px"}}>Resources</div>
+            {[{href:"/work",l:"Work in Germany"},{href:"/study",l:"Study & Ausbildung"},{href:"/living",l:"Living in Germany"},{href:"/finances",l:"💳 Banking"},{href:"/appointment",l:"🗓️ Appointments"},{href:"/blog",l:"📖 Blog & Guides"}].map(l=>(
+              <Link key={l.href} href={l.href} style={{display:"block",fontSize:"13.5px",color:"rgba(255,255,255,.5)",textDecoration:"none",marginBottom:"8px"}}>{l.l}</Link>
+            ))}
           </div>
 
-          {/* Contact & Legal */}
+          {/* Services */}
           <div>
-            <div style={{fontSize:"11px",fontWeight:700,textTransform:"uppercase",letterSpacing:"0.12em",color:"rgba(255,255,255,.3)",marginBottom:"16px"}}>Contact & Legal</div>
-            {[
-              {href:"/about",l:"About VisaVista"},
-              {href:"/service",l:"Contact & FAQ"},
-              {href:"/consultancy",l:"Book Consultation"},
-              {href:"/affiliate-disclosure",l:"Affiliate Disclosure"},
-            ].map(l=><Link key={l.href} href={l.href} className="flink">{l.l}</Link>)}
+            <div style={{fontSize:"11px",fontWeight:700,textTransform:"uppercase",letterSpacing:"0.12em",color:"rgba(255,255,255,.3)",marginBottom:"14px"}}>Services</div>
+            {[{href:"/consultancy",l:"📅 Consultancy"},{href:"/contact",l:"📩 Contact us"},{href:"/service",l:"FAQ & Help"},{href:"/about",l:"About VisaVista"}].map(l=>(
+              <Link key={l.href} href={l.href} style={{display:"block",fontSize:"13.5px",color:"rgba(255,255,255,.5)",textDecoration:"none",marginBottom:"8px"}}>{l.l}</Link>
+            ))}
+          </div>
 
-            <div style={{marginTop:"18px",padding:"16px 18px",background:"rgba(220,38,38,.15)",borderRadius:"14px",border:"1px solid rgba(220,38,38,.25)"}}>
-              <div style={{fontSize:"12px",fontWeight:700,color:"#FCA5A5",marginBottom:"6px"}}>📅 Free consultation</div>
-              <div style={{fontSize:"12px",color:"rgba(255,255,255,.5)",marginBottom:"12px",lineHeight:1.5}}>Urdu · Hindi · Bengali · English</div>
-              <a href="mailto:shaista.s.shabbir@gmail.com" style={{display:"block",fontSize:"12px",color:"#FCD34D",textDecoration:"underline",marginBottom:"6px"}}>shaista.s.shabbir@gmail.com</a>
-              <Link href="/consultancy" style={{display:"flex",alignItems:"center",justifyContent:"center",gap:"6px",background:"#DC2626",color:"#fff",textDecoration:"none",fontSize:"12px",fontWeight:700,padding:"8px",borderRadius:"9px",marginTop:"8px"}}>
-                Book free call →
-              </Link>
+          {/* Banking */}
+          <div>
+            <div style={{fontSize:"11px",fontWeight:700,textTransform:"uppercase",letterSpacing:"0.12em",color:"rgba(255,255,255,.3)",marginBottom:"14px"}}>Banking Picks</div>
+            {[
+              {href:"https://wise.com/invite/in/shaistak5",l:"🌐 Wise Account",ext:true},
+              {href:"https://www.commerzbank.de/girokonto-antrag?path=/pk/de/Abschluss/GD51_Girokonto_DD_MCD_TGK_50Start_KwK&x-werbecode=PNGHRA",l:"🏦 Commerzbank 50€",ext:true},
+              {href:"https://refer.gebuhrenfrei.com/shaistas-45",l:"💳 Advanzia Card",ext:true},
+              {href:"/affiliate-disclosure",l:"Affiliate Disclosure",ext:false},
+            ].map(l=>(
+              <a key={l.l} href={l.href} target={l.ext?"_blank":undefined} rel={l.ext?"noopener noreferrer":undefined} style={{display:"block",fontSize:"13.5px",color:"rgba(255,255,255,.5)",textDecoration:"none",marginBottom:"8px"}}>{l.l}</a>
+            ))}
+            <div style={{marginTop:"12px",fontSize:"12.5px",color:"rgba(255,255,255,.35)"}}>
+              ✉️ <a href="mailto:shaista.s.shabbir@gmail.com" style={{color:"#FCD34D",textDecoration:"none"}}>shaista.s.shabbir@gmail.com</a>
             </div>
           </div>
         </div>
       </div>
-
-      {/* Bottom bar */}
-      <div style={{padding:"20px 1.5rem",borderTop:"1px solid rgba(255,255,255,.06)"}}>
-        <div className="wrap" style={{display:"flex",justifyContent:"space-between",alignItems:"center",flexWrap:"wrap",gap:"12px"}}>
-          <div style={{fontSize:"12px",color:"rgba(255,255,255,.25)"}}>
-            © {new Date().getFullYear()} VisaVista — Independent immigration guidance. Not affiliated with any government, embassy or official body.
-          </div>
-          <div style={{display:"flex",gap:"20px",flexWrap:"wrap"}}>
-            {[{href:"/about",l:"About"},{href:"/affiliate-disclosure",l:"Affiliate Disclosure"},{href:"/service",l:"Contact"}].map(l=>(
-              <Link key={l.href} href={l.href} style={{fontSize:"12px",color:"rgba(255,255,255,.25)",textDecoration:"none",transition:"color .15s"}}
-                onMouseOver={e=>{e.currentTarget.style.color="rgba(255,255,255,.6)";}}
-                onMouseOut={e=>{e.currentTarget.style.color="rgba(255,255,255,.25)";}}>
-                {l.l}
-              </Link>
-            ))}
-          </div>
-        </div>
+      <div style={{padding:"16px 0",textAlign:"center",fontSize:"12px",color:"rgba(255,255,255,.25)"}}>
+        © {new Date().getFullYear()} VisaVista — Independent immigration guidance. Not affiliated with any government or embassy.
+        <span style={{margin:"0 12px"}}>·</span>
+        <Link href="/imprint" style={{color:"rgba(255,255,255,.25)",textDecoration:"none"}}>Imprint</Link>
+        <span style={{margin:"0 8px"}}>·</span>
+        <Link href="/privacy" style={{color:"rgba(255,255,255,.25)",textDecoration:"none"}}>Privacy</Link>
+        <span style={{margin:"0 8px"}}>·</span>
+        <Link href="/affiliate-disclosure" style={{color:"rgba(255,255,255,.25)",textDecoration:"none"}}>Affiliate Disclosure</Link>
       </div>
     </footer>
   );
