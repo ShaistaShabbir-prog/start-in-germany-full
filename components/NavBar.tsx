@@ -10,8 +10,15 @@ const links = [
   { href: "/visa", label: "Visa & Residence" },
   { href: "/living", label: "Living" },
   { href: "/finances", label: "💳 Banking" },
-  { href: "/service", label: "Service" },
+  { href: "/service", label: "Services" },
   { href: "/about", label: "About" },
+];
+
+const countries = [
+  { flag: "🇩🇪", name: "Germany", href: "/" },
+  { flag: "🇮🇹", name: "Italy", href: "/" },
+  { flag: "🇸🇪", name: "Sweden", href: "/" },
+  { flag: "🇬🇧", name: "UK", href: "/" },
 ];
 
 export default function NavBar() {
@@ -21,110 +28,89 @@ export default function NavBar() {
   return (
     <>
       {/* Announcement bar */}
-      <div style={{background:"#1D3557",padding:"8px 0",textAlign:"center",fontSize:"12px",color:"rgba(255,255,255,0.65)"}}>
-        🇩🇪 Independent guidance portal for moving to Germany &nbsp;·&nbsp;
-        <Link href="/finances" style={{fontWeight:700,color:"#F7C948",textDecoration:"underline",textUnderlineOffset:"2px"}}>
-          Open a free bank account →
+      <div style={{ background: "#0f1f3d", padding: "9px 0", textAlign: "center", fontSize: "12.5px", color: "rgba(255,255,255,.65)" }}>
+        🌍 Trusted by students & professionals from Pakistan · India · Bangladesh · Afghanistan &nbsp;·&nbsp;
+        <Link href="/finances" style={{ fontWeight: 700, color: "#f5c842", textDecoration: "underline", textUnderlineOffset: "2px" }}>
+          Open a free EU bank account →
         </Link>
       </div>
 
       {/* Main nav */}
       <header style={{
-        position:"sticky",top:0,zIndex:50,
-        background:"rgba(255,255,255,0.96)",
-        backdropFilter:"blur(14px)",
-        WebkitBackdropFilter:"blur(14px)",
-        borderBottom:"1px solid #e8e8f0",
-        boxShadow:"0 1px 8px rgba(0,0,0,0.05)"
+        position: "sticky", top: 0, zIndex: 50,
+        background: "rgba(255,255,255,.97)",
+        backdropFilter: "blur(16px)", WebkitBackdropFilter: "blur(16px)",
+        borderBottom: "1px solid #e8e8ec",
+        boxShadow: "0 2px 12px rgba(0,0,0,.06)"
       }}>
-        <div style={{
-          maxWidth:"1100px",margin:"0 auto",padding:"0 1.5rem",
-          display:"flex",alignItems:"center",justifyContent:"space-between",
-          height:"62px"
-        }}>
+        <div style={{ maxWidth: "1120px", margin: "0 auto", padding: "0 1.5rem", display: "flex", alignItems: "center", justifyContent: "space-between", height: "64px" }}>
+
           {/* Logo */}
-          <Link href="/" style={{
-            display:"flex",alignItems:"center",gap:"10px",textDecoration:"none",
-            fontFamily:'"Syne", ui-sans-serif, system-ui, sans-serif',
-            fontWeight:800,fontSize:"18px",flexShrink:0
-          }}>
+          <Link href="/" style={{ display: "flex", alignItems: "center", gap: "10px", textDecoration: "none", flexShrink: 0 }}>
             <div style={{
-              width:"36px",height:"36px",borderRadius:"10px",background:"#E63946",
-              display:"flex",alignItems:"center",justifyContent:"center",
-              color:"#fff",fontSize:"16px",fontWeight:900,flexShrink:0
-            }}>S</div>
-            <span style={{color:"#1D3557"}}>Start</span>
-            <span style={{color:"#1c5fe6",marginLeft:"2px"}}>in</span>
-            <span style={{color:"#1D3557",marginLeft:"2px"}}>Germany</span>
+              width: "38px", height: "38px", borderRadius: "12px",
+              background: "linear-gradient(135deg,#E63946,#a81e31)",
+              display: "flex", alignItems: "center", justifyContent: "center",
+              color: "#fff", fontSize: "16px", fontWeight: 900,
+              boxShadow: "0 4px 12px rgba(230,57,70,.35)"
+            }}>EP</div>
+            <div>
+              <div style={{ fontFamily: '"Syne",ui-sans-serif', fontWeight: 800, fontSize: "17px", color: "#0f1f3d", lineHeight: 1.1 }}>EuroPathway</div>
+              <div style={{ fontSize: "10px", color: "#9ca3af", fontWeight: 500, letterSpacing: "0.05em" }}>DE · IT · SE · UK</div>
+            </div>
           </Link>
 
-          {/* Desktop nav — hidden on mobile */}
-          <nav style={{
-            display:"flex",alignItems:"center",gap:"2px",
-            overflow:"hidden"
-          }} className="desktop-nav">
+          {/* Desktop nav */}
+          <nav style={{ display: "flex", alignItems: "center", gap: "2px" }} className="desktop-nav">
             {links.map(l => (
-              <Link
-                key={l.href}
-                href={l.href}
-                className={`navlink${pathname === l.href ? " active" : ""}`}
-              >
-                {l.label}
-              </Link>
+              <Link key={l.href} href={l.href} className={`navlink${pathname === l.href ? " active" : ""}`}>{l.label}</Link>
             ))}
           </nav>
 
-          {/* Mobile hamburger */}
-          <button
-            onClick={() => setOpen(!open)}
-            style={{
-              background:"none",border:"1.5px solid #e8e8f0",cursor:"pointer",
-              padding:"8px 10px",borderRadius:"10px",color:"#555",
-              display:"flex",alignItems:"center",justifyContent:"center",
-              flexShrink:0
-            }}
-            aria-label="Toggle menu"
-          >
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
-              {open
-                ? <path d="M18 6L6 18M6 6l12 12"/>
-                : <path d="M3 12h18M3 6h18M3 18h18"/>
-              }
-            </svg>
-          </button>
+          {/* Country selector + hamburger */}
+          <div style={{ display: "flex", alignItems: "center", gap: "10px", flexShrink: 0 }}>
+            <div style={{ display: "flex", gap: "4px", background: "#f3f4f6", borderRadius: "12px", padding: "4px" }} className="country-flags">
+              {countries.map(c => (
+                <Link key={c.name} href={c.href} title={c.name} style={{ fontSize: "18px", width: "32px", height: "32px", display: "flex", alignItems: "center", justifyContent: "center", borderRadius: "8px", textDecoration: "none", transition: "background .15s" }}
+                  onMouseOver={e => (e.currentTarget.style.background = "#e5e7eb")}
+                  onMouseOut={e => (e.currentTarget.style.background = "transparent")}>
+                  {c.flag}
+                </Link>
+              ))}
+            </div>
+            <button onClick={() => setOpen(!open)} style={{ background: "none", border: "1.5px solid #e5e7eb", cursor: "pointer", padding: "8px 10px", borderRadius: "10px", color: "#555", display: "flex", alignItems: "center" }} aria-label="Menu">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+                {open ? <path d="M18 6L6 18M6 6l12 12" /> : <path d="M3 12h18M3 6h18M3 18h18" />}
+              </svg>
+            </button>
+          </div>
         </div>
 
         {/* Mobile dropdown */}
         {open && (
-          <div style={{borderTop:"1px solid #ebebf0",background:"#fff",padding:"10px 16px 16px"}}>
+          <div style={{ borderTop: "1px solid #e8e8ec", background: "#fff", padding: "10px 16px 16px" }}>
             {links.map(l => (
-              <Link
-                key={l.href}
-                href={l.href}
-                onClick={() => setOpen(false)}
-                style={{
-                  display:"block",padding:"11px 14px",borderRadius:"12px",
-                  fontSize:"14px",fontWeight: pathname===l.href ? 700 : 400,
-                  color: pathname===l.href ? "#1c5fe6" : "#333",
-                  background: pathname===l.href ? "#f0f4ff" : "transparent",
-                  textDecoration:"none",marginBottom:"2px",transition:"background 0.15s"
-                }}
-              >
-                {l.label}
-              </Link>
+              <Link key={l.href} href={l.href} onClick={() => setOpen(false)} style={{
+                display: "block", padding: "11px 14px", borderRadius: "12px",
+                fontSize: "14px", fontWeight: pathname === l.href ? 700 : 500,
+                color: pathname === l.href ? "#E63946" : "#333",
+                background: pathname === l.href ? "#fff1f2" : "transparent",
+                textDecoration: "none", marginBottom: "2px"
+              }}>{l.label}</Link>
             ))}
           </div>
         )}
       </header>
 
-      {/* Desktop nav CSS — hide on small screens, show on md+ */}
       <style>{`
         .desktop-nav { display: flex !important; }
-        @media (max-width: 900px) {
+        .country-flags { display: flex !important; }
+        @media (max-width: 960px) {
           .desktop-nav { display: none !important; }
+          .country-flags { display: none !important; }
         }
-        @media (min-width: 901px) {
-          .desktop-nav + button { display: none !important; }
+        @media (min-width: 961px) {
+          header button[aria-label="Menu"] { display: none !important; }
         }
       `}</style>
     </>
