@@ -1,57 +1,127 @@
 @import "tailwindcss";
 
-
 @theme {
-  --color-brand-50: #f3f8ff;
-  --color-brand-100: #e6f0ff;
-  --color-brand-200: #c4daff;
-  --color-brand-300: #9ec2ff;
-  --color-brand-400: #6ea2ff;
-  --color-brand-500: #3d80ff;
+  --color-brand-50: #f0f4ff;
+  --color-brand-100: #e0e9ff;
+  --color-brand-200: #c0d3ff;
+  --color-brand-300: #93b3ff;
+  --color-brand-400: #6090ff;
+  --color-brand-500: #3d6ef5;
   --color-brand-600: #1c5fe6;
   --color-brand-700: #1348b4;
   --color-brand-800: #0d3586;
   --color-brand-900: #072153;
+
+  --color-navy: #1D3557;
+  --color-teal-400: #2A9D8F;
+  --color-coral: #E63946;
 }
 
-/* same utilities as before, but with focus:ring-brand-500 focus:ring-opacity-50 */
+:root {
+  --radius: 16px;
+}
 
-:root{ --radius: 16px; }
-body { @apply bg-white text-gray-900 antialiased; }
-.container-narrow { @apply max-w-5xl mx-auto px-4 md:px-6; }
-.btn { @apply inline-flex items-center justify-center rounded-2xl px-5 py-3 font-semibold shadow-sm transition hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-brand-500/50; }
-.btn-primary { @apply bg-brand-600 text-white hover:bg-brand-700; }
-.btn-ghost { @apply bg-white text-brand-700 ring-1 ring-brand-200 hover:bg-brand-50; }
-.card { @apply rounded-2xl border border-gray-200 bg-white p-6 shadow-sm; }
-.badge { @apply inline-flex items-center rounded-full bg-brand-50 px-3 py-1 text-sm font-medium text-brand-700 ring-1 ring-brand-200; }
-nav a.active { @apply text-brand-700 font-semibold; }
+body {
+  @apply bg-white text-gray-900 antialiased;
+}
+
+/* ── Layout ── */
+.container-narrow {
+  @apply max-w-5xl mx-auto px-4 md:px-6;
+}
 .section {
-  @apply container-narrow py-12;
+  @apply container-narrow py-12 md:py-16;
 }
-.card:hover { @apply shadow-md translate-y-[-1px]; }
 
-/* Layout + rhythm */
-.container-narrow { @apply max-w-5xl mx-auto px-4 md:px-6; }
-.section { @apply container-narrow py-10 md:py-14; }
+/* ── Typography ── */
+.h1 {
+  font-size: clamp(2rem, 2.5vw + 1rem, 3rem);
+  @apply font-extrabold tracking-tight leading-tight;
+}
+.h2 {
+  font-size: clamp(1.35rem, 1.5vw + 0.75rem, 1.75rem);
+  @apply font-bold tracking-tight text-navy;
+}
+.lead {
+  @apply text-lg text-gray-600 leading-relaxed;
+}
+.section-label {
+  @apply mb-2 text-xs font-bold uppercase tracking-widest text-brand-600;
+}
 
-/* Typography scale with clamp */
-.h1 { font-size: clamp(2rem, 2.5vw + 1rem, 3rem); @apply font-extrabold tracking-tight; }
-.h2 { font-size: clamp(1.25rem, 1.5vw + .75rem, 1.5rem); @apply font-bold; }
-.lead { @apply mt-4 text-lg text-gray-700; }
+/* ── Colors ── */
+.text-navy { color: #1D3557; }
+.bg-navy { background-color: #1D3557; }
 
-/* Cards & buttons */
-.card { @apply rounded-2xl border border-gray-200 bg-white p-6 shadow-sm transition; }
-.card:hover { @apply shadow-md -translate-y-0.5; }
-.btn { @apply inline-flex items-center justify-center rounded-2xl px-5 py-3 font-semibold shadow-sm transition; }
-.btn-ghost { @apply bg-white text-brand-700 ring-1 ring-brand-200 hover:bg-brand-50; }
-.btn-primary { @apply bg-brand-600 text-white hover:bg-brand-700; }
+/* ── Buttons ── */
+.btn {
+  @apply inline-flex items-center justify-center rounded-2xl px-5 py-3 text-sm font-semibold transition hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-brand-500/40;
+}
+.btn-primary {
+  @apply bg-brand-600 text-white hover:bg-brand-700 shadow-sm;
+}
+.btn-ghost {
+  @apply bg-white text-brand-700 ring-1 ring-brand-200 hover:bg-brand-50;
+}
+.btn-outline-light {
+  @apply bg-white/10 text-white border border-white/30 hover:bg-white/20;
+}
 
-/* Banners */
-.banner { @apply relative rounded-2xl overflow-hidden shadow-sm ring-1 ring-black/5; }
-.banner-overlay { @apply absolute inset-0 bg-black/10; }
+/* ── Cards ── */
+.card {
+  @apply rounded-2xl border border-gray-200 bg-white p-6 shadow-sm transition hover:shadow-md hover:-translate-y-0.5;
+}
 
-/* Navbar polish */
-.navbar { @apply sticky top-0 z-40 bg-white/80 backdrop-blur border-b border-gray-100; }
-.navbar a { @apply px-3 py-2 text-gray-700; }
-.navbar a:hover { @apply text-brand-700; }
-.navbar a.active { @apply text-brand-700 font-semibold; }
+/* ── Guide cards ── */
+.guide-card {
+  @apply rounded-2xl border border-gray-200 bg-white p-5 shadow-sm transition hover:shadow-lg hover:-translate-y-1 hover:border-brand-200 cursor-pointer;
+}
+.guide-card-icon {
+  @apply flex h-12 w-12 items-center justify-center rounded-2xl bg-brand-50 text-2xl;
+}
+
+/* ── Job cards ── */
+.job-card {
+  @apply rounded-2xl border border-gray-200 bg-white p-5 shadow-sm transition hover:shadow-md hover:-translate-y-0.5 hover:border-brand-300 cursor-pointer;
+}
+.job-icon {
+  @apply flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-xl bg-gray-50 text-2xl;
+}
+
+/* ── Badges ── */
+.badge {
+  @apply inline-flex items-center rounded-full bg-brand-50 px-3 py-1 text-xs font-semibold text-brand-700 ring-1 ring-brand-200;
+}
+.badge-demand {
+  @apply inline-block rounded-full px-3 py-0.5 text-xs font-semibold;
+}
+.badge-red {
+  @apply bg-red-50 text-red-700 border border-red-200;
+}
+.badge-teal {
+  @apply bg-teal-50 text-teal-700 border border-teal-200;
+}
+.badge-blue {
+  @apply bg-blue-50 text-blue-700 border border-blue-200;
+}
+
+/* ── Quick pills on hero card ── */
+.quick-pill {
+  @apply flex-1 rounded-xl border border-gray-200 py-2 text-center text-xs font-semibold text-gray-600 transition hover:border-brand-300 hover:text-brand-700 hover:bg-brand-50;
+}
+
+/* ── Banner ── */
+.banner {
+  @apply relative rounded-2xl overflow-hidden shadow-sm ring-1 ring-black/5;
+}
+
+/* ── Navbar ── */
+.navbar a {
+  @apply px-3 py-2 text-gray-700;
+}
+.navbar a:hover {
+  @apply text-brand-700;
+}
+.navbar a.active {
+  @apply text-brand-700 font-semibold;
+}
