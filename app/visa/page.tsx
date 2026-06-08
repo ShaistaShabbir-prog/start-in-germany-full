@@ -1,3 +1,4 @@
+import React from "react";
 import Link from "next/link";
 
 const PD = '"Playfair Display",Georgia,serif';
@@ -257,7 +258,7 @@ export default function VisaPage() {
                 </div>
               </div>
               <div style={{ background:"rgba(0,0,0,.04)", borderRadius:"10px", padding:"10px 14px", marginBottom:"12px" }}>
-                <div style={{ fontSize:"11px", fontWeight:700, textTransform:"uppercase", letterSpacing:"0.08em", color:"#6B7280", marginBottom:"3px" }}>Key requirement</div>
+                <div style={{ fontSize:"11px", fontWeight:700, textTransform:"uppercase" as const, letterSpacing:"0.08em", color:"#6B7280", marginBottom:"3px" }}>Key requirement</div>
                 <div style={{ fontSize:"13.5px", fontWeight:700, color:"#DC2626" }}>{v.salary}</div>
               </div>
               <p style={{ fontSize:"13.5px", color:"#374151", lineHeight:1.7, marginBottom:"14px" }}>{v.desc}</p>
