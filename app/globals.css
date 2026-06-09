@@ -252,3 +252,101 @@ body {
     .vv-mobile-btn { display: none !important; }
   }
 }
+
+/* ══════════════════════════════════════════
+   RESPONSIVE — Mobile & Tablet
+   ══════════════════════════════════════════ */
+
+/* Tablet (≤900px) */
+@media (max-width: 900px) {
+  .vv-desktop-nav { display: none !important; }
+
+  /* Hero grids → single column */
+  .hero-grid-2col {
+    grid-template-columns: 1fr !important;
+    gap: 32px !important;
+  }
+
+  /* Stats bar → 2 columns */
+  .stats-4col {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+
+  /* 3-col grids → 2 col */
+  .grid-3col {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+}
+
+/* Mobile (≤640px) */
+@media (max-width: 640px) {
+  .vv-mobile-btn { display: flex !important; }
+
+  /* All multi-col grids → 1 col on mobile */
+  [style*="repeat(2,1fr)"],
+  [style*="repeat(3,1fr)"],
+  [style*="repeat(4,1fr)"],
+  [style*="repeat(6,1fr)"] {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Stats bar → 2×2 grid */
+  [style*="repeat(4,1fr)"] {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+
+  /* Hero section */
+  .hero-title {
+    font-size: clamp(2rem, 8vw, 3.5rem) !important;
+  }
+
+  /* Cards padding */
+  .card { padding: 1rem !important; }
+
+  /* Section padding */
+  .sec, [style*="5rem 1.5rem"] {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+
+  /* Quick-Check form */
+  .qc-card {
+    width: 100% !important;
+    margin: 0 !important;
+  }
+
+  /* Announcement bar text */
+  .announce { font-size: 11px !important; }
+
+  /* Hide country flags row on very small screens */
+  .vv-country-flags { display: none !important; }
+
+  /* Buttons stack */
+  .btn-row {
+    flex-direction: column !important;
+    align-items: stretch !important;
+  }
+  .btn-row .btn { justify-content: center !important; }
+
+  /* Nav brand */
+  .nav-brand .tagline { display: none !important; }
+
+  /* Footer grid → 2 columns */
+  .footer-grid {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 24px !important;
+  }
+
+  /* Hide border-right on mobile stat boxes */
+  .stat-box { border-right: none !important; border-bottom: 1px solid rgba(255,255,255,.1) !important; }
+}
+
+/* Very small (≤400px) */
+@media (max-width: 400px) {
+  [style*="repeat(4,1fr)"] {
+    grid-template-columns: 1fr !important;
+  }
+  .footer-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
