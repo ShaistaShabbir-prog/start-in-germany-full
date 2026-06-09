@@ -61,7 +61,7 @@ export default function CanadaPage(){
       </section>
 
       {/* STATS */}
-      <div style={{background:"#0B1D3A"}}><div style={wrap}><div style={{display:"grid",gridTemplateColumns:"repeat(4,1fr)"}}>
+      <div style={{background:"#0B1D3A"}}><div style={wrap}><div style={{display:"grid",gridTemplateColumns:"repeat(auto-fill,minmax(160px,1fr))"}}>
         {[{n:"485K+",l:"New PRs welcomed 2026"},{n:"6 mo",l:"Express Entry processing"},{n:"+600",l:"CRS pts from PNP nomination"},{n:"3 yrs",l:"Post-Graduate Work Permit"}].map((s,i)=>(
           <div key={s.l} style={{textAlign:"center",padding:"20px 16px",borderRight:i<3?"1px solid rgba(255,255,255,.1)":"none"}}>
             <div style={{fontFamily:PD,fontWeight:900,fontSize:"1.75rem",color:"#FCD34D"}}>{s.n}</div>
@@ -75,7 +75,7 @@ export default function CanadaPage(){
         <span style={eye}>Canada immigration pathways</span>
         <h2 style={h2s}>Which Canada pathway is right for you?</h2>
         <div style={bar}/>
-        <div style={{display:"grid",gridTemplateColumns:"repeat(2,1fr)",gap:"22px"}}>
+        <div style={{display:"grid",gridTemplateColumns:"repeat(auto-fill,minmax(320px,1fr))",gap:"22px"}}>
           {visas.map(v=>(
             <div key={v.title} style={{background:v.bg,border:`1.5px solid ${v.border}`,borderRadius:"20px",padding:"1.75rem"}}>
               <div style={{display:"flex",gap:"12px",alignItems:"flex-start",marginBottom:"14px"}}>
@@ -95,7 +95,7 @@ export default function CanadaPage(){
 
       {/* LIFE IN CANADA + CITIES */}
       <div style={{background:"#fff",padding:"5rem 1.5rem"}}><div style={wrap}>
-        <div style={{display:"grid",gridTemplateColumns:"1fr 1fr",gap:"56px",alignItems:"start"}}>
+        <div style={{display:"grid",gridTemplateColumns:"repeat(auto-fit,minmax(300px,1fr))",gap:"clamp(24px,4vw,56px)",alignItems:"start"}}>
           <div>
             <span style={eye}>South Asian life in Canada</span>
             <h2 style={h2s}>Canada's South Asian community</h2>
