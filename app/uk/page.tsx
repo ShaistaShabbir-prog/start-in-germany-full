@@ -32,7 +32,7 @@ export default function UKPage(){
 
       <div style={{background:"#0B1D3A"}}>
         <div style={wrap}>
-          <div style={{display:"grid",gridTemplateColumns:"repeat(4,1fr)"}}>
+          <div style={{display:"grid",gridTemplateColumns:"repeat(auto-fill,minmax(160px,1fr))"}}>
             {[{n:"£26,200",l:"Skilled Worker min. salary 2026"},{n:"1.5M+",l:"Pakistani community in UK"},{n:"5 yrs",l:"To Indefinite Leave to Remain"},{n:"£490",l:"Visa application fee (standard)"}].map((s,i)=>(
               <div key={s.l} style={{textAlign:"center",padding:"20px 16px",borderRight:i<3?"1px solid rgba(255,255,255,.1)":"none"}}>
                 <div style={{fontFamily:PD,fontWeight:900,fontSize:"1.75rem",color:"#FCD34D"}}>{s.n}</div>
@@ -47,7 +47,7 @@ export default function UKPage(){
         <span style={eye}>UK visa pathways</span>
         <h2 style={{fontFamily:PD,fontSize:"clamp(1.75rem,3vw,2.5rem)",fontWeight:800,lineHeight:1.2,color:"#0B1D3A"}}>Which UK visa is right for you?</h2>
         <div style={bar}/>
-        <div style={{display:"grid",gridTemplateColumns:"repeat(2,1fr)",gap:"22px"}}>
+        <div style={{display:"grid",gridTemplateColumns:"repeat(auto-fill,minmax(320px,1fr))",gap:"22px"}}>
           {[
             {icon:"💼",bg:"#EFF6FF",border:"#BFDBFE",title:"Skilled Worker Visa",badge:"Most popular",
              desc:"The UK's main work visa for skilled professionals. Points-based system — you need 70 points. Job offer from an approved employer (Sponsor Licence), salary ≥ £26,200/year and at least RQF Level 3 skills.",
@@ -85,7 +85,7 @@ export default function UKPage(){
           <span style={eye}>UK South Asian life</span>
           <h2 style={{fontFamily:PD,fontSize:"clamp(1.75rem,3vw,2.5rem)",fontWeight:800,lineHeight:1.2,color:"#0B1D3A",marginBottom:"8px"}}>The UK's South Asian community — the largest outside South Asia</h2>
           <div style={bar}/>
-          <div style={{display:"grid",gridTemplateColumns:"repeat(3,1fr)",gap:"20px"}}>
+          <div style={{display:"grid",gridTemplateColumns:"repeat(auto-fill,minmax(260px,1fr))",gap:"20px"}}>
             {[
               {icon:"🇵🇰",t:"Pakistani community (1.5M+)",d:"Largest outside Pakistan. Birmingham, Bradford, Manchester, London (East End) have huge Pakistani communities. Urdu widely spoken. Mosques, halal restaurants, Pakistani cultural events throughout the year."},
               {icon:"🇮🇳",t:"Indian community (1.8M+)",d:"Second largest Indian diaspora in world. Leicester, Southall (London), Coventry, Manchester. Very established — Diwali celebrated nationally. Strong business and professional networks."},
