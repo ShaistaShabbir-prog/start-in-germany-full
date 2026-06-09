@@ -88,7 +88,7 @@ export default function StudyPage() {
         <span style={s.eye}>Your options</span>
         <h2 style={s.h2}>Ways to study &amp; train in Germany</h2>
         <div style={s.bar}/>
-        <div style={{display:"grid",gridTemplateColumns:"repeat(2,1fr)",gap:"22px",marginBottom:"48px"}}>
+        <div style={{display:"grid",gridTemplateColumns:"repeat(auto-fill,minmax(320px,1fr))",gap:"22px",marginBottom:"48px"}}>
           {studyOptions.map(opt=>(
             <div key={opt.title} style={{background:opt.bg,border:`1.5px solid ${opt.border}`,borderRadius:"20px",padding:"1.75rem"}}>
               <div style={{display:"flex",gap:"14px",alignItems:"flex-start",marginBottom:"14px"}}>
@@ -117,7 +117,7 @@ export default function StudyPage() {
         <div style={{background:"#fff",border:"1px solid #E5E7EB",borderRadius:"24px",padding:"36px 40px",marginBottom:"32px"}}>
           <h2 style={{...s.h2,marginBottom:"8px"}}>🇵🇰🇮🇳🇧🇩🇦🇫 Complete checklist for South Asian applicants</h2>
           <div style={s.bar}/>
-          <div style={{display:"grid",gridTemplateColumns:"repeat(2,1fr)",gap:"14px"}}>
+          <div style={{display:"grid",gridTemplateColumns:"repeat(auto-fill,minmax(280px,1fr))",gap:"14px"}}>
             {[
               {n:"1",t:"Check certificate equivalency",d:"Use anabin.kmk.org. FSc Pakistan → usually needs Studienkolleg. BSc/BA → usually direct entry. A-levels/HSC → often direct entry."},
               {n:"2",t:"🇵🇰 APS Certificate (Pakistan ONLY)",d:"MANDATORY for all Pakistani degree holders. Apply at eservices.hec.gov.pk. HEC verification + APS processing: 4–8 weeks. Without it, no German university will process you."},
@@ -143,7 +143,7 @@ export default function StudyPage() {
         <div style={{background:"#0B1D3A",borderRadius:"24px",padding:"40px 44px"}}>
           <h2 style={{...s.h2,color:"#fff",marginBottom:"8px"}}>🏆 Top German universities for South Asian students</h2>
           <div style={{...s.bar}}/>
-          <div style={{display:"grid",gridTemplateColumns:"repeat(3,1fr)",gap:"14px"}}>
+          <div style={{display:"grid",gridTemplateColumns:"repeat(auto-fill,minmax(220px,1fr))",gap:"14px"}}>
             {unis.map(u=>(
               <div key={u.name} style={{background:"rgba(255,255,255,.07)",border:"1px solid rgba(255,255,255,.1)",borderRadius:"14px",padding:"16px 18px"}}>
                 <div style={{fontWeight:700,color:"#fff",fontSize:"14px",marginBottom:"4px"}}>{u.name}</div>
@@ -164,7 +164,7 @@ export default function StudyPage() {
             <h2 style={s.h2}>From student to permanent resident</h2>
             <div style={{...s.bar,margin:"14px auto"}}/>
           </div>
-          <div style={{display:"grid",gridTemplateColumns:"repeat(4,1fr)",gap:"16px"}}>
+          <div style={{display:"grid",gridTemplateColumns:"repeat(auto-fill,minmax(200px,1fr))",gap:"16px"}}>
             {[
               {n:"1",i:"🎓",t:"Graduate",d:"Complete degree or Ausbildung. German qualification = globally respected."},
               {n:"2",i:"🔍",t:"18-month visa",d:"Automatic job-seeker extension after graduating from a German university."},
