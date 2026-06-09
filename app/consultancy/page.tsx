@@ -33,7 +33,7 @@ export default function ConsultancyPage() {
           <div className="divider" style={{margin:"14px auto"}} />
           <p className="lead">No hidden fees. Cancel anytime. All consultations in your preferred language.</p>
         </div>
-        <div style={{display:"grid",gridTemplateColumns:"repeat(3,1fr)",gap:"24px"}}>
+        <div style={{display:"grid",gridTemplateColumns:"repeat(auto-fill,minmax(260px,1fr))",gap:"24px"}}>
           {[
             {
               name:"Starter",badge:"Free",badgeColor:"#ECFDF5",badgeText:"#065F46",
@@ -88,7 +88,7 @@ export default function ConsultancyPage() {
             <h2 className="h2">Experts who have walked the same path</h2>
             <div className="divider" style={{margin:"14px auto"}} />
           </div>
-          <div style={{display:"grid",gridTemplateColumns:"repeat(3,1fr)",gap:"24px"}}>
+          <div style={{display:"grid",gridTemplateColumns:"repeat(auto-fill,minmax(260px,1fr))",gap:"24px"}}>
             {[
               {av:"SS",name:"Shaista Shabbir",role:"Founder & Lead Consultant",origin:"🇵🇰 Lahore → 🇩🇪 Berlin",bio:"Moved from Pakistan to Germany in 2019. Navigated the Blue Card process herself and has since helped 10,000+ South Asians do the same.",langs:"Urdu · English · German",c:"#DC2626"},
               {av:"AH",name:"Arjun Hegde",role:"India & Bangladesh Specialist",origin:"🇮🇳 Bengaluru → 🇩🇪 Munich",bio:"5 years in Germany IT sector. Expert on Indian degree recognition, EU Blue Card for IT professionals, and Ausländerbehörde processes.",langs:"Hindi · Kannada · English",c:"#0D9488"},
