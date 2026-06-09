@@ -32,7 +32,7 @@ export default function SwedenPage(){
 
       <div style={{background:"#0B1D3A"}}>
         <div style={wrap}>
-          <div style={{display:"grid",gridTemplateColumns:"repeat(4,1fr)"}}>
+          <div style={{display:"grid",gridTemplateColumns:"repeat(auto-fill,minmax(160px,1fr))"}}>
             {[{n:"No quota",l:"Work permits — employer driven"},{n:"SEK 13,000",l:"Min. monthly salary (~€1,150)"},{n:"5 yrs",l:"To permanent residence"},{n:"2 wks",l:"Avg. work permit processing"}].map((s,i)=>(
               <div key={s.l} style={{textAlign:"center",padding:"20px 16px",borderRight:i<3?"1px solid rgba(255,255,255,.1)":"none"}}>
                 <div style={{fontFamily:PD,fontWeight:900,fontSize:"1.75rem",color:"#FCD34D"}}>{s.n}</div>
@@ -47,7 +47,7 @@ export default function SwedenPage(){
         <span style={eye}>Sweden visa pathways</span>
         <h2 style={{fontFamily:PD,fontSize:"clamp(1.75rem,3vw,2.5rem)",fontWeight:800,lineHeight:1.2,color:"#0B1D3A"}}>Your visa options for Sweden</h2>
         <div style={bar}/>
-        <div style={{display:"grid",gridTemplateColumns:"repeat(2,1fr)",gap:"22px"}}>
+        <div style={{display:"grid",gridTemplateColumns:"repeat(auto-fill,minmax(320px,1fr))",gap:"22px"}}>
           {[
             {icon:"💼",bg:"#EFF6FF",border:"#BFDBFE",title:"Work Permit (Arbetstillstånd)",badge:"Most popular",
              desc:"Sweden's work permit has NO annual quota — it's purely employer-driven. Any employer can hire a non-EU worker as long as they pay the union-agreed salary. Processing via Migrationsverket.se. One of Europe's most accessible work permit systems.",
@@ -84,7 +84,7 @@ export default function SwedenPage(){
           <span style={eye}>Life in Sweden</span>
           <h2 style={{fontFamily:PD,fontSize:"clamp(1.75rem,3vw,2.5rem)",fontWeight:800,lineHeight:1.2,color:"#0B1D3A",marginBottom:"8px"}}>What to expect living in Sweden</h2>
           <div style={bar}/>
-          <div style={{display:"grid",gridTemplateColumns:"repeat(3,1fr)",gap:"20px"}}>
+          <div style={{display:"grid",gridTemplateColumns:"repeat(auto-fill,minmax(260px,1fr))",gap:"20px"}}>
             {[
               {icon:"💰",t:"Salaries & costs",d:"Average salary: SEK 37,000/month (€3,300). Stockholm 1-bed: SEK 9,000–15,000/month. High taxes (30–57%) but excellent public services — healthcare, education, childcare all covered."},
               {icon:"🕌",t:"Muslim community",d:"Sweden has 800,000+ Muslims (~8% of population). Stockholm, Gothenburg, Malmö have large South Asian communities. Mosques, halal restaurants and Islamic schools widely available."},
