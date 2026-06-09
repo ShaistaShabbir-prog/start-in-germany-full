@@ -15,5 +15,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/imprint`, lastModified: new Date() },
     { url: `${base}/privacy`, lastModified: new Date() },
     { url: `${base}/affiliate-disclosure`, lastModified: new Date() },
+    { url: `${base}/italy`, lastModified: new Date() },
+    { url: `${base}/sweden`, lastModified: new Date() },
+    { url: `${base}/uk`, lastModified: new Date() },
+    { url: `${base}/canada`, lastModified: new Date() },
+    { url: `${base}/australia`, lastModified: new Date() },
+    { url: `${base}/spain`, lastModified: new Date() },
+    { url: `${base}/blog`, lastModified: new Date() },
+    { url: `${base}/contact`, lastModified: new Date() },
+    { url: `${base}/appointment`, lastModified: new Date() },
+    { url: `${base}/consultancy`, lastModified: new Date() },
   ];
 }
