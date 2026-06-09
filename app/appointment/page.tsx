@@ -155,7 +155,7 @@ export default function AppointmentPage() {
         </div>
       </div>
 
-      {/* Day of appointment checklist */}}
+      {/* Day of appointment checklist */}
       <div style={{background:"#fff",padding:"0 1.5rem 5rem"}}>
         <div style={{maxWidth:"1200px",margin:"0 auto"}}>
           <div style={{background:"#EFF6FF",border:"1.5px solid #BFDBFE",borderRadius:"24px",padding:"40px 44px"}}>
