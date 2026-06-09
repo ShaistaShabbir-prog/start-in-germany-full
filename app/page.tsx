@@ -1,5 +1,7 @@
 "use client";
 import Link from "next/link";
+import { useState } from "react";
+import { useRouter } from "next/navigation";
 
 const PD = '"Playfair Display",Georgia,serif';
 const IN = '"Inter",ui-sans-serif,system-ui,sans-serif';
@@ -88,22 +90,31 @@ export default function Home() {
                 </div>
               </div>
 
-              {[
-                {label:"I want to…",opts:["Please select","Work in Europe","Study in Europe","Vocational training (Ausbildung)","Start a business","Family reunification","Book visa appointment"]},
-                {label:"Destination",opts:["Select country","🇩🇪 Germany","🇮🇹 Italy","🇸🇪 Sweden","🇬🇧 United Kingdom","🇨🇦 Canada","🇦🇺 Australia","🇪🇸 Spain"]},
-                {label:"I'm from…",opts:["Select country","🇵🇰 Pakistan","🇮🇳 India","🇧🇩 Bangladesh","🇦🇫 Afghanistan","🌍 Other country"]},
-              ].map(s=>(
-                <div key={s.label} style={{marginBottom:"14px"}}>
-                  <label style={{fontSize:"11px",fontWeight:700,textTransform:"uppercase",letterSpacing:"0.09em",color:"#6B7280",display:"block",marginBottom:"6px"}}>{s.label}</label>
-                  <select style={{width:"100%",padding:"12px 14px",border:"2px solid #E5E7EB",borderRadius:"10px",fontSize:"14px",background:"#F9FAFB",fontFamily:IN,cursor:"pointer",appearance:"none",backgroundImage:"url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%236B7280' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E\")",backgroundRepeat:"no-repeat",backgroundPosition:"right 12px center"}}>
-                    {s.opts.map(o=><option key={o}>{o}</option>)}
-                  </select>
-                </div>
-              ))}
+              {/* I want to */}
+              <div style={{marginBottom:"14px"}}>
+                <label style={{fontSize:"11px",fontWeight:700,textTransform:"uppercase",letterSpacing:"0.09em",color:"#6B7280",display:"block",marginBottom:"6px"}}>I want to…</label>
+                <select value={qcWant} onChange={e=>setQcWant(e.target.value)} style={{width:"100%",padding:"12px 14px",border:`2px solid ${qcWant?"#DC2626":"#E5E7EB"}`,borderRadius:"10px",fontSize:"14px",background:"#F9FAFB",fontFamily:IN,cursor:"pointer",appearance:"none",backgroundImage:"url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%236B7280' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E\")",backgroundRepeat:"no-repeat",backgroundPosition:"right 12px center"}}>
+                  {["Please select","Work in Europe","Study in Europe","Vocational training (Ausbildung)","Start a business","Family reunification","Book visa appointment"].map(o=><option key={o}>{o}</option>)}
+                </select>
+              </div>
+              {/* Destination */}
+              <div style={{marginBottom:"14px"}}>
+                <label style={{fontSize:"11px",fontWeight:700,textTransform:"uppercase",letterSpacing:"0.09em",color:"#6B7280",display:"block",marginBottom:"6px"}}>Destination</label>
+                <select value={qcDest} onChange={e=>setQcDest(e.target.value)} style={{width:"100%",padding:"12px 14px",border:`2px solid ${qcDest?"#DC2626":"#E5E7EB"}`,borderRadius:"10px",fontSize:"14px",background:"#F9FAFB",fontFamily:IN,cursor:"pointer",appearance:"none",backgroundImage:"url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%236B7280' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E\")",backgroundRepeat:"no-repeat",backgroundPosition:"right 12px center"}}>
+                  {["Select country","🇩🇪 Germany","🇮🇹 Italy","🇸🇪 Sweden","🇬🇧 United Kingdom","🇨🇦 Canada","🇦🇺 Australia","🇪🇸 Spain"].map(o=><option key={o}>{o}</option>)}
+                </select>
+              </div>
+              {/* I'm from */}
+              <div style={{marginBottom:"14px"}}>
+                <label style={{fontSize:"11px",fontWeight:700,textTransform:"uppercase",letterSpacing:"0.09em",color:"#6B7280",display:"block",marginBottom:"6px"}}>I&apos;m from…</label>
+                <select style={{width:"100%",padding:"12px 14px",border:"2px solid #E5E7EB",borderRadius:"10px",fontSize:"14px",background:"#F9FAFB",fontFamily:IN,cursor:"pointer",appearance:"none",backgroundImage:"url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%236B7280' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E\")",backgroundRepeat:"no-repeat",backgroundPosition:"right 12px center"}}>
+                  {["Select country","🇵🇰 Pakistan","🇮🇳 India","🇧🇩 Bangladesh","🇦🇫 Afghanistan","🌍 Other country"].map(o=><option key={o}>{o}</option>)}
+                </select>
+              </div>
 
-              <Link href="/visa" className="btn btn-primary" style={{width:"100%",justifyContent:"center",marginBottom:"14px"}}>
+              <button onClick={handleQuickCheck} className="btn btn-primary" style={{width:"100%",justifyContent:"center",marginBottom:"14px",cursor:"pointer",border:"none"}}>
                 Show my options →
-              </Link>
+              </button>
               <div style={{display:"flex",gap:"7px"}}>
                 <Link href="/finances" className="qpill">💳 Bank</Link>
                 <Link href="/visa" className="qpill">🛂 Visa</Link>
@@ -457,7 +468,7 @@ export default function Home() {
                 📅 Book free consultation
               </Link>
               <div style={{display:"flex",gap:"10px"}}>
-                {[{l:"✉️ Email",h:"/service"},{l:"💬 WhatsApp",h:"/service"},{l:"❓ FAQ",h:"/service"}].map(c=>(
+                {[{l:"✉️ Email",h:"/contact"},{l:"💬 WhatsApp",h:"https://wa.me/4915906171828?text=Hi%20VisaVista!"},{l:"❓ FAQ",h:"/service"}].map(c=>(
                   <Link key={c.l} href={c.h} className="ch-btn" style={{flex:1,justifyContent:"center",padding:"10px 12px",fontSize:"12.5px"}}>{c.l}</Link>
                 ))}
               </div>
