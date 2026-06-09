@@ -137,9 +137,25 @@ export default function AppointmentPage() {
             </div>
           </div>
         </div>
-      </section>
+      {/* Other countries */}
+      <div style={{background:"#F9FAFB",border:"1px solid #E5E7EB",borderRadius:"20px",padding:"28px 32px",maxWidth:"1200px",margin:"0 auto 2rem"}}>
+        <h3 style={{fontWeight:700,color:"#0B1D3A",fontSize:"16px",marginBottom:"12px"}}>🌍 Appointments for other countries</h3>
+        <div style={{display:"grid",gridTemplateColumns:"repeat(3,1fr)",gap:"14px"}}>
+          {[
+            {flag:"🇨🇦",c:"Canada",info:"Apply via IRCC (ircc.canada.ca). VFS Global handles biometrics in Pakistan, India & Bangladesh. Processing: 8–16 weeks for Express Entry PR."},
+            {flag:"🇦🇺",c:"Australia",info:"Apply via ImmiAccount (immi.homeaffairs.gov.au). VFS Global for biometrics. Processing: 6–18 months depending on visa subclass."},
+            {flag:"🇪🇸",c:"Spain",info:"Apply at Spanish Embassy/Consulate. VFS Spain in some countries. Digital Nomad Visa: apply at Spanish Consulate in your home country."},
+          ].map(c=>(
+            <div key={c.c} style={{background:"#fff",border:"1px solid #E5E7EB",borderRadius:"14px",padding:"16px"}}>
+              <div style={{fontSize:"22px",marginBottom:"8px"}}>{c.flag}</div>
+              <div style={{fontWeight:700,color:"#0B1D3A",fontSize:"14px",marginBottom:"6px"}}>{c.c}</div>
+              <div style={{fontSize:"12.5px",color:"#6B7280",lineHeight:1.6}}>{c.info}</div>
+            </div>
+          ))}
+        </div>
+      </div>
 
-      {/* Day of appointment checklist */}
+      {/* Day of appointment checklist */}}
       <div style={{background:"#fff",padding:"0 1.5rem 5rem"}}>
         <div style={{maxWidth:"1200px",margin:"0 auto"}}>
           <div style={{background:"#EFF6FF",border:"1.5px solid #BFDBFE",borderRadius:"24px",padding:"40px 44px"}}>
