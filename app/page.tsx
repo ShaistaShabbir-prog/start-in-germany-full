@@ -56,7 +56,7 @@ export default function Home() {
         <div style={{position:"absolute",bottom:"-80px",right:"160px",width:"320px",height:"320px",borderRadius:"50%",background:"#D97706",opacity:0.1,zIndex:1}} />
 
         <div className="wrap" style={{position:"relative",zIndex:2,width:"100%",padding:"96px 1.5rem 96px"}}>
-          <div style={{display:"grid",gridTemplateColumns:"1fr 380px",gap:"60px",alignItems:"center"}}>
+          <div style={{display:"grid",gridTemplateColumns:"clamp(1fr, 50vw, 1fr) clamp(300px, 380px, 45vw)",gap:"clamp(24px, 4vw, 60px)",alignItems:"center"}}>
 
             <div>
               {/* Trust pill */}
@@ -157,7 +157,7 @@ export default function Home() {
       {/* ══════════════ STATS ══════════════ */}
       <div style={{background:"#DC2626"}}>
         <div className="wrap">
-          <div style={{display:"grid",gridTemplateColumns:"repeat(4,1fr)"}}>
+          <div style={{display:"grid",gridTemplateColumns:"repeat(auto-fit,minmax(160px,1fr))"}}>
             {[
               {n:"50K+",  l:"Families helped"},
               {n:"98%",   l:"Visa success rate"},
