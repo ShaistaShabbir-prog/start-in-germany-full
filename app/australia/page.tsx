@@ -54,7 +54,7 @@ export default function AustraliaPage(){
         </div>
       </section>
 
-      <div style={{background:"#0B1D3A"}}><div style={wrap}><div style={{display:"grid",gridTemplateColumns:"repeat(4,1fr)"}}>
+      <div style={{background:"#0B1D3A"}}><div style={wrap}><div style={{display:"grid",gridTemplateColumns:"repeat(auto-fill,minmax(160px,1fr))"}}>
         {[{n:"195K+",l:"Skilled migration places 2026"},{n:"65 pts",l:"Minimum points for 189 visa"},{n:"4 yrs",l:"TSS employer-sponsored max"},{n:"AUD $70K",l:"Min. salary for TSS visa"}].map((s,i)=>(
           <div key={s.l} style={{textAlign:"center",padding:"20px 16px",borderRight:i<3?"1px solid rgba(255,255,255,.1)":"none"}}>
             <div style={{fontFamily:PD,fontWeight:900,fontSize:"1.75rem",color:"#FCD34D"}}>{s.n}</div>
@@ -67,7 +67,7 @@ export default function AustraliaPage(){
         <span style={eye}>Australia visa pathways</span>
         <h2 style={h2s}>Which Australia visa is right for you?</h2>
         <div style={bar}/>
-        <div style={{display:"grid",gridTemplateColumns:"repeat(2,1fr)",gap:"22px"}}>
+        <div style={{display:"grid",gridTemplateColumns:"repeat(auto-fill,minmax(320px,1fr))",gap:"22px"}}>
           {visas.map(v=>(
             <div key={v.title} style={{background:v.bg,border:`1.5px solid ${v.border}`,borderRadius:"20px",padding:"1.75rem"}}>
               <div style={{display:"flex",gap:"12px",alignItems:"flex-start",marginBottom:"14px"}}>
@@ -89,7 +89,7 @@ export default function AustraliaPage(){
         <span style={eye}>Life in Australia</span>
         <h2 style={h2s}>South Asian community &amp; life in Australia</h2>
         <div style={bar}/>
-        <div style={{display:"grid",gridTemplateColumns:"repeat(3,1fr)",gap:"20px"}}>
+        <div style={{display:"grid",gridTemplateColumns:"repeat(auto-fill,minmax(260px,1fr))",gap:"20px"}}>
           {[
             {i:"🕌",t:"Muslim & South Asian life",d:"800K+ Muslims in Australia. Large Pakistani community in Sydney (Auburn/Lakemba), Melbourne (Broadmeadows), Brisbane. 300+ mosques. Halal food widely available in all major cities."},
             {i:"💰",t:"Salaries & costs",d:"Sydney avg: AUD $90K. Melbourne: AUD $85K. Brisbane: AUD $80K. Sydney 1-bed: AUD $2,500–$3,200. Melbourne: AUD $2,000–$2,800. Brisbane cheapest of big 3."},
