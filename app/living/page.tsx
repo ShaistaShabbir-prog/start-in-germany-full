@@ -138,7 +138,7 @@ export default function LivingPage() {
         <span style={s.eye}>Arrival checklist</span>
         <h2 style={s.h2}>Your first 30 days in Germany</h2>
         <div style={s.bar}/>
-        <div style={{display:"grid",gridTemplateColumns:"repeat(2,1fr)",gap:"16px",marginBottom:"52px"}}>
+        <div style={{display:"grid",gridTemplateColumns:"repeat(auto-fill,minmax(280px,1fr))",gap:"16px",marginBottom:"52px"}}>
           {firstSteps.map(st=>(
             <div key={st.n} style={{background:"#fff",border:"1px solid #E5E7EB",borderRadius:"18px",padding:"20px 22px",display:"flex",gap:"16px",alignItems:"flex-start",boxShadow:"0 2px 8px rgba(0,0,0,.04)"}}>
               <div style={{background:"#FEF2F2",border:"1px solid #FCA5A5",borderRadius:"12px",padding:"10px 12px",flexShrink:0,textAlign:"center",minWidth:"60px"}}>
@@ -157,7 +157,7 @@ export default function LivingPage() {
         <span style={s.eye}>Settling in</span>
         <h2 style={s.h2}>Everything you need to know</h2>
         <div style={s.bar}/>
-        <div style={{display:"grid",gridTemplateColumns:"repeat(3,1fr)",gap:"20px"}}>
+        <div style={{display:"grid",gridTemplateColumns:"repeat(auto-fill,minmax(260px,1fr))",gap:"20px"}}>
           {lifeSections.map(ls=>(
             <div key={ls.title} style={{background:ls.bg,border:`1.5px solid ${ls.border}`,borderRadius:"20px",padding:"1.6rem"}}>
               <div style={{fontSize:"32px",marginBottom:"12px"}}>{ls.icon}</div>
@@ -173,7 +173,7 @@ export default function LivingPage() {
       {/* HOUSING COSTS + COMMUNITIES */}
       <div style={{background:"#fff",padding:"5rem 1.5rem"}}>
         <div style={s.wrap}>
-          <div style={{display:"grid",gridTemplateColumns:"1fr 1fr",gap:"56px",alignItems:"start"}}>
+          <div style={{display:"grid",gridTemplateColumns:"repeat(auto-fit,minmax(300px,1fr))",gap:"clamp(24px,4vw,56px)",alignItems:"start"}}>
             {/* Rent table */}
             <div>
               <span style={s.eye}>Housing costs 2026</span>
