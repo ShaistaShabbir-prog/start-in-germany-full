@@ -20,7 +20,7 @@ export default function FinancesPage() {
       {/* Why banking matters */}
       <div style={{background:"#0B1D3A",padding:"2rem 1.5rem"}}>
         <div className="wrap">
-          <div style={{display:"grid",gridTemplateColumns:"repeat(3,1fr)",gap:"20px"}}>
+          <div style={{display:"grid",gridTemplateColumns:"repeat(auto-fill,minmax(280px,1fr))",gap:"20px"}}>
             {[
               {i:"🏠",t:"Required for Anmeldung",d:"You need a German IBAN to register your address (Anmeldung) — the first thing you must do on arrival."},
               {i:"💼",t:"Salary payments",d:"German employers only pay to a German IBAN. You need one before your first payday — set it up before you arrive."},
@@ -43,7 +43,7 @@ export default function FinancesPage() {
         <span className="eyebrow">Our top picks</span>
         <h2 className="h2" style={{marginBottom:"8px"}}>Recommended accounts &amp; cards</h2>
         <div className="divider" style={{marginBottom:"36px"}} />
-        <div style={{display:"grid",gridTemplateColumns:"repeat(3,1fr)",gap:"24px"}}>
+        <div style={{display:"grid",gridTemplateColumns:"repeat(auto-fill,minmax(280px,1fr))",gap:"24px"}}>
 
           {/* Wise */}
           <div className="card" style={{border:"2px solid #BFDBFE",display:"flex",flexDirection:"column",position:"relative",overflow:"hidden"}}>
