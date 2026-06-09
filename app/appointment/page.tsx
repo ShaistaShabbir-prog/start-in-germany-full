@@ -182,6 +182,7 @@ export default function AppointmentPage() {
           </div>
         </div>
       </div>
+    </section>
     </div>
   );
 }
