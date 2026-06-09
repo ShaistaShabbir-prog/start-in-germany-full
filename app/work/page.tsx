@@ -90,7 +90,7 @@ export default function WorkPage(){
         <span style={eye}>In-demand professions 2026</span>
         <h2 style={h2s}>Top jobs for South Asian professionals</h2>
         <div style={bar}/>
-        <div style={{display:"grid",gridTemplateColumns:"repeat(3,1fr)",gap:"18px"}}>
+        <div style={{display:"grid",gridTemplateColumns:"repeat(auto-fill,minmax(280px,1fr))",gap:"18px"}}>
           {jobs.map(j=>(
             <div key={j.t} style={{background:"#fff",border:"1.5px solid #E5E7EB",borderRadius:"20px",padding:"1.4rem",boxShadow:"0 2px 8px rgba(0,0,0,.04)"}}>
               <div style={{display:"flex",gap:"14px",alignItems:"flex-start",marginBottom:"12px"}}>
@@ -119,7 +119,7 @@ export default function WorkPage(){
           <span style={eye}>Where to work</span>
           <h2 style={h2s}>Best German cities for South Asian professionals 2026</h2>
           <div style={bar}/>
-          <div style={{display:"grid",gridTemplateColumns:"repeat(3,1fr)",gap:"16px"}}>
+          <div style={{display:"grid",gridTemplateColumns:"repeat(auto-fill,minmax(260px,1fr))",gap:"16px"}}>
             {cities.map(c=>(
               <div key={c.city} style={{background:"#F9FAFB",border:"1px solid #E5E7EB",borderRadius:"18px",padding:"20px 22px"}}>
                 <div style={{fontFamily:PD,fontWeight:800,fontSize:"18px",color:"#0B1D3A",marginBottom:"12px"}}>{c.flag} {c.city}</div>
@@ -142,7 +142,7 @@ export default function WorkPage(){
 
       {/* JOB SEARCH TIPS */}
       <section style={sec}>
-        <div style={{display:"grid",gridTemplateColumns:"1fr 1fr",gap:"56px",alignItems:"start"}}>
+        <div style={{display:"grid",gridTemplateColumns:"repeat(auto-fit,minmax(300px,1fr))",gap:"clamp(24px,4vw,56px)",alignItems:"start"}}>
           <div>
             <span style={eye}>Job search strategy</span>
             <h2 style={h2s}>How to land a job from abroad</h2>
