@@ -1,3 +1,4 @@
+"use client";
 import Link from "next/link";
 const PD = '"Playfair Display",Georgia,serif';
 const HERO = "https://images.unsplash.com/photo-1521791136064-7986c2920216?w=1400&q=80&auto=format&fit=crop";
