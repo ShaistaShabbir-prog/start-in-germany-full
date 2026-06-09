@@ -72,19 +72,9 @@ VisaVista is a consultancy and information website covering visa guidance, job s
 
 ---
 
-## Affiliate Links (Your Referral Links)
-
-| Product | Your Link | Bonus |
-|---------|-----------|-------|
-| 🌐 Wise | `wise.com/invite/in/shaistak5` | Fee-free first transfer |
-| 🏦 Commerzbank | `...&x-werbecode=PNGHRA` | 50€ starting credit |
-| 💳 Advanzia | `refer.gebuhrenfrei.com/shaistas-45` | 0€ annual fee card |
-
----
-
 ## Key Features
 
-- **WhatsApp floating button** — `+4915906171828` on every page
+- **WhatsApp floating button** — `` on every page
 - **Quick-Check form** — dropdown: country × destination × purpose
 - **7-country destinations dropdown** in navbar
 - **Mobile-responsive** — full hamburger menu with all 7 countries
