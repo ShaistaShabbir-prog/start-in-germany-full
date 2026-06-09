@@ -113,6 +113,9 @@ export default function ContactPage(){
                       <option>🇮🇹 Italy</option>
                       <option>🇸🇪 Sweden</option>
                       <option>🇬🇧 United Kingdom</option>
+                      <option>🇨🇦 Canada</option>
+                      <option>🇦🇺 Australia</option>
+                      <option>🇪🇸 Spain</option>
                       <option>Not sure yet</option>
                     </select>
                   </div>
