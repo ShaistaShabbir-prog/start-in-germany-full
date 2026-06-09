@@ -7,7 +7,7 @@ export default function Footer(){
   return(
     <footer style={{background:"#0B1D3A",color:"#fff"}}>
       <div style={{maxWidth:"1200px",margin:"0 auto",padding:"56px 1.5rem 0"}}>
-        <div style={{display:"grid",gridTemplateColumns:"2fr 1fr 1fr 1fr 1fr",gap:"36px",paddingBottom:"48px",borderBottom:"1px solid rgba(255,255,255,.08)"}}>
+        <div style={{display:"grid",gridTemplateColumns:"repeat(auto-fill,minmax(160px,1fr))",gap:"28px",paddingBottom:"48px",borderBottom:"1px solid rgba(255,255,255,.08)"}}>
 
           {/* Brand */}
           <div>
