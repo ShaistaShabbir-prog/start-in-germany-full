@@ -18,7 +18,7 @@ export default function AboutPage() {
       </section>
 
       <section className="sec">
-        <div style={{display:"grid",gridTemplateColumns:"1fr 1fr",gap:"64px",alignItems:"center",marginBottom:"64px"}}>
+        <div style={{display:"grid",gridTemplateColumns:"repeat(auto-fit,minmax(280px,1fr))",gap:"clamp(24px,4vw,64px)",alignItems:"center",marginBottom:"64px"}}>
           <div>
             <span className="eyebrow">Our story</span>
             <h2 className="h2" style={{marginBottom:"16px"}}>From confusion to clarity — for 50,000+ families</h2>
@@ -53,7 +53,7 @@ export default function AboutPage() {
         <span className="eyebrow">Our team</span>
         <h2 className="h2" style={{marginBottom:"8px"}}>Meet the VisaVista experts</h2>
         <div style={{width:"60px",height:"4px",background:"#DC2626",borderRadius:"2px",margin:"14px 0 36px"}}/>
-        <div style={{display:"grid",gridTemplateColumns:"repeat(3,1fr)",gap:"22px",marginBottom:"56px"}}>
+        <div style={{display:"grid",gridTemplateColumns:"repeat(auto-fill,minmax(260px,1fr))",gap:"22px",marginBottom:"56px"}}>
           {[
             {av:"SS",n:"Shaista Shabbir",role:"Founder & Lead Consultant",origin:"🇵🇰 Lahore → 🇩🇪 Berlin",bio:"Moved from Pakistan to Germany in 2019 on a student visa. Completed her Masters at TU Berlin. Navigated the Blue Card process herself and has since personally helped over 10,000 South Asians with their visa applications.",langs:"Urdu · Punjabi · English · German (B2)",spec:"Pakistan-Germany immigration · EU Blue Card · Degree recognition",c:"#DC2626"},
             {av:"AH",n:"Arjun Hegde",role:"India & Engineering Specialist",origin:"🇮🇳 Bengaluru → 🇩🇪 Munich",bio:"Senior software engineer at a Munich tech company. 6 years in Germany's IT sector. Expert on the EU Blue Card for IT professionals, Indian degree recognition (MEA Apostille), and navigating the Ausländerbehörde in Bavaria.",langs:"Hindi · Kannada · English · German (C1)",spec:"India-Germany IT careers · Blue Card · Munich/Bavaria process",c:"#0D9488"},
