@@ -50,7 +50,7 @@ export default function Home() {
 
               {/* Country chips */}
               <div style={{display:"flex",gap:"8px",flexWrap:"wrap",marginBottom:"34px"}}>
-                {[{f:"🇩🇪",n:"Germany"},{f:"🇮🇹",n:"Italy"},{f:"🇸🇪",n:"Sweden"},{f:"🇬🇧",n:"UK"}].map(c=>(
+                {[{f:"🇩🇪",n:"Germany"},{f:"🇮🇹",n:"Italy"},{f:"🇸🇪",n:"Sweden"},{f:"🇬🇧",n:"UK"},{f:"🇨🇦",n:"Canada"},{f:"🇦🇺",n:"Australia"},{f:"🇪🇸",n:"Spain"}].map(c=>(
                   <div key={c.n} style={{display:"flex",alignItems:"center",gap:"6px",background:"rgba(255,255,255,.1)",border:"1px solid rgba(255,255,255,.2)",borderRadius:"999px",padding:"6px 14px",fontSize:"13px",fontWeight:600,color:"#fff"}}>
                     {c.f} {c.n}
                   </div>
@@ -90,7 +90,7 @@ export default function Home() {
 
               {[
                 {label:"I want to…",opts:["Please select","Work in Europe","Study in Europe","Vocational training (Ausbildung)","Start a business","Family reunification","Book visa appointment"]},
-                {label:"Destination",opts:["Select country","🇩🇪 Germany","🇮🇹 Italy (soon)","🇸🇪 Sweden (soon)","🇬🇧 United Kingdom (soon)"]},
+                {label:"Destination",opts:["Select country","🇩🇪 Germany","🇮🇹 Italy","🇸🇪 Sweden","🇬🇧 United Kingdom","🇨🇦 Canada","🇦🇺 Australia","🇪🇸 Spain"]},
                 {label:"I'm from…",opts:["Select country","🇵🇰 Pakistan","🇮🇳 India","🇧🇩 Bangladesh","🇦🇫 Afghanistan","🌍 Other country"]},
               ].map(s=>(
                 <div key={s.label} style={{marginBottom:"14px"}}>
@@ -148,10 +148,10 @@ export default function Home() {
         </div>
         <div style={{display:"grid",gridTemplateColumns:"repeat(4,1fr)",gap:"22px"}}>
           {[
-            {flag:"🇩🇪",name:"Germany",desc:"EU Blue Card · Opportunity Card · Skilled Worker Visa · Ausbildung",img:IMG.germany,color:"#0B1D3A",tag:"✓ Live & updated",tagColor:"#ECFDF5",tagText:"#065F46",href:"/visa"},
-            {flag:"🇮🇹",name:"Italy",desc:"Student Visa · Work Permit · Decreto Flussi · Self-employment",img:IMG.italy,color:"#1E3A5F",tag:"Coming Q3 2025",tagColor:"rgba(255,255,255,.2)",tagText:"#fff",href:"/"},
-            {flag:"🇸🇪",name:"Sweden",desc:"Work Permit · Student Visa · Residence Permit · Job Seeker",img:IMG.sweden,color:"#0B1D3A",tag:"Coming Q4 2025",tagColor:"rgba(255,255,255,.2)",tagText:"#fff",href:"/"},
-            {flag:"🇬🇧",name:"United Kingdom",desc:"Skilled Worker · Student Visa · Graduate Route · Family",img:IMG.uk,color:"#1E3A5F",tag:"Coming 2026",tagColor:"rgba(255,255,255,.2)",tagText:"#fff",href:"/"},
+            {flag:"🇩🇪",name:"Germany",desc:"EU Blue Card · Opportunity Card · Skilled Worker · Ausbildung · Student",img:IMG.germany,color:"#0B1D3A",tag:"✓ Live 2026",tagColor:"#ECFDF5",tagText:"#065F46",href:"/visa"},
+            {flag:"🇮🇹",name:"Italy",desc:"Decreto Flussi 452K · EU Blue Card · Student · Family",img:IMG.italy,color:"#1E3A5F",tag:"✓ Live 2026",tagColor:"#ECFDF5",tagText:"#065F46",href:"/italy"},
+            {flag:"🇸🇪",name:"Sweden",desc:"Work Permit · EU Blue Card · Student · Self-Employment",img:IMG.sweden,color:"#0B1D3A",tag:"✓ Live 2026",tagColor:"#ECFDF5",tagText:"#065F46",href:"/sweden"},
+            {flag:"🇬🇧",name:"United Kingdom",desc:"Skilled Worker · Student · Health & Care · Graduate Route",img:IMG.uk,color:"#1E3A5F",tag:"✓ Live 2026",tagColor:"#ECFDF5",tagText:"#065F46",href:"/uk"},
           ].map(c=>(
             <Link key={c.name} href={c.href} className="img-card" style={{minHeight:"340px"}}>
               <div style={{position:"absolute",inset:0,backgroundImage:`url(${c.img})`,backgroundSize:"cover",backgroundPosition:"center",filter:"brightness(0.5)",transition:"filter .35s"}} />
@@ -165,7 +165,7 @@ export default function Home() {
                   <div style={{fontFamily:PD,fontWeight:800,fontSize:"24px",color:"#fff",marginBottom:"7px",textShadow:"0 2px 8px rgba(0,0,0,.4)"}}>{c.name}</div>
                   <div style={{fontSize:"12.5px",color:"rgba(255,255,255,.72)",lineHeight:1.55}}>{c.desc}</div>
                   <div style={{marginTop:"14px",fontSize:"13px",fontWeight:700,color:c.href==="/"?"rgba(255,255,255,.5)":"#FCD34D",display:"flex",alignItems:"center",gap:"5px"}}>
-                    {c.href==="/"?"Notify me when live":"Explore Germany →"}
+                    `Explore ${c.name} →`
                   </div>
                 </div>
               </div>
