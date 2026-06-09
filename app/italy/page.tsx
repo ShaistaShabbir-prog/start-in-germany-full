@@ -36,7 +36,7 @@ export default function ItalyPage(){
       {/* Stats */}
       <div style={{background:"#0B1D3A"}}>
         <div style={wrap}>
-          <div style={{display:"grid",gridTemplateColumns:"repeat(4,1fr)"}}>
+          <div style={{display:"grid",gridTemplateColumns:"repeat(auto-fill,minmax(160px,1fr))"}}>
             {[{n:"452K",l:"Work permits 2026 (Decreto Flussi)"},{n:"€1,310",l:"Net min. monthly salary"},{n:"5 yrs",l:"To permanent residence"},{n:"€30",l:"Work permit application fee"}].map((s,i)=>(
               <div key={s.l} style={{textAlign:"center",padding:"20px 16px",borderRight:i<3?"1px solid rgba(255,255,255,.1)":"none"}}>
                 <div style={{fontFamily:PD,fontWeight:900,fontSize:"1.75rem",color:"#FCD34D"}}>{s.n}</div>
@@ -52,7 +52,7 @@ export default function ItalyPage(){
         <span style={eye}>Italy visa pathways</span>
         <h2 style={{fontFamily:PD,fontSize:"clamp(1.75rem,3vw,2.5rem)",fontWeight:800,lineHeight:1.2,color:"#0B1D3A"}}>Which Italy visa is right for you?</h2>
         <div style={bar}/>
-        <div style={{display:"grid",gridTemplateColumns:"repeat(2,1fr)",gap:"22px"}}>
+        <div style={{display:"grid",gridTemplateColumns:"repeat(auto-fill,minmax(320px,1fr))",gap:"22px"}}>
           {[
             {icon:"⚡",bg:"#FEF2F2",border:"#FCA5A5",title:"Decreto Flussi — Work Permit (Nulla Osta)",badge:"452,000 slots 2026",
              desc:"Italy's annual work permit quota. Opens 3–4 times per year — applications open online via the Italian government portal (click day). 2026 quota: 452,000 total (130,000 non-seasonal, rest seasonal).",
@@ -88,7 +88,7 @@ export default function ItalyPage(){
       {/* Decreto Flussi deep-dive */}
       <div style={{background:"#fff",padding:"5rem 1.5rem"}}>
         <div style={wrap}>
-          <div style={{display:"grid",gridTemplateColumns:"1fr 1fr",gap:"56px",alignItems:"start"}}>
+          <div style={{display:"grid",gridTemplateColumns:"repeat(auto-fit,minmax(300px,1fr))",gap:"clamp(24px,4vw,56px)",alignItems:"start"}}>
             <div>
               <span style={eye}>Decreto Flussi 2026</span>
               <h2 style={{fontFamily:PD,fontSize:"clamp(1.75rem,3vw,2.5rem)",fontWeight:800,lineHeight:1.2,color:"#0B1D3A",marginBottom:"16px"}}>How to apply for Italy's work permit quota</h2>
@@ -147,7 +147,7 @@ export default function ItalyPage(){
         <span style={eye}>Life in Italy</span>
         <h2 style={{fontFamily:PD,fontSize:"clamp(1.75rem,3vw,2.5rem)",fontWeight:800,lineHeight:1.2,color:"#0B1D3A",marginBottom:"8px"}}>South Asian community &amp; life in Italy</h2>
         <div style={bar}/>
-        <div style={{display:"grid",gridTemplateColumns:"repeat(3,1fr)",gap:"20px"}}>
+        <div style={{display:"grid",gridTemplateColumns:"repeat(auto-fill,minmax(260px,1fr))",gap:"20px"}}>
           {[
             {icon:"🕌",title:"Muslim community",desc:"Italy has 1.6M+ Muslims. Significant Pakistani community especially in Milan, Rome, Turin, Brescia. Mosques in all major cities. Halal food widely available in cities."},
             {icon:"💰",title:"Cost of living",desc:"Much cheaper than Germany. Milan avg. 1-bed: €900–€1,300. Rome: €800–€1,200. Southern Italy (Naples, Palermo): €400–€700. Lower salaries but significantly lower costs."},
