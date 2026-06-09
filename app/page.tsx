@@ -126,7 +126,7 @@ export default function Home() {
             {[
               {n:"50K+",  l:"Families helped"},
               {n:"98%",   l:"Visa success rate"},
-              {n:"4",     l:"Countries covered"},
+              {n:"7",     l:"Countries covered"},
               {n:"2026",  l:"Data updated"},
             ].map((s,i)=>(
               <div key={s.l} className="stat-box" style={{borderRight:i<3?"1px solid rgba(255,255,255,.22)":"none"}}>
