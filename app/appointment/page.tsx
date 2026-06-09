@@ -41,7 +41,7 @@ export default function AppointmentPage() {
       </div>
 
       <section className="sec">
-        <div style={{display:"grid",gridTemplateColumns:"repeat(auto-fit,minmax(300px,1fr))",gap:"clamp(24px,4vw,56px)",alignItems:"start"}}>
+        <div style={{display:"grid",gridTemplateColumns:"repeat(auto-fit,minmax(min(100%,340px),1fr))",gap:"clamp(24px,4vw,56px)",alignItems:"start"}}>
 
           {/* Step-by-step */}
           <div>
