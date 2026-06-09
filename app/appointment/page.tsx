@@ -23,7 +23,7 @@ export default function AppointmentPage() {
       {/* Wait times */}
       <div style={{background:"#0B1D3A"}}>
         <div className="wrap">
-          <div style={{display:"grid",gridTemplateColumns:"repeat(4,1fr)"}}>
+          <div style={{display:"grid",gridTemplateColumns:"repeat(auto-fill,minmax(160px,1fr))"}}>
             {[
               {n:"8–16 wk",l:"Pakistan (Islamabad/Karachi)"},
               {n:"4–10 wk",l:"India (Delhi/Mumbai)"},
@@ -40,7 +40,7 @@ export default function AppointmentPage() {
       </div>
 
       <section className="sec">
-        <div style={{display:"grid",gridTemplateColumns:"1fr 1fr",gap:"56px",alignItems:"start"}}>
+        <div style={{display:"grid",gridTemplateColumns:"repeat(auto-fit,minmax(300px,1fr))",gap:"clamp(24px,4vw,56px)",alignItems:"start"}}>
 
           {/* Step-by-step */}
           <div>
@@ -140,7 +140,7 @@ export default function AppointmentPage() {
       {/* Other countries */}
       <div style={{background:"#F9FAFB",border:"1px solid #E5E7EB",borderRadius:"20px",padding:"28px 32px",maxWidth:"1200px",margin:"0 auto 2rem"}}>
         <h3 style={{fontWeight:700,color:"#0B1D3A",fontSize:"16px",marginBottom:"12px"}}>🌍 Appointments for other countries</h3>
-        <div style={{display:"grid",gridTemplateColumns:"repeat(3,1fr)",gap:"14px"}}>
+        <div style={{display:"grid",gridTemplateColumns:"repeat(auto-fill,minmax(220px,1fr))",gap:"14px"}}>
           {[
             {flag:"🇨🇦",c:"Canada",info:"Apply via IRCC (ircc.canada.ca). VFS Global handles biometrics in Pakistan, India & Bangladesh. Processing: 8–16 weeks for Express Entry PR."},
             {flag:"🇦🇺",c:"Australia",info:"Apply via ImmiAccount (immi.homeaffairs.gov.au). VFS Global for biometrics. Processing: 6–18 months depending on visa subclass."},
@@ -161,7 +161,7 @@ export default function AppointmentPage() {
           <div style={{background:"#EFF6FF",border:"1.5px solid #BFDBFE",borderRadius:"24px",padding:"40px 44px"}}>
             <h2 className="h2" style={{marginBottom:"8px"}}>📋 Day-of-appointment checklist</h2>
             <div style={{width:"60px",height:"4px",background:"#DC2626",borderRadius:"2px",margin:"14px 0 24px"}}/>
-            <div style={{display:"grid",gridTemplateColumns:"repeat(3,1fr)",gap:"24px"}}>
+            <div style={{display:"grid",gridTemplateColumns:"repeat(auto-fill,minmax(220px,1fr))",gap:"24px"}}>
               {[
                 {title:"Documents to bring",items:["Valid original passport + 1 photocopy of data page","2 biometric photos (35×45mm, white background, taken in last 6 months)","Printed VIDEX form with barcode pages clearly visible (not folded)","All original documents + 1 certified copy each","APS Certificate (Pakistan only) — original + copy","Apostilled + translated documents","Bank statements (last 3 months, original + copy)"]},
                 {title:"Practical tips",items:["Arrive 15 minutes before your appointment","Dress formally — first impressions matter in Germany","Bring all documents in the EXACT ORDER specified in the checklist","Tab/label your document sections for quick access","Bring exact visa fee in cash (or check if card is accepted at your VAC)","Bring a charged phone — you may need to show email confirmations","Do NOT bring extra people unless specifically allowed"]},
