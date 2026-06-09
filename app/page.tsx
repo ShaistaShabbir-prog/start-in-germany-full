@@ -20,6 +20,30 @@ const IMG = {
 };
 
 export default function Home() {
+  const router = useRouter();
+  const [qcWant, setQcWant] = useState("");
+  const [qcDest, setQcDest] = useState("");
+
+  const handleQuickCheck = () => {
+    const destMap: Record<string,string> = {
+      "🇩🇪 Germany":"/visa","🇮🇹 Italy":"/italy","🇸🇪 Sweden":"/sweden",
+      "🇬🇧 United Kingdom":"/uk","🇨🇦 Canada":"/canada",
+      "🇦🇺 Australia":"/australia","🇪🇸 Spain":"/spain",
+    };
+    const wantMap: Record<string,string> = {
+      "Work in Europe":"/work","Study in Europe":"/study",
+      "Vocational training (Ausbildung)":"/study",
+      "Start a business":"/consultancy",
+      "Family reunification":"/visa",
+      "Book visa appointment":"/appointment",
+    };
+    const destRoute = destMap[qcDest] || "";
+    const wantRoute = wantMap[qcWant] || "";
+    if (destRoute) router.push(destRoute);
+    else if (wantRoute) router.push(wantRoute);
+    else router.push("/visa");
+  };
+
   return (
     <div style={{background:"#f9fafb"}}>
 
@@ -47,7 +71,7 @@ export default function Home() {
               </h1>
 
               <p style={{fontSize:"18px",color:"rgba(255,255,255,.72)",lineHeight:1.75,maxWidth:"520px",marginBottom:"14px"}}>
-                Complete visa guidance, job search, banking & appointment booking for students and professionals from Pakistan, India, Bangladesh & Afghanistan moving to Germany, Italy, Sweden or the UK.
+                Complete visa guidance, job search, banking & appointment booking for students and professionals from Pakistan, India, Bangladesh & Afghanistan moving to Germany, Italy, Sweden, UK, Canada, Australia or Spain.
               </p>
 
               {/* Country chips */}
