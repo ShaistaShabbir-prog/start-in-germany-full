@@ -52,8 +52,7 @@ export default function VisaVistaAdmin() {
   };
 
   const copyLeads = () => {
-    navigator.clipboard.writeText(leads.map(l=>l.email).join("
-"));
+    navigator.clipboard.writeText(leads.map(l=>l.email).join("\n"));
     setCopied(true); setTimeout(()=>setCopied(false), 2000);
   };
 
