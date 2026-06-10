@@ -4,6 +4,7 @@ import NavBar from "@/components/NavBar";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import Script from "next/script";
+import Chatbot from "@/components/Chatbot";
 
 export const metadata: Metadata = {
   title: { default: "VisaVista — Move to Europe from Pakistan, India & Bangladesh", template: "%s | VisaVista" },
@@ -39,6 +40,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <Footer />
         <WhatsAppButton />
       </body>
+      <Chatbot />
     </html>
   );
 }
