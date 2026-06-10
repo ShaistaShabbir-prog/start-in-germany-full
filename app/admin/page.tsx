@@ -57,9 +57,7 @@ export default function VisaVistaAdmin() {
   };
 
   const exportCSV = () => {
-    const csv = "Email,Date,Source
-" + leads.map(l=>`${l.email},${l.date},${l.source||"homepage"}`).join("
-");
+    const csv = `Email,Date,Source\n${leads.map(l=>`${l.email},${l.date},${l.source||"homepage"}`).join("\n")}`;
     const a = document.createElement("a");
     a.href = URL.createObjectURL(new Blob([csv],{type:"text/csv"}));
     a.download = `visavista-leads-${new Date().toISOString().slice(0,10)}.csv`;
