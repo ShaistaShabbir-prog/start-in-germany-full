@@ -80,6 +80,8 @@ export default function Footer(){
         <span style={{margin:"0 8px"}}>·</span>
         <Link href="/affiliate-disclosure" style={{color:"rgba(255,255,255,.25)",textDecoration:"none"}}>Affiliate Disclosure</Link>
       </div>
-    </footer>
+    
+        <p style={{fontSize:"11px",color:"#9CA3AF",textAlign:"center",marginTop:"16px"}}>© 2026 Shaista Shabbir · VisaVista · All Rights Reserved · Proprietary Software</p>
+</footer>
   );
 }
