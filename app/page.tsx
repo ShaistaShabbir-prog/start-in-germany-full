@@ -23,6 +23,21 @@ export default function Home() {
   const router = useRouter();
   const [qcWant, setQcWant] = useState("");
   const [qcDest, setQcDest] = useState("");
+  const [email, setEmail] = useState("");
+  const [emailSub, setEmailSub] = useState<"idle"|"loading"|"done"|"error">("idle");
+
+  const handleEmailSub = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!email || !email.includes("@")) return;
+    setEmailSub("loading");
+    try {
+      const subs = JSON.parse(localStorage.getItem("vv_subscribers") || "[]");
+      subs.push({ email, date: new Date().toISOString() });
+      localStorage.setItem("vv_subscribers", JSON.stringify(subs));
+      setEmailSub("done");
+      setEmail("");
+    } catch { setEmailSub("error"); }
+  };
 
   const handleQuickCheck = () => {
     const destMap: Record<string,string> = {
@@ -48,15 +63,15 @@ export default function Home() {
     <div style={{background:"#f9fafb"}}>
 
       {/* ══════════════ HERO ══════════════ */}
-      <section style={{position:"relative",minHeight:"680px",display:"flex",alignItems:"center",overflow:"hidden"}}>
+      <section style={{position:"relative",minHeight:"92vh",display:"flex",alignItems:"flex-start",overflow:"hidden"}}>
         <div style={{position:"absolute",inset:0,backgroundImage:`url(${IMG.hero})`,backgroundSize:"cover",backgroundPosition:"center 35%",filter:"brightness(0.28)"}} />
         <div style={{position:"absolute",inset:0,background:"linear-gradient(110deg,rgba(11,29,58,0.97) 0%,rgba(11,29,58,0.75) 50%,rgba(220,38,38,0.2) 100%)"}} />
         {/* Geometric accent */}
         <div style={{position:"absolute",top:"-100px",right:"-60px",width:"500px",height:"500px",borderRadius:"50%",background:"#DC2626",opacity:0.1,zIndex:1}} />
         <div style={{position:"absolute",bottom:"-80px",right:"160px",width:"320px",height:"320px",borderRadius:"50%",background:"#D97706",opacity:0.1,zIndex:1}} />
 
-        <div className="wrap" style={{position:"relative",zIndex:2,width:"100%",padding:"96px 1.5rem 96px"}}>
-          <div style={{display:"grid",gridTemplateColumns:"clamp(1fr, 50vw, 1fr) clamp(300px, 380px, 45vw)",gap:"clamp(24px, 4vw, 60px)",alignItems:"center"}}>
+        <div className="wrap" style={{position:"relative",zIndex:2,width:"100%",padding:"56px 1.5rem 48px"}}>
+          <div style={{display:"grid",gridTemplateColumns:"1fr minmax(340px,400px)",gap:"clamp(24px, 4vw, 48px)",alignItems:"start"}}>
 
             <div>
               {/* Trust pill */}
@@ -149,10 +164,67 @@ export default function Home() {
               <p style={{fontSize:"11px",color:"#9CA3AF",textAlign:"center",marginTop:"14px"}}>
                 🔒 Free · No registration required
               </p>
+
+              {/* ── Email subscribe inside card ── */}
+              <div style={{marginTop:"16px",paddingTop:"16px",borderTop:"1px solid #F3F4F6"}}>
+                <p style={{fontSize:"11px",fontWeight:700,color:"#6B7280",textTransform:"uppercase",letterSpacing:"0.07em",marginBottom:"8px"}}>📬 Get visa tips & updates</p>
+                {emailSub === "done" ? (
+                  <div style={{background:"#F0FDF4",border:"1px solid #86EFAC",borderRadius:"8px",padding:"10px 12px",fontSize:"12px",color:"#16A34A",fontWeight:600,textAlign:"center"}}>
+                    ✅ Subscribed! Check your inbox.
+                  </div>
+                ) : (
+                  <form onSubmit={handleEmailSub} style={{display:"flex",gap:"6px"}}>
+                    <input type="email" value={email} onChange={e=>setEmail(e.target.value)}
+                      placeholder="your@email.com" required
+                      style={{flex:1,padding:"9px 10px",border:"1.5px solid #E5E7EB",borderRadius:"8px",fontSize:"12px",fontFamily:IN,outline:"none",minWidth:0}}
+                    />
+                    <button type="submit" disabled={emailSub==="loading"}
+                      style={{padding:"9px 14px",background:"#DC2626",color:"#fff",border:"none",borderRadius:"8px",fontWeight:700,fontSize:"12px",cursor:"pointer",whiteSpace:"nowrap",flexShrink:0}}>
+                      {emailSub==="loading" ? "…" : "Join →"}
+                    </button>
+                  </form>
+                )}
+              </div>
             </div>
           </div>
         </div>
       </section>
+
+      {/* ══════════════ EMAIL CAPTURE BAR ══════════════ */}
+      <div style={{background:"#0B1D3A",borderBottom:"3px solid #DC2626"}}>
+        <div className="wrap" style={{padding:"0"}}>
+          <div style={{display:"flex",flexWrap:"wrap",alignItems:"center",justifyContent:"space-between",gap:"16px",padding:"22px 0"}}> 
+            <div style={{display:"flex",alignItems:"center",gap:"14px"}}>
+              <span style={{fontSize:"24px"}}>📬</span>
+              <div>
+                <div style={{fontFamily:PD,fontSize:"16px",fontWeight:800,color:"#fff",lineHeight:1.2}}>Free visa updates & immigration guides</div>
+                <div style={{fontSize:"13px",color:"rgba(255,255,255,.5)",marginTop:"2px"}}>Join 12,000+ South Asians. Weekly tips. Zero spam.</div>
+              </div>
+            </div>
+            <div>
+              {emailSub === "done" ? (
+                <div style={{display:"flex",alignItems:"center",gap:"10px",background:"rgba(16,185,129,.15)",border:"1px solid rgba(16,185,129,.4)",borderRadius:"10px",padding:"12px 20px"}}>
+                  <span style={{fontSize:"20px"}}>✅</span>
+                  <div style={{fontWeight:700,color:"#34D399",fontSize:"14px"}}>You&apos;re subscribed!</div>
+                </div>
+              ) : (
+                <form onSubmit={handleEmailSub} style={{display:"flex",gap:"8px",flexWrap:"wrap",alignItems:"center"}}>
+                  <input type="email" value={email} onChange={e=>setEmail(e.target.value)}
+                    placeholder="Enter your email address"
+                    required
+                    style={{padding:"12px 16px",borderRadius:"10px",border:"2px solid rgba(255,255,255,.15)",background:"rgba(255,255,255,.08)",color:"#fff",fontSize:"14px",width:"260px",outline:"none",fontFamily:IN}}
+                  />
+                  <button type="submit" disabled={emailSub==="loading"}
+                    style={{padding:"12px 24px",background:"#DC2626",color:"#fff",border:"none",borderRadius:"10px",fontWeight:700,fontSize:"14px",cursor:"pointer",whiteSpace:"nowrap",fontFamily:IN,boxShadow:"0 4px 14px rgba(220,38,38,.4)"}}>
+                    {emailSub==="loading" ? "…" : "Get free updates →"}
+                  </button>
+                  <div style={{fontSize:"11px",color:"rgba(255,255,255,.35)",whiteSpace:"nowrap"}}>🔒 No spam. Unsubscribe anytime.</div>
+                </form>
+              )}
+            </div>
+          </div>
+        </div>
+      </div>
 
       {/* ══════════════ STATS ══════════════ */}
       <div style={{background:"#DC2626"}}>
