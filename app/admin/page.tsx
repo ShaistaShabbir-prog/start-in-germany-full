@@ -1,3 +1,4 @@
+import { withAdminAuth } from "@/components/AdminGuard";
 "use client";
 import { useState, useEffect } from "react";
 import Link from "next/link";
@@ -27,7 +28,7 @@ const COUNTRIES = [
   { flag:"🇪🇸", name:"Spain",     pages:["/spain"],                              color:"#EC4899" },
 ];
 
-export default function VisaVistaAdmin() {
+function VisaVistaAdmin() {
   const [tab, setTab] = useState("overview");
   const [leads, setLeads] = useState<Lead[]>([]);
   const [consults, setConsults] = useState<Consult[]>([]);
@@ -326,3 +327,5 @@ export default function VisaVistaAdmin() {
     </div>
   );
 }
+
+export default withAdminAuth(VisaVistaAdmin);
