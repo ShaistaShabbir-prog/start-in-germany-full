@@ -1,4 +1,5 @@
 "use client";
+// Multi-language support added
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState, useRef, useEffect } from "react";
@@ -20,6 +21,13 @@ const links = [
   {href:"/",l:"Home"},{href:"/work",l:"Work"},{href:"/study",l:"Study"},
   {href:"/finances",l:"💳 Banking"},{href:"/appointment",l:"Appointments"},
   {href:"/blog",l:"Blog"},{href:"/service",l:"Services"},{href:"/consultancy",l:"Consultancy"},
+];
+
+const LANG_OPTIONS = [
+  {code:"en",label:"🇬🇧 EN"},{code:"de",label:"🇩🇪 DE"},{code:"ar",label:"🇸🇦 AR"},
+  {code:"ur",label:"🇵🇰 UR"},{code:"hi",label:"🇮🇳 HI"},{code:"bn",label:"🇧🇩 BN"},
+  {code:"tr",label:"🇹🇷 TR"},{code:"ru",label:"🇷🇺 RU"},{code:"fr",label:"🇫🇷 FR"},
+  {code:"it",label:"🇮🇹 IT"},
 ];
 
 export default function NavBar(){
