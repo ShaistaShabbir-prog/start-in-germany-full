@@ -41,7 +41,7 @@ export default function Home() {
 
   const handleQuickCheck = () => {
     const destMap: Record<string,string> = {
-      "🇩🇪 Germany":"/visa","🇮🇹 Italy":"/italy","🇸🇪 Sweden":"/sweden",
+      "🌍 Germany":"/visa","🇮🇹 Italy":"/italy","🇸🇪 Sweden":"/sweden",
       "🇬🇧 United Kingdom":"/uk","🇨🇦 Canada":"/canada",
       "🇦🇺 Australia":"/australia","🇪🇸 Spain":"/spain",
     };
@@ -91,7 +91,7 @@ export default function Home() {
 
               {/* Country chips */}
               <div style={{display:"flex",gap:"8px",flexWrap:"wrap",marginBottom:"34px"}}>
-                {[{f:"🇩🇪",n:"Germany"},{f:"🇮🇹",n:"Italy"},{f:"🇸🇪",n:"Sweden"},{f:"🇬🇧",n:"UK"},{f:"🇨🇦",n:"Canada"},{f:"🇦🇺",n:"Australia"},{f:"🇪🇸",n:"Spain"}].map(c=>(
+                {[{f:"🇩🇪",n:"Germany"},{f:"🇮🇹",n:"Italy"},{f:"🇸🇪",n:"Sweden"},{f:"🇬🇧",n:"UK"},{f:"🇨🇦",n:"Canada"},{f:"🇦🇺",n:"Australia"},{f:"🇪🇸",n:"Spain","Switzerland","Netherlands","Norway","Austria","France","USA"}].map(c=>(
                   <div key={c.n} style={{display:"flex",alignItems:"center",gap:"6px",background:"rgba(255,255,255,.1)",border:"1px solid rgba(255,255,255,.2)",borderRadius:"999px",padding:"6px 14px",fontSize:"13px",fontWeight:600,color:"#fff"}}>
                     {c.f} {c.n}
                   </div>
@@ -140,7 +140,7 @@ export default function Home() {
               <div style={{marginBottom:"14px"}}>
                 <label style={{fontSize:"11px",fontWeight:700,textTransform:"uppercase",letterSpacing:"0.09em",color:"#6B7280",display:"block",marginBottom:"6px"}}>Destination</label>
                 <select value={qcDest} onChange={e=>setQcDest(e.target.value)} style={{width:"100%",padding:"12px 14px",border:`2px solid ${qcDest?"#DC2626":"#E5E7EB"}`,borderRadius:"10px",fontSize:"14px",background:"#F9FAFB",fontFamily:IN,cursor:"pointer",appearance:"none",backgroundImage:"url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%236B7280' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E\")",backgroundRepeat:"no-repeat",backgroundPosition:"right 12px center"}}>
-                  {["Select country","🇩🇪 Germany","🇮🇹 Italy","🇸🇪 Sweden","🇬🇧 United Kingdom","🇨🇦 Canada","🇦🇺 Australia","🇪🇸 Spain"].map(o=><option key={o}>{o}</option>)}
+                  {["Select country","🌍 Germany","🇮🇹 Italy","🇸🇪 Sweden","🇬🇧 United Kingdom","🇨🇦 Canada","🇦🇺 Australia","🇪🇸 Spain"].map(o=><option key={o}>{o}</option>)}
                 </select>
               </div>
               {/* I'm from */}
