@@ -45,7 +45,8 @@ Reference inspiration: [make-it-in-germany.com](https://www.make-it-in-germany.c
 | 🇪🇸 Spain | Digital Nomad, Work | ✅ | — | — |
 
 ### 🤖 AI Features
-- **Claude AI chatbot** — immigration specialist, bottom-left floating widget
+- **FAQ + website chatbot** — works without an API key and searches the current page
+- **Optional Claude enhancement** — server-side only; the API key is never exposed to the browser
 - **Quick-Check tool** — find your visa path in 30 seconds
 - **Auto-updating news** — live immigration news per country via `/api/news`
 
@@ -117,7 +118,8 @@ npm run dev                   # http://localhost:3000
 
 ### Environment Variables (Vercel)
 ```env
-ANTHROPIC_API_KEY=sk-ant-...          # Required for AI chatbot
+ANTHROPIC_API_KEY=sk-ant-...          # Optional; local FAQ mode works without it
+ANTHROPIC_MODEL=claude-sonnet-4-20250514
 NEXT_PUBLIC_ADMIN_PASSWORD=your_pass  # Admin dashboard access
 ```
 

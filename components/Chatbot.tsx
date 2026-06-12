@@ -1,37 +1,10 @@
 "use client";
 import { useState, useRef, useEffect } from "react";
+import { STARTERS } from "@/lib/chatbot-knowledge";
 
 const IN = '"Inter",ui-sans-serif,system-ui,sans-serif';
 
 interface Message { role: "user" | "assistant"; content: string; }
-
-const STARTERS = [
-  "How do I get a Germany work visa?",
-  "What is the EU Blue Card salary 2026?",
-  "Can I study in Germany for free?",
-  "How to open a bank account in Germany?",
-  "Italy Decreto Flussi 2026 — how to apply?",
-  "Canada Express Entry CRS score?",
-];
-
-const SYSTEM_PROMPT = `You are VisaVista's immigration assistant — friendly, accurate, and concise.
-
-You help students and professionals from Pakistan, India, Bangladesh, and Afghanistan move to:
-Germany, Italy, Sweden, UK, Canada, Australia, Spain.
-
-You know about:
-- Visa types: EU Blue Card, Chancenkarte/Opportunity Card, Skilled Worker visa, Study visa, Ausbildung, Family reunification
-- Country-specific rules for Germany, Italy, Sweden, UK, Canada, Australia, Spain
-- Embassy appointments, document requirements, APS certificate, blocked account
-- Banking: Wise, Commerzbank, Advanzia Mastercard
-- 2026 updated salary thresholds, processing times, quota systems
-
-Rules:
-- Be concise — max 3-4 sentences per answer unless user asks for detail
-- Always mention if rules may have changed: "verify with official source"
-- For complex cases, suggest free WhatsApp consultation: +49 159 06171828
-- Never give legal advice — always recommend checking with a qualified immigration lawyer for personal cases
-- Be warm, helpful, and South Asian-friendly in tone`;
 
 export default function Chatbot() {
   const [open, setOpen] = useState(false);
@@ -66,18 +39,18 @@ export default function Chatbot() {
     setLoading(true);
 
     try {
-      const res = await fetch("https://api.anthropic.com/v1/messages", {
+      const pageContext = document.querySelector("main")?.innerText.slice(0, 12000) || "";
+      const res = await fetch("/api/chat", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          model: "claude-sonnet-4-20250514",
-          max_tokens: 400,
-          system: SYSTEM_PROMPT,
-          messages: newMessages.map(m => ({ role: m.role, content: m.content })),
+          message: userMsg,
+          pageContext,
         }),
       });
       const data = await res.json();
-      const reply = data.content?.[0]?.text || "Sorry, I couldn't get a response. Please try again or contact us on WhatsApp.";
+      const source = data.sources?.[0];
+      const reply = `${data.answer || "Sorry, I couldn't find an answer."}${source ? `\n\nSource: ${source.label}${source.href ? ` (${source.href})` : ""}` : ""}`;
       setMessages(prev => [...prev, { role: "assistant", content: reply }]);
       if (!open) setUnread(u => u + 1);
     } catch {
