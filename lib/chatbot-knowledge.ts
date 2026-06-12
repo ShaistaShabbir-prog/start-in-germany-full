@@ -70,8 +70,8 @@ export const FAQS: Faq[] = [
   // ── SCHOLARSHIPS ────────────────────────────────────────────
   {
     question: "What are the best scholarships for Germany?",
-    answer: "Top scholarships for Germany: (1) DAAD — €934/month + travel + health insurance, all nationalities, Masters/PhD/Research, apply Oct–Nov. (2) Konrad-Adenauer-Stiftung — €1,200/month, all fields. (3) Friedrich Ebert Stiftung — €1,200/month, social sciences focus. (4) Heinrich Böll Stiftung — €1,200/month, green/environmental focus, good for international students. (5) Alexander von Humboldt — €2,670–3,170/month for researchers. (6) Erasmus+ for EU exchanges. All are on the Scholarships page.",
-    keywords: ["scholarship","daad","stipend","funding","grant","free money","fully funded","germany scholarship"],
+    answer: "Top scholarships for Germany: (1) DAAD — €934/month + travel + health insurance, all nationalities, Masters/PhD/Research, apply Oct–Nov. (2) Konrad-Adenauer-Stiftung — €1,200/month, all fields. (3) Friedrich Ebert Stiftung — €1,200/month, social sciences focus. (4) Heinrich Böll Stiftung — €1,200/month, green/environmental focus, good for international students. (5) Alexander von Humboldt — €2,670–3,170/month for researchers. (6) Erasmus+ for EU exchanges. (7) Fulbright — US government fully funded, all fields. (8) Gates Cambridge — elite, University of Cambridge, all fields. All 18 scholarships are on the Scholarships page.",
+    keywords: ["scholarship","daad","stipend","funding","grant","free money","fully funded","germany scholarship","fulbright","gates cambridge","chevening","humboldt","erasmus"],
     href: "/scholarships",
     followUps: ["How do I apply for DAAD?","What is the Humboldt Fellowship?","Are there scholarships for PhD students?"],
   },
