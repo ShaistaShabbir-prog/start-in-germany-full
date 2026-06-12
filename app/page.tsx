@@ -91,7 +91,7 @@ export default function Home() {
 
               {/* Country chips */}
               <div style={{display:"flex",gap:"8px",flexWrap:"wrap",marginBottom:"34px"}}>
-                {[{f:"🇩🇪",n:"Germany"},{f:"🇮🇹",n:"Italy"},{f:"🇸🇪",n:"Sweden"},{f:"🇬🇧",n:"UK"},{f:"🇨🇦",n:"Canada"},{f:"🇦🇺",n:"Australia"},{f:"🇪🇸",n:"Spain","Switzerland","Netherlands","Norway","Austria","France","USA"}].map(c=>(
+                {[{f:"🇩🇪",n:"Germany"},{f:"🇮🇹",n:"Italy"},{f:"🇸🇪",n:"Sweden"},{f:"🇬🇧",n:"UK"},{f:"🇨🇦",n:"Canada"},{f:"🇦🇺",n:"Australia"},{f:"🇪🇸",n:"Spain"},{f:"🇨🇭",n:"Switzerland"},{f:"🇳🇱",n:"Netherlands"},{f:"🇳🇴",n:"Norway"},{f:"🇦🇹",n:"Austria"},{f:"🇫🇷",n:"France"},{f:"🇺🇸",n:"USA"}].map(c=>(
                   <div key={c.n} style={{display:"flex",alignItems:"center",gap:"6px",background:"rgba(255,255,255,.1)",border:"1px solid rgba(255,255,255,.2)",borderRadius:"999px",padding:"6px 14px",fontSize:"13px",fontWeight:600,color:"#fff"}}>
                     {c.f} {c.n}
                   </div>

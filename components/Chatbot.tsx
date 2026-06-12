@@ -1,6 +1,6 @@
 "use client";
 import { useState, useRef, useEffect } from "react";
-import { STARTERS } from "@/lib/chatbot-knowledge";
+import { STARTERS, findLocalAnswer } from "@/lib/chatbot-knowledge";
 
 const IN = '"Inter",ui-sans-serif,system-ui,sans-serif';
 
@@ -40,7 +40,8 @@ export default function Chatbot() {
 
     try {
       const pageContext = document.querySelector("main")?.innerText.slice(0, 12000) || "";
-      const res = await fetch("/api/chat", {
+      const local = findLocalAnswer(userMsg, pageContext);
+      const res = await fetch("/chatbot-answer", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -48,13 +49,15 @@ export default function Chatbot() {
           pageContext,
         }),
       });
-      const data = await res.json();
+      const data = res.ok ? await res.json() : local;
       const source = data.sources?.[0];
-      const reply = `${data.answer || "Sorry, I couldn't find an answer."}${source ? `\n\nSource: ${source.label}${source.href ? ` (${source.href})` : ""}` : ""}`;
+      const reply = `${data.answer || local.answer}${source ? `\n\nSource: ${source.label}${source.href ? ` (${source.href})` : ""}` : ""}`;
       setMessages(prev => [...prev, { role: "assistant", content: reply }]);
       if (!open) setUnread(u => u + 1);
     } catch {
-      setMessages(prev => [...prev, { role: "assistant", content: "Connection issue. Please try again or reach us on WhatsApp: +49 159 06171828 🙏" }]);
+      const local = findLocalAnswer(userMsg, document.querySelector("main")?.innerText.slice(0, 12000) || "");
+      const source = local.sources[0];
+      setMessages(prev => [...prev, { role: "assistant", content: `${local.answer}${source ? `\n\nSource: ${source.label}${source.href ? ` (${source.href})` : ""}` : ""}` }]);
     } finally {
       setLoading(false);
     }
