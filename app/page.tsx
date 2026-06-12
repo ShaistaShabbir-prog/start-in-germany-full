@@ -77,7 +77,7 @@ export default function Home() {
               {/* Trust pill */}
               <div style={{display:"inline-flex",alignItems:"center",gap:"10px",background:"rgba(217,119,6,.15)",border:"1px solid rgba(217,119,6,.4)",padding:"8px 18px",borderRadius:"999px",marginBottom:"28px"}}>
                 <span style={{fontSize:"16px"}}>🇵🇰 🇮🇳 🇧🇩 🇦🇫</span>
-                <span style={{fontSize:"12.5px",fontWeight:700,color:"#FCD34D",letterSpacing:"0.05em"}}>Trusted by 50,000+ South Asians</span>
+                <span style={{fontSize:"12.5px",fontWeight:700,color:"#FCD34D",letterSpacing:"0.05em"}}>Trusted by students &amp; professionals worldwide</span>
               </div>
 
               <h1 className="h1" style={{color:"#fff",marginBottom:"22px"}}>
