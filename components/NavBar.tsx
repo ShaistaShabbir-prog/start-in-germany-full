@@ -102,7 +102,8 @@ export default function NavBar(){
             {[{href:"/work",l:"Work"},{href:"/study",l:"Study"},{href:"/finances",l:"💳 Banking"},{href:"/blog",l:"Blog"}].map(n=>(
               <Link key={n.href} href={n.href} style={nl(n.href)}>{n.l}</Link>
             ))}
-          </nav>
+          <a href="/scholarships" style={{marginLeft:"8px",padding:"6px 12px",background:"rgba(255,204,2,.12)",border:"1px solid rgba(255,204,2,.3)",borderRadius:"8px",color:"#fbbf24",fontWeight:700,fontSize:".78rem",textDecoration:"none"}}>🏆 Scholarships</a>
+      </nav>
 
           {/* Right buttons */}
           <div style={{display:"flex",alignItems:"center",gap:"8px",flexShrink:0}}>
