@@ -1,29 +1,37 @@
 import { MetadataRoute } from "next";
 
-export default function sitemap(): MetadataRoute.Sitemap {
-  const base = "https://start-in-germany-full.vercel.app"; // change later if you add a custom domain
+const BASE = "https://start-in-germany-full.vercel.app";
 
-  return [
-    { url: base, lastModified: new Date() },
-    { url: `${base}/work`, lastModified: new Date() },
-    { url: `${base}/study`, lastModified: new Date() },
-    { url: `${base}/visa`, lastModified: new Date() },
-    { url: `${base}/living`, lastModified: new Date() },
-    { url: `${base}/finances`, lastModified: new Date() },
-    { url: `${base}/service`, lastModified: new Date() },
-    { url: `${base}/about`, lastModified: new Date() },
-    { url: `${base}/imprint`, lastModified: new Date() },
-    { url: `${base}/privacy`, lastModified: new Date() },
-    { url: `${base}/affiliate-disclosure`, lastModified: new Date() },
-    { url: `${base}/italy`, lastModified: new Date() },
-    { url: `${base}/sweden`, lastModified: new Date() },
-    { url: `${base}/uk`, lastModified: new Date() },
-    { url: `${base}/canada`, lastModified: new Date() },
-    { url: `${base}/australia`, lastModified: new Date() },
-    { url: `${base}/spain`, lastModified: new Date() },
-    { url: `${base}/blog`, lastModified: new Date() },
-    { url: `${base}/contact`, lastModified: new Date() },
-    { url: `${base}/appointment`, lastModified: new Date() },
-    { url: `${base}/consultancy`, lastModified: new Date() },
-  ];
+export default function sitemap(): MetadataRoute.Sitemap {
+  const pages = [
+    { url: "/",                priority: 1.0,  freq: "weekly"  },
+    { url: "/visa",            priority: 0.95, freq: "monthly" },
+    { url: "/scholarships",    priority: 0.95, freq: "monthly" },
+    { url: "/work",            priority: 0.9,  freq: "monthly" },
+    { url: "/study",           priority: 0.9,  freq: "monthly" },
+    { url: "/finances",        priority: 0.85, freq: "monthly" },
+    { url: "/consultancy",     priority: 0.85, freq: "monthly" },
+    { url: "/appointment",     priority: 0.8,  freq: "monthly" },
+    { url: "/germany",         priority: 0.85, freq: "monthly" },
+    { url: "/uk",              priority: 0.8,  freq: "monthly" },
+    { url: "/canada",          priority: 0.8,  freq: "monthly" },
+    { url: "/australia",       priority: 0.8,  freq: "monthly" },
+    { url: "/italy",           priority: 0.75, freq: "monthly" },
+    { url: "/sweden",          priority: 0.75, freq: "monthly" },
+    { url: "/spain",           priority: 0.75, freq: "monthly" },
+    { url: "/switzerland",     priority: 0.75, freq: "monthly" },
+    { url: "/netherlands",     priority: 0.75, freq: "monthly" },
+    { url: "/norway",          priority: 0.7,  freq: "monthly" },
+    { url: "/austria",         priority: 0.7,  freq: "monthly" },
+    { url: "/france",          priority: 0.7,  freq: "monthly" },
+    { url: "/usa",             priority: 0.75, freq: "monthly" },
+    { url: "/blog",            priority: 0.7,  freq: "weekly"  },
+  ] as const;
+
+  return pages.map(({ url, priority, freq }) => ({
+    url: `${BASE}${url}`,
+    lastModified: new Date("2026-06-13"),
+    changeFrequency: freq as MetadataRoute.Sitemap[0]["changeFrequency"],
+    priority,
+  }));
 }
