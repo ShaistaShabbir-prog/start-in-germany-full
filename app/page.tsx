@@ -83,7 +83,7 @@ export default function Home() {
             <div>
               {/* Trust pill */}
               <div style={{display:"inline-flex",alignItems:"center",gap:"10px",background:"rgba(217,119,6,.15)",border:"1px solid rgba(217,119,6,.4)",padding:"8px 18px",borderRadius:"999px",marginBottom:"28px"}}>
-                <span style={{fontSize:"16px"}}>🇵🇰 🇮🇳 🇧🇩 🇦🇫</span>
+                <span style={{fontSize:"16px"}}>🌍 🇩🇪 🇬🇧 🇨🇦 🇦🇺 🇸🇪 🇮🇹</span>
                 <span style={{fontSize:"12.5px",fontWeight:700,color:"#FCD34D",letterSpacing:"0.05em"}}>Trusted by students &amp; professionals worldwide</span>
               </div>
 
@@ -93,7 +93,7 @@ export default function Home() {
               </h1>
 
               <p style={{fontSize:"18px",color:"rgba(255,255,255,.72)",lineHeight:1.75,maxWidth:"520px",marginBottom:"14px"}}>
-                Complete visa guidance, job search, banking & appointment booking for students and professionals worldwide Pakistan, India, Bangladesh & Afghanistan moving to Germany, Italy, Sweden, UK, Canada, Australia or Spain.
+                Complete visa guidance, job search, banking & appointment booking for international students and professionals moving to Germany, Italy, Sweden, UK, Canada, Australia, Spain and more.
               </p>
 
               {/* Country chips */}
@@ -480,7 +480,7 @@ export default function Home() {
             </div>
             <div style={{display:"flex",flexDirection:"column",gap:"14px"}}>
               {[
-                {e:"🌐",n:"Wise",d:"Real exchange rate — send money to Pakistan/India/Bangladesh for free",badge:"Best for transfers",bc:"#ECFDF5",bt:"#065F46",href:"https://wise.com/invite/in/shaistak5"},
+                {e:"🌐",n:"Wise",d:"Real exchange rate — send money to 80+ countries for less",badge:"Best for transfers",bc:"#ECFDF5",bt:"#065F46",href:"https://wise.com/invite/in/shaistak5"},
                 {e:"🏦",n:"Commerzbank",d:"Traditional German IBAN · 50€ starting bonus · Accepted everywhere",badge:"50€ bonus",bc:"#FFFBEB",bt:"#92400E",href:"https://www.commerzbank.de/girokonto-antrag?path=/pk/de/Abschluss/GD51_Girokonto_DD_MCD_TGK_50Start_KwK&x-werbecode=PNGHRA"},
                 {e:"💳",n:"Advanzia Mastercard Gold",d:"No annual fee · No foreign transaction fees · Free travel insurance",badge:"0€ annual fee",bc:"#F5F3FF",bt:"#5B21B6",href:"https://refer.gebuhrenfrei.com/shaistas-45"},
               ].map(b=>(
@@ -507,11 +507,11 @@ export default function Home() {
               <h2 className="h2" style={{marginBottom:"6px"}}>Most-read articles</h2>
               <div className="divider" style={{marginBottom:"24px"}} />
               {[
-                {n:"01",tag:"Visa 🇩🇪 2026",t:"Germany Opportunity Card: how to apply from Pakistan & India"},
+                {n:"01",tag:"Visa 🇩🇪 2026",t:"Germany Opportunity Card: complete guide for international applicants 2026"},
                 {n:"02",tag:"Banking",t:"Best bank accounts for Germany newcomers in 2026 (compared)"},
                 {n:"03",tag:"Study 🇩🇪",t:"Study in Germany for free: complete guide for international students"},
-                {n:"04",tag:"Appointment",t:"How to get a German embassy appointment from Pakistan (2026)"},
-                {n:"05",tag:"IT Career",t:"IT professionals from India in Germany: salary, visa, relocation"},
+                {n:"04",tag:"Appointment",t:"How to get a German embassy appointment — all countries (2026)"},
+                {n:"05",tag:"IT Career",t:"IT professionals in Germany: salary guide, visa, and relocation tips 2026"},
                 {n:"06",tag:"Ausbildung",t:"Vocational training (Ausbildung) — the complete guide for foreigners"},
                 {n:"07",tag:"Blue Card",t:"EU Blue Card 2026: new €50,700 salary threshold explained"},
               ].map(a=>(
@@ -543,7 +543,7 @@ export default function Home() {
                   <Link href="/about" style={{display:"inline-flex",alignItems:"center",gap:"6px",background:"rgba(255,255,255,.15)",color:"#fff",textDecoration:"none",fontSize:"13px",fontWeight:600,padding:"11px 22px",borderRadius:"12px",border:"1px solid rgba(255,255,255,.25)"}}>Meet our team</Link>
                 </div>
                 <div style={{marginTop:"18px",fontSize:"12px",color:"rgba(255,255,255,.45)",display:"flex",alignItems:"center",gap:"8px"}}>
-                  <span>🇵🇰 Urdu</span><span>·</span><span>🇮🇳 Hindi</span><span>·</span><span>🇧🇩 Bengali</span><span>·</span><span>🌍 English</span>
+                  <span>🌍 Urdu</span><span>·</span><span>🌍 Hindi</span><span>·</span><span>🌍 Bengali</span><span>·</span><span>🌍 English</span>
                 </div>
               </div>
             </div>
