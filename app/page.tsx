@@ -258,9 +258,7 @@ export default function Home() {
           <span className="eyebrow">Choose your destination</span>
           <h2 className="h2">Where do you want to build your future?</h2>
           <div className="divider" style={{margin:"14px auto"}} />
-          <p className="lead">Complete, up-to-date guidance for Europe's most sought-after destinations for South Asian immigrants.</p>
-        </div>
-        <div style={{display:"grid",gridTemplateColumns:"repeat(4,1fr)",gap:"22px"}}>
+          <p className="lead">Complete, up-to-date guidance for Europe's most popular immigration destinations — trusted by students and professionals from every country. style={{display:"grid",gridTemplateColumns:"repeat(4,1fr)",gap:"22px"}}>
           {[
             {flag:"🇩🇪",name:"Germany",desc:"EU Blue Card · Opportunity Card · Skilled Worker · Ausbildung · Student",img:IMG.germany,color:"#0B1D3A",tag:"✓ Live 2026",tagColor:"#ECFDF5",tagText:"#065F46",href:"/visa"},
             {flag:"🇮🇹",name:"Italy",desc:"Decreto Flussi 452K · EU Blue Card · Student · Family",img:IMG.italy,color:"#1E3A5F",tag:"✓ Live 2026",tagColor:"#ECFDF5",tagText:"#065F46",href:"/italy"},
@@ -511,7 +509,7 @@ export default function Home() {
               {[
                 {n:"01",tag:"Visa 🇩🇪 2026",t:"Germany Opportunity Card: how to apply from Pakistan & India"},
                 {n:"02",tag:"Banking",t:"Best bank accounts for Germany newcomers in 2026 (compared)"},
-                {n:"03",tag:"Study 🇩🇪",t:"Study in Germany for free: complete guide for South Asians"},
+                {n:"03",tag:"Study 🇩🇪",t:"Study in Germany for free: complete guide for international students"},
                 {n:"04",tag:"Appointment",t:"How to get a German embassy appointment from Pakistan (2026)"},
                 {n:"05",tag:"IT Career",t:"IT professionals from India in Germany: salary, visa, relocation"},
                 {n:"06",tag:"Ausbildung",t:"Vocational training (Ausbildung) — the complete guide for foreigners"},
@@ -538,7 +536,7 @@ export default function Home() {
                   1-on-1 expert consultation in Urdu, Hindi or English
                 </div>
                 <div style={{fontSize:"14px",color:"rgba(255,255,255,.62)",lineHeight:1.7,marginBottom:"22px"}}>
-                  Book a personal consultation with our certified immigration experts. We've helped 50,000+ South Asians successfully move to Europe.
+                  Book a personal consultation with our certified immigration experts. We've helped 50,000+ professionals worldwidens successfully move to Europe.
                 </div>
                 <div style={{display:"flex",gap:"10px",flexWrap:"wrap"}}>
                   <Link href="/consultancy" style={{display:"inline-flex",alignItems:"center",gap:"6px",background:"#DC2626",color:"#fff",textDecoration:"none",fontSize:"13px",fontWeight:800,padding:"11px 22px",borderRadius:"12px"}}>Book now — It's free →</Link>
