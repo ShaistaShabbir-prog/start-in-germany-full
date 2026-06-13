@@ -7,18 +7,83 @@ import Script from "next/script";
 import Chatbot from "@/components/Chatbot";
 
 export const metadata: Metadata = {
-  title: { default: "VisaVista — Move to Europe from Pakistan, India & Bangladesh", template: "%s | VisaVista" },
-  description: "Complete visa guidance, job search, banking & appointment help for students and professionals from Pakistan, India, Bangladesh & Afghanistan moving to Germany, Italy, Sweden and the UK.",
-  keywords: ["Germany visa Pakistan 2026","Europe immigration India","Germany student visa Bangladesh","EU Blue Card","Opportunity Card Germany","Italy visa South Asia","Sweden immigration","UK visa South Asia"],
-  openGraph: {
-    title: "VisaVista — Move to Europe",
-    description: "Trusted visa & immigration guidance for students and professionals from Pakistan, India, Bangladesh & Afghanistan.",
-    type: "website",
-    url: "https://visavista.eu",
+  metadataBase: new URL("https://start-in-germany-full.vercel.app"),
+
+  title: {
+    default: "VisaVista — Global Immigration Platform · Germany, UK, Canada, Australia & More",
+    template: "%s | VisaVista Immigration",
   },
-  twitter: { card: "summary_large_image", title: "VisaVista", description: "Your European immigration guide" },
-  icons: { icon: "/favicon.ico" },
-  manifest: "/site.webmanifest",
+
+  description: "VisaVista helps students and professionals worldwide immigrate to Germany, UK, Canada, Australia, Sweden, Italy and more. Blue Card, Chancenkarte, skilled worker visa, scholarships, banking and step-by-step guides.",
+
+  keywords: [
+    "Germany immigration", "EU Blue Card", "Chancenkarte", "work in Germany",
+    "Germany visa 2026", "move to Germany", "Germany Blue Card salary",
+    "UK Skilled Worker visa", "Canada Express Entry", "Australia skilled visa",
+    "immigration guide", "VisaVista", "international scholarships",
+    "DAAD scholarship", "Chevening scholarship", "Fulbright scholarship",
+    "Germany bank account", "Commerzbank Germany", "Wise transfer Germany",
+    "Pakistan Germany visa", "India Germany", "Bangladesh Germany",
+    "international students Europe", "study in Germany free",
+  ],
+
+  authors: [{ name: "VisaVista Immigration" }],
+
+  creator: "VisaVista",
+
+  publisher: "VisaVista",
+
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-snippet": -1,
+      "max-image-preview": "large",
+      "max-video-preview": -1,
+    },
+  },
+
+  alternates: {
+    canonical: "https://start-in-germany-full.vercel.app",
+    languages: {
+      "en": "https://start-in-germany-full.vercel.app",
+      "de": "https://start-in-germany-full.vercel.app",
+      "ar": "https://start-in-germany-full.vercel.app",
+      "ur": "https://start-in-germany-full.vercel.app",
+    },
+  },
+
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    url: "https://start-in-germany-full.vercel.app",
+    siteName: "VisaVista",
+    title: "VisaVista — Global Immigration Platform",
+    description: "Trusted immigration guides for Germany, UK, Canada, Australia and more. Blue Card, scholarships, banking, step-by-step visa help.",
+    images: [
+      {
+        url: "https://images.unsplash.com/photo-1467269204594-9661b134dd2b?w=1200&q=90&auto=format&fit=crop",
+        width: 1200,
+        height: 630,
+        alt: "VisaVista — Global Immigration Platform",
+      },
+    ],
+  },
+
+  twitter: {
+    card: "summary_large_image",
+    title: "VisaVista — Global Immigration Platform",
+    description: "Immigration guides for Germany, UK, Canada, Australia and more. Blue Card, scholarships, banking guides.",
+    images: ["https://images.unsplash.com/photo-1467269204594-9661b134dd2b?w=1200&q=90&auto=format&fit=crop"],
+  },
+
+  verification: {
+    google: "ADD_YOUR_GOOGLE_SEARCH_CONSOLE_CODE_HERE",
+  },
+
+  category: "immigration, travel, education",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
