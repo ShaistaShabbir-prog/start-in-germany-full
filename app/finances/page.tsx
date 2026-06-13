@@ -1,4 +1,5 @@
 "use client";
+// Page-level SEO handled in layout.tsx
 import RecommendationWidget from "@/components/RecommendationWidget";
 import Link from "next/link";
 
