@@ -1,4 +1,5 @@
 "use client";
+import RecommendationWidget from "@/components/RecommendationWidget";
 import Link from "next/link";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
