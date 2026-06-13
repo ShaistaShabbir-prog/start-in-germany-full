@@ -1,4 +1,5 @@
 "use client";
+import RecommendationWidget from "@/components/RecommendationWidget";
 import React from "react";
 import Link from "next/link";
 
@@ -57,6 +58,11 @@ function StatBar({ stats }: { stats: { n: string; l: string }[] }) {
             </div>
           ))}
         </div>
+      </div>
+      {/* Sidebar recommendation */}
+      <div style={{maxWidth:"480px",margin:"24px auto 0",padding:"0 16px"}}>
+        <div style={{fontSize:".72rem",color:"rgba(255,255,255,.3)",textAlign:"center",marginBottom:"10px",textTransform:"uppercase",letterSpacing:".08em"}}>Trusted by our team</div>
+        <RecommendationWidget variant="sidebar" />
       </div>
     </div>
   );
