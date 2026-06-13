@@ -1,4 +1,5 @@
 "use client";
+import RecommendationWidget from "@/components/RecommendationWidget";
 import Link from "next/link";
 
 const PD = '"Playfair Display",Georgia,serif';
