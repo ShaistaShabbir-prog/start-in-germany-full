@@ -1,4 +1,5 @@
 "use client";
+import RecommendationWidget from "@/components/RecommendationWidget";
 import { useState, useEffect } from "react";
 
 const PD = "'Playfair Display',Georgia,serif";
@@ -378,6 +379,14 @@ export default function ScholarshipsPage() {
             <div style={{fontSize:"14px"}}>Try a different level or search term.</div>
           </div>
         )}
+
+        {/* ── OUR RECOMMENDATIONS ── */}
+        <div style={{marginBottom:"32px"}}>
+          <div style={{fontSize:".72rem",color:"#9CA3AF",textTransform:"uppercase" as const,letterSpacing:".08em",marginBottom:"12px"}}>
+            🤝 While you're planning your move — trusted financial tools
+          </div>
+          <RecommendationWidget variant="inline" />
+        </div>
 
         {/* ── TIPS ── */}
         <div style={{background:"#0B1D3A",borderRadius:"24px",padding:"40px 36px",marginBottom:"60px",position:"relative",overflow:"hidden"}}>
