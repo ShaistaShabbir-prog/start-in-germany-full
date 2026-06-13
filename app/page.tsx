@@ -205,7 +205,7 @@ export default function Home() {
               <span style={{fontSize:"24px"}}>📬</span>
               <div>
                 <div style={{fontFamily:PD,fontSize:"16px",fontWeight:800,color:"#fff",lineHeight:1.2}}>Free visa updates & immigration guides</div>
-                <div style={{fontSize:"13px",color:"rgba(255,255,255,.5)",marginTop:"2px"}}>Join 12,000+ South Asians. Weekly tips. Zero spam.</div>
+                <div style={{fontSize:"13px",color:"rgba(255,255,255,.5)",marginTop:"2px"}}>Join 50,000+ internationals. Weekly tips. Zero spam.</div>
               </div>
             </div>
             <div>
@@ -430,7 +430,7 @@ export default function Home() {
           <div style={{display:"flex",justifyContent:"space-between",alignItems:"flex-end",flexWrap:"wrap",gap:"16px",marginBottom:"36px"}}>
             <div>
               <span className="eyebrow">In demand</span>
-              <h2 className="h2">Top jobs for South Asian professionals in Germany</h2>
+              <h2 className="h2">Top jobs for professionals worldwide in Germany</h2>
             </div>
             <Link href="/work" className="btn btn-white">Browse all vacancies →</Link>
           </div>
