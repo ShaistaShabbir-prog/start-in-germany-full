@@ -26,6 +26,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: "/france",          priority: 0.7,  freq: "monthly" },
     { url: "/usa",             priority: 0.75, freq: "monthly" },
     { url: "/blog",            priority: 0.7,  freq: "weekly"  },
+    { url: "/privacy-policy",  priority: 0.3,  freq: "yearly"  },
   ] as const;
 
   return pages.map(({ url, priority, freq }) => ({
