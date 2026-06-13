@@ -154,7 +154,7 @@ export default function Home() {
               <div style={{marginBottom:"14px"}}>
                 <label style={{fontSize:"11px",fontWeight:700,textTransform:"uppercase",letterSpacing:"0.09em",color:"#6B7280",display:"block",marginBottom:"6px"}}>I&apos;m from…</label>
                 <select style={{width:"100%",padding:"12px 14px",border:"2px solid #E5E7EB",borderRadius:"10px",fontSize:"14px",background:"#F9FAFB",fontFamily:IN,cursor:"pointer",appearance:"none",backgroundImage:"url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%236B7280' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E\")",backgroundRepeat:"no-repeat",backgroundPosition:"right 12px center"}}>
-                  {["Select country","🇵🇰 Pakistan","🇮🇳 India","🇧🇩 Bangladesh","🇦🇫 Afghanistan","🇩🇪 Germany","🇬🇧 UK","🇺🇦 Ukraine","🇸🇾 Syria","🇪🇬 Egypt","🇳🇬 Nigeria","🇰🇪 Kenya","🇧🇷 Brazil","🇵🇭 Philippines","🌍 Other country"].map(o=><option key={o}>{o}</option>)}
+                  {["🌍 Select your country","🇵🇰 Pakistan","🇮🇳 India","🇧🇩 Bangladesh","🇦🇫 Afghanistan","🇺🇦 Ukraine","🇸🇾 Syria","🇮🇷 Iran","🇪🇬 Egypt","🇳🇬 Nigeria","🇰🇪 Kenya","🇬🇭 Ghana","🇪🇹 Ethiopia","🇹🇷 Turkey","🇮🇩 Indonesia","🇵🇭 Philippines","🇻🇳 Vietnam","🇧🇷 Brazil","🇲🇽 Mexico","🇨🇴 Colombia","🇩🇿 Algeria","🇲🇦 Morocco","🇷🇺 Russia","🇺🇿 Uzbekistan","🇷🇴 Romania","🇷🇸 Serbia","🌍 Other country"].map(o=><option key={o}>{o}</option>)}
                 </select>
               </div>
 
