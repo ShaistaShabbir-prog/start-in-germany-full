@@ -93,7 +93,7 @@ export default function Home() {
               </h1>
 
               <p style={{fontSize:"18px",color:"rgba(255,255,255,.72)",lineHeight:1.75,maxWidth:"520px",marginBottom:"14px"}}>
-                Complete visa guidance, job search, banking & appointment booking for students and professionals from Pakistan, India, Bangladesh & Afghanistan moving to Germany, Italy, Sweden, UK, Canada, Australia or Spain.
+                Complete visa guidance, job search, banking & appointment booking for students and professionals worldwide Pakistan, India, Bangladesh & Afghanistan moving to Germany, Italy, Sweden, UK, Canada, Australia or Spain.
               </p>
 
               {/* Country chips */}
@@ -154,7 +154,7 @@ export default function Home() {
               <div style={{marginBottom:"14px"}}>
                 <label style={{fontSize:"11px",fontWeight:700,textTransform:"uppercase",letterSpacing:"0.09em",color:"#6B7280",display:"block",marginBottom:"6px"}}>I&apos;m from…</label>
                 <select style={{width:"100%",padding:"12px 14px",border:"2px solid #E5E7EB",borderRadius:"10px",fontSize:"14px",background:"#F9FAFB",fontFamily:IN,cursor:"pointer",appearance:"none",backgroundImage:"url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%236B7280' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E\")",backgroundRepeat:"no-repeat",backgroundPosition:"right 12px center"}}>
-                  {["Select country","🇵🇰 Pakistan","🇮🇳 India","🇧🇩 Bangladesh","🇦🇫 Afghanistan","🌍 Other country"].map(o=><option key={o}>{o}</option>)}
+                  {["Select country","🇵🇰 Pakistan","🇮🇳 India","🇧🇩 Bangladesh","🇦🇫 Afghanistan","🇩🇪 Germany","🇬🇧 UK","🇺🇦 Ukraine","🇸🇾 Syria","🇪🇬 Egypt","🇳🇬 Nigeria","🇰🇪 Kenya","🇧🇷 Brazil","🇵🇭 Philippines","🌍 Other country"].map(o=><option key={o}>{o}</option>)}
                 </select>
               </div>
 
@@ -315,7 +315,7 @@ export default function Home() {
         </div>
       </div>
 
-      {/* ══════════════ FOR SOUTH ASIANS ══════════════ */}
+      {/* ══════════════ VISA ROUTES ══════════════ */}
       <section style={{position:"relative",overflow:"hidden",padding:"5rem 0"}}>
         <div style={{position:"absolute",inset:0,backgroundImage:`url(${IMG.students})`,backgroundSize:"cover",backgroundPosition:"center 40%",filter:"brightness(0.15)"}} />
         <div style={{position:"absolute",inset:0,background:"linear-gradient(135deg,rgba(11,29,58,0.98) 0%,rgba(11,29,58,0.88) 55%,rgba(220,38,38,0.25) 100%)"}} />
@@ -324,7 +324,7 @@ export default function Home() {
           <div style={{display:"grid",gridTemplateColumns:"1fr 1fr",gap:"72px",alignItems:"center"}}>
             <div>
               <span className="eyebrow" style={{color:"#FCD34D"}}>Built for you</span>
-              <h2 className="h2" style={{color:"#fff",marginBottom:"16px"}}>Made specifically for South Asian students &amp; professionals</h2>
+              <h2 className="h2" style={{color:"#fff",marginBottom:"16px"}}>Built for international students &amp; professionals worldwide</h2>
               <div style={{width:"60px",height:"4px",background:"#DC2626",borderRadius:"2px",marginBottom:"20px"}} />
               <p style={{color:"rgba(255,255,255,.65)",lineHeight:1.8,fontSize:"16px",marginBottom:"28px"}}>
                 We understand your unique challenges — complex embassy paperwork, long appointment wait times, degree recognition (anabin/ZAB), blocked account setup, language barriers and finding the right visa path. VisaVista was built to solve exactly these problems, in a language you understand.
@@ -351,7 +351,8 @@ export default function Home() {
               <h3 style={{fontFamily:PD,fontWeight:700,fontSize:"20px",color:"#fff",marginBottom:"4px"}}>Real success stories</h3>
               {[
                 {name:"Ayesha Khalid",origin:"🇵🇰 Lahore, Pakistan",role:"Software Engineer · Berlin",text:"VisaVista guided me through every step of my EU Blue Card application. I had my appointment in 3 weeks and visa in 8 weeks. Highly recommend!",av:"AK",c:"#DC2626",stars:5},
-                {name:"Rahul Mehta",origin:"🇮🇳 Mumbai, India",role:"Mechanical Engineer · Munich",text:"The appointment guide was a lifesaver. I finally got my Ausländerbehörde slot after following their step-by-step guide. Got my settlement permit now!",av:"RM",c:"#0D9488",stars:5},
+                {name:"Olena Marchenko",origin:"🇺🇦 Kyiv, Ukraine",role:"IT Specialist · Dortmund",text:"Navigate Germany helped me understand tenant rights and find a Ukrainian-speaking doctor — I felt safe from day one."},
+      {name:"Rahul Mehta",origin:"🇮🇳 Mumbai, India",role:"Mechanical Engineer · Munich",text:"The appointment guide was a lifesaver. I finally got my Ausländerbehörde slot after following their step-by-step guide. Got my settlement permit now!",av:"RM",c:"#0D9488",stars:5},
                 {name:"Fatima Noor",origin:"🇧🇩 Dhaka, Bangladesh",role:"Nursing Trainee · Hamburg",text:"From university application to opening my Commerzbank account — VisaVista covered everything. The Ausbildung guide is amazing.",av:"FN",c:"#1D4ED8",stars:5},
               ].map(t=>(
                 <div key={t.name} className="tcard">
@@ -378,9 +379,9 @@ export default function Home() {
         <div style={{display:"grid",gridTemplateColumns:"1fr 1fr",gap:"64px",alignItems:"center"}}>
           <div>
             <span className="eyebrow">🇩🇪 Focus: Germany</span>
-            <h2 className="h2" style={{marginBottom:"16px"}}>Germany's most popular visa routes for South Asians</h2>
+            <h2 className="h2" style={{marginBottom:"16px"}}>Germany's most popular visa routes</h2>
             <div className="divider" />
-            <p className="lead" style={{marginBottom:"28px"}}>Germany is the #1 destination for Pakistani, Indian and Bangladeshi professionals in Europe. Here are your main pathways:</p>
+            <p className="lead" style={{marginBottom:"28px"}}>Germany is the #1 destination for international skilled professionals in Europe. Here are your main pathways:</p>
 
             {[
               {icon:"💙",title:"EU Blue Card",salary:"€50,700/yr (€45,934 shortage roles)",desc:"For graduates with a job offer. Fast-track to PR after 21 months with B1 German.",badge:"Most popular",bc:"badge-blue"},
