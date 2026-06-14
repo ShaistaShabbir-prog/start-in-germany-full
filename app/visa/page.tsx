@@ -1,4 +1,6 @@
 "use client";
+import GlobalDisclaimer from "@/components/GlobalDisclaimer";
+import OfficialSourceBadge from "@/components/OfficialSourceBadge";
 // Page-level SEO handled in layout.tsx
 import RecommendationWidget from "@/components/RecommendationWidget";
 import React from "react";
