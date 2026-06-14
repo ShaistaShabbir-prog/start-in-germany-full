@@ -33,7 +33,7 @@ export default function Footer(){
           {/* Destinations */}
           <div>
             <div style={{fontSize:"11px",fontWeight:700,textTransform:"uppercase",letterSpacing:"0.12em",color:"rgba(255,255,255,.3)",marginBottom:"14px"}}>Destinations</div>
-            {[{href:"/visa",l:"🇩🇪 Germany"},{href:"/italy",l:"🇮🇹 Italy"},{href:"/sweden",l:"🇸🇪 Sweden"},{href:"/uk",l:"🇬🇧 United Kingdom"},{href:"/canada",l:"🇨🇦 Canada"},{href:"/australia",l:"🇦🇺 Australia"},{href:"/spain",l:"🇪🇸 Spain"}].map(l=>(
+            {[{href:"/visa",l:"🇩🇪 Germany"},{href:"/italy",l:"🇮🇹 Italy"},{href:"/sweden",l:"🇸🇪 Sweden"},{href:"/uk",l:"🇬🇧 United Kingdom"},{href:"/canada",l:"🇨🇦 Canada"},{href:"/australia",l:"🇦🇺 Australia"},{href:"/spain",l:"🇪🇸 Spain"},{href:"/malaysia",l:"🇲🇾 Malaysia"},{href:"/china",l:"🇨🇳 China"}].map(l=>(
               <Link key={l.href} href={l.href} style={{display:"block",fontSize:"13.5px",color:"rgba(255,255,255,.5)",textDecoration:"none",marginBottom:"8px"}}>{l.l}</Link>
             ))}
           </div>

@@ -24,6 +24,8 @@ const IMG = {
   netherlands:"https://images.unsplash.com/photo-1512470876302-972faa2aa9a4?w=900&q=80&auto=format&fit=crop", // Amsterdam canals verified
   usa:       "https://images.unsplash.com/photo-1485738422979-f5c462d49f74?w=900&q=80&auto=format&fit=crop",  // New York verified
   france:    "https://images.unsplash.com/photo-1499856871958-5b9357976b82?w=900&q=80&auto=format&fit=crop",  // Paris Eiffel verified
+  malaysia:  "https://images.unsplash.com/photo-1596422846543-75c6fc197f07?w=900&q=80&auto=format&fit=crop",
+  china:     "https://images.unsplash.com/photo-1508804185872-d7badad00f7d?w=900&q=80&auto=format&fit=crop",
 };
 
 export default function Home() {
@@ -51,6 +53,7 @@ export default function Home() {
       "🌍 Germany":"/visa","🇮🇹 Italy":"/italy","🇸🇪 Sweden":"/sweden",
       "🇬🇧 United Kingdom":"/uk","🇨🇦 Canada":"/canada",
       "🇦🇺 Australia":"/australia","🇪🇸 Spain":"/spain",
+      "🇲🇾 Malaysia":"/malaysia","🇨🇳 China":"/china",
     };
     const wantMap: Record<string,string> = {
       "Work in Europe":"/work","Study in Europe":"/study",
@@ -147,7 +150,7 @@ export default function Home() {
               <div style={{marginBottom:"14px"}}>
                 <label style={{fontSize:"11px",fontWeight:700,textTransform:"uppercase",letterSpacing:"0.09em",color:"#6B7280",display:"block",marginBottom:"6px"}}>Destination</label>
                 <select value={qcDest} onChange={e=>setQcDest(e.target.value)} style={{width:"100%",padding:"12px 14px",border:`2px solid ${qcDest?"#DC2626":"#E5E7EB"}`,borderRadius:"10px",fontSize:"14px",background:"#F9FAFB",fontFamily:IN,cursor:"pointer",appearance:"none",backgroundImage:"url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%236B7280' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E\")",backgroundRepeat:"no-repeat",backgroundPosition:"right 12px center"}}>
-                  {["Select country","🌍 Germany","🇮🇹 Italy","🇸🇪 Sweden","🇬🇧 United Kingdom","🇨🇦 Canada","🇦🇺 Australia","🇪🇸 Spain"].map(o=><option key={o}>{o}</option>)}
+                  {["Select country","🌍 Germany","🇮🇹 Italy","🇸🇪 Sweden","🇬🇧 United Kingdom","🇨🇦 Canada","🇦🇺 Australia","🇪🇸 Spain","🇲🇾 Malaysia","🇨🇳 China"].map(o=><option key={o}>{o}</option>)}
                 </select>
               </div>
               {/* I'm from */}
@@ -240,7 +243,7 @@ export default function Home() {
             {[
               {n:"50K+",  l:"Families helped"},
               {n:"98%",   l:"Visa success rate"},
-              {n:"7",     l:"Countries covered"},
+              {n:"9",     l:"Countries covered"},
               {n:"2026",  l:"Data updated"},
             ].map((s,i)=>(
               <div key={s.l} className="stat-box" style={{borderRight:i<3?"1px solid rgba(255,255,255,.22)":"none"}}>
@@ -258,12 +261,16 @@ export default function Home() {
           <span className="eyebrow">Choose your destination</span>
           <h2 className="h2">Where do you want to build your future?</h2>
           <div className="divider" style={{margin:"14px auto"}} />
-          <p className="lead">Complete, up-to-date guidance for Europe's most popular immigration destinations — trusted by students and professionals from every country. style={{display:"grid",gridTemplateColumns:"repeat(4,1fr)",gap:"22px"}}>
+          <p className="lead">Official-link based guidance for popular immigration destinations in Europe and Asia.</p>
+        </div>
+        <div style={{display:"grid",gridTemplateColumns:"repeat(auto-fit,minmax(230px,1fr))",gap:"22px"}}>
           {[
             {flag:"🇩🇪",name:"Germany",desc:"EU Blue Card · Opportunity Card · Skilled Worker · Ausbildung · Student",img:IMG.germany,color:"#0B1D3A",tag:"✓ Live 2026",tagColor:"#ECFDF5",tagText:"#065F46",href:"/visa"},
             {flag:"🇮🇹",name:"Italy",desc:"Decreto Flussi 452K · EU Blue Card · Student · Family",img:IMG.italy,color:"#1E3A5F",tag:"✓ Live 2026",tagColor:"#ECFDF5",tagText:"#065F46",href:"/italy"},
             {flag:"🇸🇪",name:"Sweden",desc:"Work Permit · EU Blue Card · Student · Self-Employment",img:IMG.sweden,color:"#0B1D3A",tag:"✓ Live 2026",tagColor:"#ECFDF5",tagText:"#065F46",href:"/sweden"},
             {flag:"🇬🇧",name:"United Kingdom",desc:"Skilled Worker · Student · Health & Care · Graduate Route",img:IMG.uk,color:"#1E3A5F",tag:"✓ Live 2026",tagColor:"#ECFDF5",tagText:"#065F46",href:"/uk"},
+            {flag:"🇲🇾",name:"Malaysia",desc:"Employment Pass · Student Pass · Professional Visit · Family",img:IMG.malaysia,color:"#991B1B",tag:"✓ Official links",tagColor:"#ECFDF5",tagText:"#065F46",href:"/malaysia"},
+            {flag:"🇨🇳",name:"China",desc:"Z Work Visa · X1/X2 Student · Business · Family",img:IMG.china,color:"#991B1B",tag:"✓ Official links",tagColor:"#ECFDF5",tagText:"#065F46",href:"/china"},
           ].map(c=>(
             <Link key={c.name} href={c.href} className="img-card" style={{minHeight:"340px"}}>
               <div style={{position:"absolute",inset:0,backgroundImage:`url(${c.img})`,backgroundSize:"cover",backgroundPosition:"center",filter:"brightness(0.5)",transition:"filter .35s"}} />
@@ -277,7 +284,7 @@ export default function Home() {
                   <div style={{fontFamily:PD,fontWeight:800,fontSize:"24px",color:"#fff",marginBottom:"7px",textShadow:"0 2px 8px rgba(0,0,0,.4)"}}>{c.name}</div>
                   <div style={{fontSize:"12.5px",color:"rgba(255,255,255,.72)",lineHeight:1.55}}>{c.desc}</div>
                   <div style={{marginTop:"14px",fontSize:"13px",fontWeight:700,color:c.href==="/"?"rgba(255,255,255,.5)":"#FCD34D",display:"flex",alignItems:"center",gap:"5px"}}>
-                    `Explore ${c.name} →`
+                    Explore {c.name} →
                   </div>
                 </div>
               </div>
@@ -349,7 +356,7 @@ export default function Home() {
               <h3 style={{fontFamily:PD,fontWeight:700,fontSize:"20px",color:"#fff",marginBottom:"4px"}}>Real success stories</h3>
               {[
                 {name:"Ayesha Khalid",origin:"🇵🇰 Lahore, Pakistan",role:"Software Engineer · Berlin",text:"VisaVista guided me through every step of my EU Blue Card application. I had my appointment in 3 weeks and visa in 8 weeks. Highly recommend!",av:"AK",c:"#DC2626",stars:5},
-                {name:"Olena Marchenko",origin:"🇺🇦 Kyiv, Ukraine",role:"IT Specialist · Dortmund",text:"Navigate Germany helped me understand tenant rights and find a Ukrainian-speaking doctor — I felt safe from day one."},
+                {name:"Olena Marchenko",origin:"🇺🇦 Kyiv, Ukraine",role:"IT Specialist · Dortmund",text:"Navigate Germany helped me understand tenant rights and find a Ukrainian-speaking doctor — I felt safe from day one.",av:"OM",c:"#7C3AED",stars:5},
       {name:"Rahul Mehta",origin:"🇮🇳 Mumbai, India",role:"Mechanical Engineer · Munich",text:"The appointment guide was a lifesaver. I finally got my Ausländerbehörde slot after following their step-by-step guide. Got my settlement permit now!",av:"RM",c:"#0D9488",stars:5},
                 {name:"Fatima Noor",origin:"🇧🇩 Dhaka, Bangladesh",role:"Nursing Trainee · Hamburg",text:"From university application to opening my Commerzbank account — VisaVista covered everything. The Ausbildung guide is amazing.",av:"FN",c:"#1D4ED8",stars:5},
               ].map(t=>(
