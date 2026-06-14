@@ -1,5 +1,6 @@
 "use client";
 import RecommendationWidget from "@/components/RecommendationWidget";
+import GlobalDisclaimer from "@/components/GlobalDisclaimer";
 import Link from "next/link";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
@@ -336,9 +337,9 @@ export default function Home() {
               </p>
               <div style={{display:"grid",gridTemplateColumns:"1fr 1fr",gap:"14px",marginBottom:"32px"}}>
                 {[
-                  {e:"🇵🇰",t:"Pakistan",d:"Embassy Islamabad/Karachi. Avg. processing: 8-12 weeks",c:"#DC2626"},
-                  {e:"🇮🇳",t:"India",d:"Consulates in Delhi, Mumbai, Chennai. 6-10 weeks",c:"#0D9488"},
-                  {e:"🇧🇩",t:"Bangladesh",d:"Embassy Dhaka. Processing: 10-14 weeks",c:"#1D4ED8"},
+                  {e:"🇵🇰",t:"Pakistan",d:"Embassy Islamabad/Karachi. Approx. 8–12 weeks (indicative)",c:"#DC2626"},
+                  {e:"🇮🇳",t:"India",d:"Consulates in Delhi, Mumbai, Chennai. Approx. 6–10 weeks (indicative)",c:"#0D9488"},
+                  {e:"🇧🇩",t:"Bangladesh",d:"Embassy Dhaka. Approx. 10–14 weeks (indicative)",c:"#1D4ED8"},
                   {e:"🇦🇫",t:"Afghanistan",d:"Special routes & protection pathways available",c:"#D97706"},
                 ].map(o=>(
                   <div key={o.t} style={{background:"rgba(255,255,255,.07)",border:"1px solid rgba(255,255,255,.1)",borderRadius:"16px",padding:"16px 18px",borderLeft:`3px solid ${o.c}`}}>
@@ -356,7 +357,7 @@ export default function Home() {
               <h3 style={{fontFamily:PD,fontWeight:700,fontSize:"20px",color:"#fff",marginBottom:"4px"}}>Real success stories</h3>
               {[
                 {name:"Ayesha Khalid",origin:"🇵🇰 Lahore, Pakistan",role:"Software Engineer · Berlin",text:"VisaVista guided me through every step of my EU Blue Card application. I had my appointment in 3 weeks and visa in 8 weeks. Highly recommend!",av:"AK",c:"#DC2626",stars:5},
-                {name:"Olena Marchenko",origin:"🇺🇦 Kyiv, Ukraine",role:"IT Specialist · Dortmund",text:"Navigate Germany helped me understand tenant rights and find a Ukrainian-speaking doctor — I felt safe from day one.",av:"OM",c:"#7C3AED",stars:5},
+                {name:"Olena Marchenko",origin:"🇺🇦 Kyiv, Ukraine",role:"IT Specialist · Dortmund",text:"VisaVista helped me understand tenant rights and find a Ukrainian-speaking doctor — I felt safe from day one.",av:"OM",c:"#7C3AED",stars:5},
       {name:"Rahul Mehta",origin:"🇮🇳 Mumbai, India",role:"Mechanical Engineer · Munich",text:"The appointment guide was a lifesaver. I finally got my Ausländerbehörde slot after following their step-by-step guide. Got my settlement permit now!",av:"RM",c:"#0D9488",stars:5},
                 {name:"Fatima Noor",origin:"🇧🇩 Dhaka, Bangladesh",role:"Nursing Trainee · Hamburg",text:"From university application to opening my Commerzbank account — VisaVista covered everything. The Ausbildung guide is amazing.",av:"FN",c:"#1D4ED8",stars:5},
               ].map(t=>(
