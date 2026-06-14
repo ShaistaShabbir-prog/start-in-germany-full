@@ -183,7 +183,12 @@ export default function RecommendationWidget({ variant = "inline" }: Recommendat
           onMouseOut={e=>(e.currentTarget.style.transform="scale(1)")}>
           {p.cta}
         </a>
-        <div style={{fontSize:".62rem",color:"rgba(255,255,255,.25)",textAlign:"center" as const}}>{p.note}</div>
+        <div style={{fontSize:".62rem",color:"rgba(255,255,255,.25)",textAlign:"center" as const,lineHeight:1.5}}>
+          {p.note}<br/>
+          <a href="/affiliate-disclosure" style={{color:"rgba(255,204,2,.4)",textDecoration:"none",fontSize:".58rem"}}>
+            Partner/affiliate · Disclosure ↗
+          </a>
+        </div>
       </div>
 
       {/* Dots nav */}
