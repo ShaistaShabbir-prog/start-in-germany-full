@@ -31,7 +31,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: "/malaysia",        priority: 0.75, freq: "monthly" },
     { url: "/china",           priority: 0.75, freq: "monthly" },
     { url: "/blog",            priority: 0.7,  freq: "weekly"  },
-    { url: "/privacy-policy",  priority: 0.3,  freq: "yearly"  },
+    { url: "/privacy-policy",        priority: 0.3,  freq: "yearly"  },
+    { url: "/affiliate-disclosure",  priority: 0.3,  freq: "yearly"  },
   ] as const;
 
   return pages.map(({ url, priority, freq }) => ({
