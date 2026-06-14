@@ -15,7 +15,7 @@ export default function Chatbot() {
   const [messages, setMessages] = useState<Message[]>([
     {
       role: "assistant",
-      content: "Hi! 👋 I'm your VisaVista immigration assistant.\n\nI can answer questions about visas, scholarships, jobs, and moving to Germany, UK, Canada, Australia, Sweden, Italy, Spain, and more.\n\nWhat would you like to know?",
+      content: "Hi! 👋 I'm your VisaVista immigration assistant.\n\nI can answer questions about visas, scholarships, jobs, and moving to Germany, UK, Canada, Australia, Sweden, Italy, Spain, Malaysia, China, and more.\n\nWhat would you like to know?",
       followUps: [],
     },
   ]);
@@ -166,7 +166,7 @@ export default function Chatbot() {
               <div style={{fontWeight:800,fontSize:"14px",color:"#fff",lineHeight:1}}>VisaVista Assistant</div>
               <div style={{fontSize:"11px",color:"rgba(255,255,255,.55)",marginTop:"3px",display:"flex",alignItems:"center",gap:"5px"}}>
                 <span style={{width:"6px",height:"6px",borderRadius:"50%",background:"#22C55E",display:"inline-block",flexShrink:0}}/>
-                Immigration specialist · 7 countries
+                Immigration specialist · 9 countries
               </div>
             </div>
             <a href="https://wa.me/4915906171828?text=Hi%20VisaVista!" target="_blank" rel="noopener"

@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     template: "%s | VisaVista Immigration",
   },
 
-  description: "VisaVista helps students and professionals worldwide immigrate to Germany, UK, Canada, Australia, Sweden, Italy and more. Blue Card, Chancenkarte, skilled worker visa, scholarships, banking and step-by-step guides.",
+  description: "VisaVista helps students and professionals worldwide navigate visas for Germany, Italy, Malaysia, China, the UK, Canada, Australia, Sweden and more.",
 
   keywords: [
     "Germany immigration", "EU Blue Card", "Chancenkarte", "work in Germany",
@@ -104,8 +104,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <main>{children}</main>
         <Footer />
         <WhatsAppButton />
+        <Chatbot />
       </body>
-      <Chatbot />
     </html>
   );
 }

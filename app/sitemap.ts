@@ -19,6 +19,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: "/italy",           priority: 0.75, freq: "monthly" },
     { url: "/sweden",          priority: 0.75, freq: "monthly" },
     { url: "/spain",           priority: 0.75, freq: "monthly" },
+    { url: "/malaysia",        priority: 0.75, freq: "monthly" },
+    { url: "/china",           priority: 0.75, freq: "monthly" },
     { url: "/switzerland",     priority: 0.75, freq: "monthly" },
     { url: "/netherlands",     priority: 0.75, freq: "monthly" },
     { url: "/norway",          priority: 0.7,  freq: "monthly" },
@@ -31,7 +33,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   return pages.map(({ url, priority, freq }) => ({
     url: `${BASE}${url}`,
-    lastModified: new Date("2026-06-13"),
+    lastModified: new Date("2026-06-14"),
     changeFrequency: freq as MetadataRoute.Sitemap[0]["changeFrequency"],
     priority,
   }));

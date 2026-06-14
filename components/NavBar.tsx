@@ -15,6 +15,8 @@ const destinations = [
   { href:"/canada",    flag:"🇨🇦", name:"Canada",         sub:"Express Entry · PNP · Study", live:true },
   { href:"/australia", flag:"🇦🇺", name:"Australia",      sub:"Skilled 189/190 · TSS · Study", live:true },
   { href:"/spain",     flag:"🇪🇸", name:"Spain",          sub:"Digital Nomad · Blue Card", live:true },
+  { href:"/malaysia",  flag:"🇲🇾", name:"Malaysia",       sub:"Employment Pass · Student", live:true },
+  { href:"/china",     flag:"🇨🇳", name:"China",          sub:"Z Work Visa · X1/X2 Study", live:true },
 ];
 
 const links = [
@@ -54,7 +56,7 @@ export default function NavBar(){
     <>
       {/* Announcement bar */}
       <div style={{background:"#0B1D3A",padding:"8px 0",textAlign:"center",fontSize:"12.5px",color:"rgba(255,255,255,.65)"}}>
-        🌍 <strong style={{color:"#FCD34D"}}>7 countries</strong>: 🇩🇪 🇮🇹 🇸🇪 🇬🇧 🇨🇦 🇦🇺 🇪🇸 &nbsp;·&nbsp;
+        🌍 <strong style={{color:"#FCD34D"}}>9 countries</strong>: 🇩🇪 🇮🇹 🇸🇪 🇬🇧 🇨🇦 🇦🇺 🇪🇸 🇲🇾 🇨🇳 &nbsp;·&nbsp;
         🇵🇰 Pakistan · 🇮🇳 India · 🇧🇩 Bangladesh · 🇦🇫 Afghanistan &nbsp;·&nbsp;
         <a href={WA} target="_blank" rel="noopener noreferrer" style={{color:"#25D366",fontWeight:700,textDecoration:"underline",textUnderlineOffset:"2px"}}>💬 WhatsApp +49 159 06171828</a>
       </div>
@@ -69,7 +71,7 @@ export default function NavBar(){
             </div>
             <div>
               <div style={{fontFamily:PD,fontWeight:900,fontSize:"20px",color:"#0B1D3A",letterSpacing:"-0.02em",lineHeight:1}}>VisaVista</div>
-              <div style={{fontSize:"9px",fontWeight:600,color:"#9CA3AF",letterSpacing:"0.06em",textTransform:"uppercase"}}>DE·IT·SE·UK·CA·AU·ES</div>
+              <div style={{fontSize:"9px",fontWeight:600,color:"#9CA3AF",letterSpacing:"0.06em",textTransform:"uppercase"}}>DE·IT·SE·UK·CA·AU·ES·MY·CN</div>
             </div>
           </Link>
 
