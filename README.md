@@ -9,7 +9,7 @@ Complete visa guidance · Job search · Banking · Appointment booking</p>
 [![Next.js](https://img.shields.io/badge/Next.js_14-black?style=for-the-badge&logo=next.js)](https://nextjs.org)
 [![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white)](https://typescriptlang.org)
 [![Vercel](https://img.shields.io/badge/Vercel-000?style=for-the-badge&logo=vercel)](https://vercel.com)
-[![License](https://img.shields.io/badge/License-Proprietary-red?style=for-the-badge)](./LICENSE)
+[![License: MIT](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)](./LICENSE)
 
 </div>
 
@@ -127,5 +127,4 @@ NEXT_PUBLIC_ADMIN_PASSWORD=your_pass  # Admin dashboard access
 
 ## 📄 License
 
-Proprietary — All rights reserved © 2026 Shaista Shabbir.
-See [LICENSE](./LICENSE).
+MIT License - see [LICENSE](./LICENSE).
