@@ -1,6 +1,7 @@
 "use client";
 import GlobalDisclaimer from "@/components/GlobalDisclaimer";
 import OfficialSourceBadge from "@/components/OfficialSourceBadge";
+// Last checked: June 2026 — Source: Make it in Germany, BAMF
 // Page-level SEO handled in layout.tsx
 import RecommendationWidget from "@/components/RecommendationWidget";
 import React from "react";
@@ -76,8 +77,8 @@ export default function VisaPage() {
     {
       icon:"💙", bg:"#EFF6FF", border:"#BFDBFE", badge:"Most popular" as const, bc:"blue" as const,
       title:"EU Blue Card (§18b AufenthG)",
-      salary:"€50,700/yr · €45,934 for STEM, healthcare & IT",
-      time:"8–14 weeks",
+      salary:"€50,700 ✓/yr · €45,934 ✓ for STEM, healthcare & IT",
+      time:"8–14 weeks (indicative)",
       desc:"Germany's flagship visa for highly qualified workers. Fast-track permanent residence after just 21 months with B1 German. Spouse gets unrestricted work permit immediately.",
       points:[
         "University degree recognised in Germany (check anabin.kmk.org)",
@@ -93,7 +94,7 @@ export default function VisaPage() {
       icon:"🎯", bg:"#ECFDF5", border:"#6EE7B7", badge:"No job needed" as const, bc:"green" as const,
       title:"Opportunity Card / Chancenkarte (§20a AufenthG)",
       salary:"€1,091/month in blocked account (€13,092/year)",
-      time:"6–12 weeks",
+      time:"6–12 weeks (indicative)",
       desc:"New since June 2024. Enter Germany WITHOUT a job offer and job-hunt on-site for 12 months. Work part-time (20h/week) while searching. 2-year extension possible if close to offer.",
       points:[
         "Route 1 (Auto): Fully recognised German degree or 2+ year vocational qualification",
@@ -109,7 +110,7 @@ export default function VisaPage() {
       icon:"⚙️", bg:"#FEF2F2", border:"#FCA5A5", badge:"Stable choice" as const, bc:"red" as const,
       title:"Skilled Worker Visa (§18a / §18b / §18c AufenthG)",
       salary:"€50,700/yr · §18c: experience-based, no formal recognition",
-      time:"8–16 weeks",
+      time:"8–16 weeks (indicative)",
       desc:"For qualified professionals. The new §18c route (2023 Skilled Immigration Act) allows experienced workers without formal recognition — great for Pakistani/Indian IT & engineering talent with 5 years experience.",
       points:[
         "§18a: Vocational qualification recognised in Germany (ZAB/IHK)",
@@ -125,7 +126,7 @@ export default function VisaPage() {
       icon:"🎓", bg:"#F5F3FF", border:"#C4B5FD", badge:"Free tuition" as const, bc:"blue" as const,
       title:"Student Visa (§16b AufenthG)",
       salary:"€934/month blocked account = €11,208/year total",
-      time:"6–14 weeks (Pakistan: CSP queue-based)",
+      time:"6–14 weeks (indicative) (Pakistan: CSP queue-based)",
       desc:"Study at German public universities — most charge only €100–€400/semester admin fee. After graduation: automatic 18-month job-seeker visa. Most students stay on a Blue Card.",
       points:[
         "University admission letter (Zulassungsbescheid) from a German university",
@@ -141,7 +142,7 @@ export default function VisaPage() {
       icon:"🔧", bg:"#FFFBEB", border:"#FCD34D", badge:"Earn while you learn" as const, bc:"gold" as const,
       title:"Ausbildung Visa (§16a AufenthG)",
       salary:"€600–€1,100/month salary — paid by the training company",
-      time:"6–12 weeks",
+      time:"6–12 weeks (indicative)",
       desc:"Germany's world-famous dual vocational training system. Work 3–4 days/week at a company, vocational school 1–2 days/week. After 2–3 years: world-class German qualification and right to stay permanently.",
       points:[
         "Training contract (Ausbildungsvertrag) signed by a German company",
@@ -157,7 +158,7 @@ export default function VisaPage() {
       icon:"👨‍👩‍👧", bg:"#F0FDF4", border:"#86EFAC", badge:"Bring your family" as const, bc:"green" as const,
       title:"Family Reunification Visa (§28/§29 AufenthG)",
       salary:"Sponsor must have adequate income for whole family",
-      time:"12–24 weeks (often longer from Bangladesh)",
+      time:"12–24 weeks (indicative) (often longer from Bangladesh)",
       desc:"Once you hold a German residence permit, your spouse and children can join. Spouse receives an unrestricted German work permit. Children get free schooling — most are fluent in German within 12 months.",
       points:[
         "Sponsor holds valid German residence or settlement permit",
@@ -179,7 +180,7 @@ export default function VisaPage() {
         "Register at pakistan.diplo.de via Consular Services Portal (CSP) — new 2026 queue-based waitlist",
         "Complete VIDEX form online at videx.diplo.de — print barcode pages clearly (do NOT fold)",
         "Get HEC attestation (PKR 1,000/original) + MOFA Apostille (required since 2023)",
-        "APS Certificate MANDATORY for all degrees — apply at eservices.hec.gov.pk (4–8 weeks)",
+        "APS Certificate MANDATORY for all degrees — apply at eservices.hec.gov.pk (4–8 weeks (indicative))",
         "Upload high-resolution scans to CSP — quality of uploads affects how fast you get a slot",
         "VFS/Gerry's VAC: Islamabad, Lahore, Karachi. Fee: €80 ≈ PKR 28,000 + VAC service fee",
       ]
