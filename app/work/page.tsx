@@ -1,4 +1,5 @@
 "use client";
+import GlobalDisclaimer from "@/components/GlobalDisclaimer";
 import React from "react";
 import Link from "next/link";
 
