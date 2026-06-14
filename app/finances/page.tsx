@@ -80,6 +80,13 @@ export default function FinancesPage() {
             <p style={{fontSize:"11px",color:"#9CA3AF",textAlign:"center",marginTop:"8px"}}>Referral link — you get a bonus, we earn a small commission</p>
           </div>
 
+          {/* Partner / Affiliate label */}
+          <div style={{display:"flex",alignItems:"center",gap:"8px",marginBottom:"4px",padding:"8px 12px",background:"rgba(255,204,2,.06)",borderRadius:"10px",border:"1px solid rgba(255,204,2,.15)"}}>
+            <span style={{fontSize:".65rem",fontWeight:800,textTransform:"uppercase",letterSpacing:".08em",color:"rgba(255,204,2,.6)"}}>🤝 Partner / Affiliate Recommendations</span>
+            <a href="/affiliate-disclosure" style={{marginLeft:"auto",fontSize:".62rem",color:"rgba(255,204,2,.5)",textDecoration:"none"}}>Disclosure ↗</a>
+          </div>
+          <p style={{fontSize:".7rem",color:"#6B7280",marginBottom:"12px"}}>We use these services ourselves and may earn a referral reward if you sign up. No extra cost to you.</p>
+
           {/* Commerzbank */}
           <div className="card" style={{border:"2px solid #FCD34D",display:"flex",flexDirection:"column",position:"relative",overflow:"hidden"}}>
             <div style={{position:"absolute",top:0,left:0,right:0,height:"4px",background:"linear-gradient(90deg,#D97706,#DC2626)"}} />
