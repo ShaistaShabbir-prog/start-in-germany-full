@@ -27,6 +27,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: "/austria",         priority: 0.7,  freq: "monthly" },
     { url: "/france",          priority: 0.7,  freq: "monthly" },
     { url: "/usa",             priority: 0.75, freq: "monthly" },
+    { url: "/italy",           priority: 0.8,  freq: "monthly" },
+    { url: "/malaysia",        priority: 0.75, freq: "monthly" },
+    { url: "/china",           priority: 0.75, freq: "monthly" },
     { url: "/blog",            priority: 0.7,  freq: "weekly"  },
     { url: "/privacy-policy",  priority: 0.3,  freq: "yearly"  },
   ] as const;
