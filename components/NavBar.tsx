@@ -22,7 +22,7 @@ const destinations = [
 const links = [
   {href:"/",l:"Home"},{href:"/work",l:"Work"},{href:"/study",l:"Study"},
   {href:"/finances",l:"💳 Banking"},{href:"/appointment",l:"Appointments"},
-  {href:"/blog",l:"Blog"},{href:"/service",l:"Services"},{href:"/consultancy",l:"Consultancy"},
+  {href:"/blog",l:"Blog"},{href:"/service",l:"Services"},{href:"/consultancy",l:"Consultancy"},{href:"/privacy-policy",l:"Privacy"},{href:"/affiliate-disclosure",l:"Affiliates"},
 ];
 
 const LANG_OPTIONS = [
