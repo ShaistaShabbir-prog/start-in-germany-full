@@ -1,4 +1,5 @@
 "use client";
+import GlobalDisclaimer from "@/components/GlobalDisclaimer";
 // Page-level SEO handled in layout.tsx
 import RecommendationWidget from "@/components/RecommendationWidget";
 import { useState, useEffect } from "react";
@@ -386,7 +387,10 @@ export default function ScholarshipsPage() {
           <div style={{fontSize:".72rem",color:"#9CA3AF",textTransform:"uppercase" as const,letterSpacing:".08em",marginBottom:"12px"}}>
             🤝 While you're planning your move — trusted financial tools
           </div>
-          <RecommendationWidget variant="inline" />
+          <div style={{fontSize:".65rem",fontWeight:800,textTransform:"uppercase",letterSpacing:".1em",color:"rgba(255,255,255,.3)",marginBottom:"8px"}}>
+          🤝 Partner / affiliate — <a href="/affiliate-disclosure" style={{color:"#FFCC02",textDecoration:"none"}}>see disclosure</a>
+        </div>
+        <RecommendationWidget variant="inline" />
         </div>
 
         {/* ── TIPS ── */}
