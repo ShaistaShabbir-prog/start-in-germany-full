@@ -1,6 +1,7 @@
 "use client";
 // Page-level SEO handled in layout.tsx
 import RecommendationWidget from "@/components/RecommendationWidget";
+import GlobalDisclaimer from "@/components/GlobalDisclaimer";
 import Link from "next/link";
 
 const PD = '"Playfair Display",Georgia,serif';
