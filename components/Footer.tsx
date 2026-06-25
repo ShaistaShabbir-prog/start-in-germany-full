@@ -1,7 +1,7 @@
 "use client";
 import Link from "next/link";
 const PD='"Playfair Display",Georgia,serif';
-const WA="https://wa.me/XXXXXXXXXX?text="+encodeURIComponent("Hi VisaVista! I need help with my visa.");
+const WA="/contact?text="+encodeURIComponent("Hi VisaVista! I need help with my visa.");
 
 export default function Footer(){
   return(
