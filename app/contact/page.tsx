@@ -3,7 +3,7 @@ import Link from "next/link";
 import { useState } from "react";
 const PD='"Playfair Display",Georgia,serif';
 const IN='"Inter",ui-sans-serif,system-ui,sans-serif';
-const WA="https://wa.me/XXXXXXXXXX?text="+encodeURIComponent("Hi VisaVista! I need help with my visa application.");
+const WA="/contact?text="+encodeURIComponent("Hi VisaVista! I need help with my visa application.");
 const btnP:React.CSSProperties={display:"inline-flex",alignItems:"center",justifyContent:"center",gap:"6px",padding:"13px 26px",borderRadius:"12px",fontSize:"15px",fontWeight:700,fontFamily:IN,cursor:"pointer",border:"none",textDecoration:"none",background:"#DC2626",color:"#fff",boxShadow:"0 4px 18px rgba(220,38,38,.35)",width:"100%"};
 
 export default function ContactPage(){
@@ -13,7 +13,7 @@ export default function ContactPage(){
   const handleSubmit=(e:React.FormEvent)=>{
     e.preventDefault();
     const msg=`New VisaVista enquiry!\n\nName: ${form.name}\nEmail: ${form.email}\nWhatsApp: ${form.whatsapp}\nFrom: ${form.country}\nDestination: ${form.destination}\n\nMessage: ${form.message}`;
-    window.open("https://wa.me/XXXXXXXXXX?text="+encodeURIComponent(msg),"_blank");
+    window.open("/contact?text="+encodeURIComponent(msg),"_blank");
     setSent(true);
   };
 
