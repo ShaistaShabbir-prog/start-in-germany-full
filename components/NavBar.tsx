@@ -5,7 +5,7 @@ import { usePathname } from "next/navigation";
 import { useState, useRef, useEffect } from "react";
 
 const PD = '"Playfair Display",Georgia,serif';
-const WA = "https://wa.me/XXXXXXXXXX?text=Hello%20VisaVista!%20I%20need%20immigration%20help.";
+const WA = "/contact?text=Hello%20VisaVista!%20I%20need%20immigration%20help.";
 
 const destinations = [
   { href:"/visa",      flag:"🇩🇪", name:"Germany",        sub:"EU Blue Card · Opportunity Card", live:true },
