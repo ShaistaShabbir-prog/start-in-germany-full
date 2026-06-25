@@ -168,7 +168,7 @@ export default function PrivacyPolicyPage() {
             Affiliation: TU Dortmund University / Lamarr Institute for ML & AI, Germany<br />
             Website: <a href="https://start-in-germany-full.vercel.app" style={{ color: "#FFCC02" }}>start-in-germany-full.vercel.app</a><br />
             GitHub: <a href="https://github.com/ShaistaShabbir-prog" target="_blank" rel="noopener" style={{ color: "#FFCC02" }}>github.com/ShaistaShabbir-prog</a><br />
-            WhatsApp: <a href="https://wa.me/XXXXXXXXXX" target="_blank" rel="noopener" style={{ color: "#FFCC02" }}>[CONTACT FORM]</a>
+            WhatsApp: <a href="/contact" target="_blank" rel="noopener" style={{ color: "#FFCC02" }}>[CONTACT FORM]</a>
           </Box>
         </Section>
 
