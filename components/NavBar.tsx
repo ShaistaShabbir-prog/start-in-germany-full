@@ -5,7 +5,7 @@ import { usePathname } from "next/navigation";
 import { useState, useRef, useEffect } from "react";
 
 const PD = '"Playfair Display",Georgia,serif';
-const WA = "https://wa.me/4915906171828?text=Hello%20VisaVista!%20I%20need%20immigration%20help.";
+const WA = "https://wa.me/XXXXXXXXXX?text=Hello%20VisaVista!%20I%20need%20immigration%20help.";
 
 const destinations = [
   { href:"/visa",      flag:"🇩🇪", name:"Germany",        sub:"EU Blue Card · Opportunity Card", live:true },
@@ -58,7 +58,7 @@ export default function NavBar(){
       <div style={{background:"#0B1D3A",padding:"8px 0",textAlign:"center",fontSize:"12.5px",color:"rgba(255,255,255,.65)"}}>
         🌍 <strong style={{color:"#FCD34D"}}>9 countries</strong>: 🇩🇪 🇮🇹 🇸🇪 🇬🇧 🇨🇦 🇦🇺 🇪🇸 🇲🇾 🇨🇳 &nbsp;·&nbsp;
         🇵🇰 Pakistan · 🇮🇳 India · 🇧🇩 Bangladesh · 🇦🇫 Afghanistan &nbsp;·&nbsp;
-        <a href={WA} target="_blank" rel="noopener noreferrer" style={{color:"#25D366",fontWeight:700,textDecoration:"underline",textUnderlineOffset:"2px"}}>💬 WhatsApp +49 159 06171828</a>
+        <a href={WA} target="_blank" rel="noopener noreferrer" style={{color:"#25D366",fontWeight:700,textDecoration:"underline",textUnderlineOffset:"2px"}}>💬 WhatsApp [CONTACT FORM]</a>
       </div>
 
       <header style={{position:"sticky",top:0,zIndex:100,background:"rgba(255,255,255,.98)",backdropFilter:"blur(20px)",WebkitBackdropFilter:"blur(20px)",borderBottom:"1px solid #E5E7EB",boxShadow:"0 2px 16px rgba(0,0,0,.06)"}}>
