@@ -80,7 +80,7 @@ export default function PrivacyPolicyPage() {
 
         <Section title="2. What data we collect">
           <h3 style={{ fontSize: ".9rem", fontWeight: 700, color: "#f1f5f9", marginBottom: "8px" }}>2.1 Data you provide voluntarily</h3>
-          <P>VisaVista does not require account creation or login. If you contact us via WhatsApp (+49 159 06171828) or GitHub, those platforms' own privacy policies apply to data you share.</P>
+          <P>VisaVista does not require account creation or login. If you contact us via WhatsApp ([CONTACT FORM]) or GitHub, those platforms' own privacy policies apply to data you share.</P>
 
           <h3 style={{ fontSize: ".9rem", fontWeight: 700, color: "#f1f5f9", margin: "16px 0 8px" }}>2.2 Data collected automatically</h3>
           <Tbl rows={[
@@ -168,7 +168,7 @@ export default function PrivacyPolicyPage() {
             Affiliation: TU Dortmund University / Lamarr Institute for ML & AI, Germany<br />
             Website: <a href="https://start-in-germany-full.vercel.app" style={{ color: "#FFCC02" }}>start-in-germany-full.vercel.app</a><br />
             GitHub: <a href="https://github.com/ShaistaShabbir-prog" target="_blank" rel="noopener" style={{ color: "#FFCC02" }}>github.com/ShaistaShabbir-prog</a><br />
-            WhatsApp: <a href="https://wa.me/4915906171828" target="_blank" rel="noopener" style={{ color: "#FFCC02" }}>+49 159 06171828</a>
+            WhatsApp: <a href="https://wa.me/XXXXXXXXXX" target="_blank" rel="noopener" style={{ color: "#FFCC02" }}>[CONTACT FORM]</a>
           </Box>
         </Section>
 
