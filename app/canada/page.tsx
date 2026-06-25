@@ -4,7 +4,7 @@ const PD='"Playfair Display",Georgia,serif';
 const IN='"Inter",ui-sans-serif,system-ui,sans-serif';
 const HERO="https://images.unsplash.com/photo-1503614472-8c93d56e92ce?w=1400&q=85&auto=format&fit=crop";
 const CITY="https://images.unsplash.com/photo-1517935706615-2717063c2225?w=1200&q=80&auto=format&fit=crop";
-const WA="https://wa.me/4915906171828?text=Hi%20VisaVista!%20I%20need%20help%20with%20Canada%20immigration.";
+const WA="https://wa.me/XXXXXXXXXX?text=Hi%20VisaVista!%20I%20need%20help%20with%20Canada%20immigration.";
 
 const btnP:React.CSSProperties={display:"inline-flex",alignItems:"center",gap:"6px",padding:"13px 26px",borderRadius:"12px",fontSize:"15px",fontWeight:700,fontFamily:IN,cursor:"pointer",border:"none",textDecoration:"none",background:"#DC2626",color:"#fff",boxShadow:"0 4px 18px rgba(220,38,38,.35)"};
 const btnG:React.CSSProperties={display:"inline-flex",alignItems:"center",gap:"6px",padding:"13px 26px",borderRadius:"12px",fontSize:"15px",fontWeight:700,fontFamily:IN,cursor:"pointer",border:"1.5px solid rgba(255,255,255,.3)",textDecoration:"none",background:"rgba(255,255,255,.12)",color:"#fff"};

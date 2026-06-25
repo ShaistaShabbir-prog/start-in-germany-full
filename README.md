@@ -57,7 +57,7 @@ Reference inspiration: [make-it-in-germany.com](https://www.make-it-in-germany.c
 
 ### 💳 Monetisation
 - Referral integrations: **Wise**, **Commerzbank** (€50 bonus), **Advanzia Mastercard Gold**
-- WhatsApp consultation booking: +49 159 06171828
+- WhatsApp consultation booking: [CONTACT FORM]
 - Free Consultation CTA throughout
 
 ### 🔒 Admin Dashboard (`/admin`)

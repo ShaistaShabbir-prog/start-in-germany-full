@@ -3,7 +3,7 @@ import Link from "next/link";
 import { useState } from "react";
 const PD='"Playfair Display",Georgia,serif';
 const IN='"Inter",ui-sans-serif,system-ui,sans-serif';
-const WA="https://wa.me/4915906171828?text="+encodeURIComponent("Hi VisaVista! I need help with my visa application.");
+const WA="https://wa.me/XXXXXXXXXX?text="+encodeURIComponent("Hi VisaVista! I need help with my visa application.");
 const btnP:React.CSSProperties={display:"inline-flex",alignItems:"center",justifyContent:"center",gap:"6px",padding:"13px 26px",borderRadius:"12px",fontSize:"15px",fontWeight:700,fontFamily:IN,cursor:"pointer",border:"none",textDecoration:"none",background:"#DC2626",color:"#fff",boxShadow:"0 4px 18px rgba(220,38,38,.35)",width:"100%"};
 
 export default function ContactPage(){
@@ -13,7 +13,7 @@ export default function ContactPage(){
   const handleSubmit=(e:React.FormEvent)=>{
     e.preventDefault();
     const msg=`New VisaVista enquiry!\n\nName: ${form.name}\nEmail: ${form.email}\nWhatsApp: ${form.whatsapp}\nFrom: ${form.country}\nDestination: ${form.destination}\n\nMessage: ${form.message}`;
-    window.open("https://wa.me/4915906171828?text="+encodeURIComponent(msg),"_blank");
+    window.open("https://wa.me/XXXXXXXXXX?text="+encodeURIComponent(msg),"_blank");
     setSent(true);
   };
 
@@ -41,7 +41,7 @@ export default function ContactPage(){
 
             {[
               {icon:"💬",title:"WhatsApp (Fastest)",desc:"Typically responds within 2–4 hours. Send us a message in Urdu, Hindi, Bengali or English.",cta:"Open WhatsApp",href:WA,color:"#25D366",bg:"#F0FFF4",border:"#6EE7B7"},
-              {icon:"✉️",title:"Email",desc:"For detailed questions or document sharing. Response within 24 hours.",cta:"Email us",href:"mailto:shaista.s.shabbir@gmail.com",color:"#1D4ED8",bg:"#EFF6FF",border:"#BFDBFE"},
+              {icon:"✉️",title:"Email",desc:"For detailed questions or document sharing. Response within 24 hours.",cta:"Email us",href:"mailto:contact@start-in-germany.com",color:"#1D4ED8",bg:"#EFF6FF",border:"#BFDBFE"},
               {icon:"📅",title:"Book a free consultation",desc:"30-minute 1-on-1 call with an immigration expert in your language.",cta:"Book free call",href:"/consultancy",color:"#DC2626",bg:"#FEF2F2",border:"#FCA5A5"},
             ].map(c=>(
               <div key={c.title} style={{background:c.bg,border:`1.5px solid ${c.border}`,borderRadius:"16px",padding:"18px 20px",marginBottom:"14px",display:"flex",gap:"14px",alignItems:"flex-start"}}>
@@ -86,12 +86,12 @@ export default function ContactPage(){
                   </div>
                   <div>
                     <label style={lbl}>Email address *</label>
-                    <input required type="email" style={inp} placeholder="ayesha@email.com" value={form.email} onChange={e=>setForm({...form,email:e.target.value})}/>
+                    <input required type="email" style={inp} placeholder="user@example.com" value={form.email} onChange={e=>setForm({...form,email:e.target.value})}/>
                   </div>
                 </div>
                 <div style={{marginBottom:"14px"}}>
                   <label style={lbl}>WhatsApp number (with country code)</label>
-                  <input style={inp} placeholder="+92 300 1234567" value={form.whatsapp} onChange={e=>setForm({...form,whatsapp:e.target.value})}/>
+                  <input style={inp} placeholder="[PHONE HIDDEN]" value={form.whatsapp} onChange={e=>setForm({...form,whatsapp:e.target.value})}/>
                 </div>
                 <div style={{display:"grid",gridTemplateColumns:"1fr 1fr",gap:"14px",marginBottom:"14px"}}>
                   <div>

@@ -15,7 +15,7 @@ export default function ConsultancyPage() {
           <h1 className="h1" style={{color:"#fff",maxWidth:"700px",marginBottom:"16px"}}>1-on-1 immigration consultancy in Urdu, Hindi &amp; English</h1>
           <p style={{fontSize:"17px",color:"rgba(255,255,255,.72)",maxWidth:"580px",lineHeight:1.7,marginBottom:"28px"}}>Our certified immigration experts have helped 50,000+ South Asians successfully move to Germany. Book your free 30-min consultation today.</p>
           <div style={{display:"flex",gap:"12px",flexWrap:"wrap"}}>
-            <Link href="mailto:shaista.s.shabbir@gmail.com" className="btn btn-primary">📅 Book free consultation</Link>
+            <Link href="mailto:contact@start-in-germany.com" className="btn btn-primary">📅 Book free consultation</Link>
             <Link href="/service" className="btn btn-ghost-light">💬 WhatsApp us</Link>
           </div>
           <div style={{marginTop:"24px",display:"flex",gap:"24px",flexWrap:"wrap"}}>
@@ -41,21 +41,21 @@ export default function ConsultancyPage() {
               price:"€0",period:"one session",
               desc:"Perfect if you just need a quick sense-check and don't know where to start.",
               features:["30-minute consultation call","Visa eligibility check","Basic document checklist","Email follow-up summary"],
-              cta:"Book free call",href:"mailto:shaista.s.shabbir@gmail.com",featured:false
+              cta:"Book free call",href:"mailto:contact@start-in-germany.com",featured:false
             },
             {
               name:"Full Application Support",badge:"Most popular",badgeColor:"#FEF2F2",badgeText:"#B91C1C",
               price:"€149",period:"complete package",
               desc:"End-to-end support from visa selection to appointment booking and document review.",
               features:["3× 60-min consultation calls","Full visa application review","Document checklist & quality check","Embassy appointment guidance","CV & cover letter review","WhatsApp support throughout","German A1 resource pack"],
-              cta:"Start full package",href:"mailto:shaista.s.shabbir@gmail.com",featured:true
+              cta:"Start full package",href:"mailto:contact@start-in-germany.com",featured:true
             },
             {
               name:"Premium Settlement",badge:"Best value",badgeColor:"#FFFBEB",badgeText:"#92400E",
               price:"€299",period:"6-month support",
               desc:"From visa application all the way to registration, banking and first job in Germany.",
               features:["Everything in Full Application","Unlimited WhatsApp support (6 months)","Anmeldung & Ausländerbehörde guidance","Bank account setup support","Housing & accommodation advice","German language resources","Job application review","Community access (WhatsApp group)"],
-              cta:"Start premium",href:"mailto:shaista.s.shabbir@gmail.com",featured:false
+              cta:"Start premium",href:"mailto:contact@start-in-germany.com",featured:false
             },
           ].map(p=>(
             <div key={p.name} className={`price-card${p.featured?" price-card-featured":""}`} style={{display:"flex",flexDirection:"column"}}>

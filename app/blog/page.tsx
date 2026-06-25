@@ -5,7 +5,7 @@ import NewsWidget from "@/components/NewsWidget";
 
 const PD = '"Playfair Display",Georgia,serif';
 const IN = '"Inter",ui-sans-serif,system-ui,sans-serif';
-const WA = "https://wa.me/4915906171828?text="+encodeURIComponent("Hi VisaVista!");
+const WA = "https://wa.me/XXXXXXXXXX?text="+encodeURIComponent("Hi VisaVista!");
 
 const POSTS = [
   {slug:"germany-opportunity-card-pakistan-india",cat:"Visa 🇩🇪",title:"Germany Opportunity Card 2026: Complete guide for Pakistan & India",date:"Jun 2026",read:"8 min",desc:"The Chancenkarte lets you enter Germany WITHOUT a job offer. Here's exactly how to apply from Pakistan and India, what documents you need, and how the points system works.",img:"https://images.unsplash.com/photo-1467269204594-9661b134dd2b?w=600&q=70&auto=format&fit=crop",hot:true},
