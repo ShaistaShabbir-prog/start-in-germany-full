@@ -1,7 +1,7 @@
 "use client";
 import Link from "next/link";
 const PD='"Playfair Display",Georgia,serif';
-const WA="https://wa.me/4915906171828?text="+encodeURIComponent("Hi VisaVista! I need help with my visa.");
+const WA="https://wa.me/XXXXXXXXXX?text="+encodeURIComponent("Hi VisaVista! I need help with my visa.");
 
 export default function Footer(){
   return(
@@ -26,7 +26,7 @@ export default function Footer(){
             </div>
             {/* WhatsApp CTA */}
             <a href={WA} target="_blank" rel="noopener noreferrer" style={{display:"inline-flex",alignItems:"center",gap:"8px",padding:"10px 16px",borderRadius:"10px",background:"#25D366",color:"#fff",textDecoration:"none",fontSize:"13px",fontWeight:700,boxShadow:"0 3px 10px rgba(37,211,102,.3)"}}>
-              💬 WhatsApp: +49 159 06171828
+              💬 WhatsApp: [CONTACT FORM]
             </a>
           </div>
 
@@ -66,7 +66,7 @@ export default function Footer(){
               <a key={l.l} href={l.href} target={l.ext?"_blank":undefined} rel={l.ext?"noopener noreferrer":undefined} style={{display:"block",fontSize:"13.5px",color:"rgba(255,255,255,.5)",textDecoration:"none",marginBottom:"8px"}}>{l.l}</a>
             ))}
             <div style={{marginTop:"12px",fontSize:"12.5px",color:"rgba(255,255,255,.35)"}}>
-              ✉️ <a href="mailto:shaista.s.shabbir@gmail.com" style={{color:"#FCD34D",textDecoration:"none"}}>shaista.s.shabbir@gmail.com</a>
+              ✉️ <a href="mailto:contact@start-in-germany.com" style={{color:"#FCD34D",textDecoration:"none"}}>contact@start-in-germany.com</a>
             </div>
           </div>
         </div>
