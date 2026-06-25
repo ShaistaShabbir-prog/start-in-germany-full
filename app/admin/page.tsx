@@ -112,7 +112,7 @@ function VisaVistaAdmin() {
             {NAV.find(n=>n.id===tab)?.icon} {NAV.find(n=>n.id===tab)?.label}
           </h1>
           <div style={{display:"flex",gap:"10px"}}>
-            <a href="https://wa.me/XXXXXXXXXX" target="_blank" rel="noopener"
+            <a href="/contact" target="_blank" rel="noopener"
               style={{padding:"8px 16px",background:"#25D366",color:"#fff",borderRadius:"8px",fontSize:"13px",fontWeight:700,textDecoration:"none"}}>
               WhatsApp →
             </a>
@@ -238,7 +238,7 @@ function VisaVistaAdmin() {
 
               <div style={{background:"#fff",border:"1px solid #E5E7EB",borderRadius:"14px",padding:"18px 20px"}}>
                 <p style={{fontWeight:700,marginBottom:"10px",fontSize:"15px"}}>📥 WhatsApp enquiries go to:</p>
-                <a href="https://wa.me/XXXXXXXXXX" target="_blank" rel="noopener"
+                <a href="/contact" target="_blank" rel="noopener"
                   style={{display:"inline-flex",alignItems:"center",gap:"8px",background:"#25D366",color:"#fff",padding:"10px 18px",borderRadius:"8px",fontWeight:700,fontSize:"14px",textDecoration:"none"}}>
                   📱 [CONTACT FORM] — Open WhatsApp
                 </a>
@@ -303,7 +303,7 @@ function VisaVistaAdmin() {
           {tab==="settings" && (
             <div style={{display:"flex",flexDirection:"column",gap:"16px",maxWidth:"600px"}}>
               {[
-                { label:"WhatsApp Number", value:"[CONTACT FORM]", href:"https://wa.me/XXXXXXXXXX" },
+                { label:"WhatsApp Number", value:"[CONTACT FORM]", href:"/contact" },
                 { label:"Site URL (Vercel)", value:"start-in-germany-full.vercel.app", href:"https://start-in-germany-full.vercel.app" },
                 { label:"GitHub Repo", value:"ShaistaShabbir-prog/start-in-germany-full", href:"https://github.com/ShaistaShabbir-prog/start-in-germany-full" },
               ].map(s=>(

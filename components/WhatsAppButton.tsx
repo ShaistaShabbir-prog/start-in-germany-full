@@ -1,10 +1,10 @@
 "use client";
 
-const WA_NUMBER = "XXXXXXXXXX"; // [CONTACT FORM]
+const WA_NUMBER = ""; // Phone hidden — redirects to contact page
 const WA_MESSAGE = "Hello VisaVista! I need help with my European visa application.";
 
 export default function WhatsAppButton() {
-  const waUrl = `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(WA_MESSAGE)}`;
+  const waUrl = WA_NUMBER ? `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(WA_MESSAGE)}` : "/contact";
 
   return (
     <>

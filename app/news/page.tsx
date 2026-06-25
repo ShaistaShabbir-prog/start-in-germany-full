@@ -78,7 +78,7 @@ export default function NewsPage() {
                 {active!=="germany"&&[
                   {l:`${ac.name} visa guide`,href:`/${active==="uk"?"uk":active}`},
                   {l:"Free consultation",href:"/consultancy"},
-                  {l:"WhatsApp us",href:"https://wa.me/XXXXXXXXXX"},
+                  {l:"WhatsApp us",href:"/contact"},
                 ].map(k=>(
                   <a key={k.l} href={k.href} style={{fontSize:"13px",color:ac.color,fontWeight:600,textDecoration:"none",padding:"6px 0",borderBottom:"1px solid #F9FAFB"}}>→ {k.l}</a>
                 ))}
@@ -89,7 +89,7 @@ export default function NewsPage() {
             <div style={{background:"linear-gradient(135deg,#0B1D3A,#1E3A5F)",borderRadius:"14px",padding:"18px"}}>
               <p style={{fontSize:"13px",fontWeight:800,color:"#fff",marginBottom:"6px"}}>📱 Get personalised advice</p>
               <p style={{fontSize:"12px",color:"rgba(255,255,255,.6)",lineHeight:1.6,marginBottom:"12px"}}>Our immigration specialists answer questions for {ac.name} applications daily.</p>
-              <a href="https://wa.me/XXXXXXXXXX?text=Hi! I want to move to ${ac.name} and need help." target="_blank" rel="noopener"
+              <a href="/contact?text=Hi! I want to move to ${ac.name} and need help." target="_blank" rel="noopener"
                 style={{display:"block",background:"#25D366",color:"#fff",padding:"10px 14px",borderRadius:"8px",fontWeight:700,fontSize:"13px",textAlign:"center",textDecoration:"none"}}>
                 WhatsApp Free Consult →
               </a>
