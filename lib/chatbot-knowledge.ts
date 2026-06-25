@@ -149,7 +149,7 @@ export const FAQS: Faq[] = [
   // ── GENERAL ─────────────────────────────────────────────────
   {
     question: "How can I book a free consultation with VisaVista?",
-    answer: "You can reach VisaVista in two ways: (1) Click the green WhatsApp button on any page — send a message directly to our immigration advisor at +49 159 06171828. (2) Visit the Consultancy page to fill out a free consultation request form. Note: VisaVista provides guidance and information — for complex legal cases involving refusals or deportation, you should also consult a licensed Rechtsanwalt (immigration lawyer).",
+    answer: "You can reach VisaVista in two ways: (1) Click the green WhatsApp button on any page — send a message directly to our immigration advisor at [CONTACT FORM]. (2) Visit the Consultancy page to fill out a free consultation request form. Note: VisaVista provides guidance and information — for complex legal cases involving refusals or deportation, you should also consult a licensed Rechtsanwalt (immigration lawyer).",
     keywords: ["consultation","book","appointment","whatsapp","contact","talk","free","help","advisor","consultant"],
     href: "/consultancy",
     followUps: ["What countries does VisaVista cover?","What is VisaVista?"],
