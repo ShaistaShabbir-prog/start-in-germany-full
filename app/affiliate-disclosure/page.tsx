@@ -76,7 +76,7 @@ export default function AffiliateDisclosurePage() {
 
         <div style={s({background:"#111520",border:"1px solid rgba(255,255,255,.07)",borderRadius:"12px",padding:"16px 18px"})}>
           <p style={s({fontSize:".82rem",color:"#64748b",lineHeight:1.7})}>
-            This disclosure complies with FTC guidelines (USA), ASA guidelines (UK), and EU Directive 2005/29/EC on commercial practices. For questions, contact us via <a href="https://wa.me/XXXXXXXXXX" style={s({color:"#FFCC02",textDecoration:"none"})}>WhatsApp</a> or <a href="https://github.com/ShaistaShabbir-prog" target="_blank" rel="noopener" style={s({color:"#FFCC02",textDecoration:"none"})}>GitHub</a>.
+            This disclosure complies with FTC guidelines (USA), ASA guidelines (UK), and EU Directive 2005/29/EC on commercial practices. For questions, contact us via <a href="/contact" style={s({color:"#FFCC02",textDecoration:"none"})}>WhatsApp</a> or <a href="https://github.com/ShaistaShabbir-prog" target="_blank" rel="noopener" style={s({color:"#FFCC02",textDecoration:"none"})}>GitHub</a>.
           </p>
         </div>
 
