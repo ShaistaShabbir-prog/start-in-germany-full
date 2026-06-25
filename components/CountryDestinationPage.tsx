@@ -32,7 +32,7 @@ export type CountryDestinationData = {
 const PD = '"Playfair Display",Georgia,serif';
 
 export default function CountryDestinationPage({ data }: { data: CountryDestinationData }) {
-  const whatsapp = `https://wa.me/4915906171828?text=${encodeURIComponent(`Hi VisaVista! I need help with a ${data.country} visa.`)}`;
+  const whatsapp = `https://wa.me/XXXXXXXXXX?text=${encodeURIComponent(`Hi VisaVista! I need help with a ${data.country} visa.`)}`;
 
   return (
     <div style={{ background: "#F8FAFC", color: "#0F172A" }}>
