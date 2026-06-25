@@ -1,6 +1,6 @@
 "use client";
 
-const WA_NUMBER = "4915906171828"; // +49 159 06171828
+const WA_NUMBER = "XXXXXXXXXX"; // [CONTACT FORM]
 const WA_MESSAGE = "Hello VisaVista! I need help with my European visa application.";
 
 export default function WhatsAppButton() {
