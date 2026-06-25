@@ -169,7 +169,7 @@ export default function Chatbot() {
                 Immigration specialist · 9 countries
               </div>
             </div>
-            <a href="https://wa.me/XXXXXXXXXX?text=Hi%20VisaVista!" target="_blank" rel="noopener"
+            <a href="/contact?text=Hi%20VisaVista!" target="_blank" rel="noopener"
               style={{background:"#25D366",color:"#fff",padding:"6px 11px",borderRadius:"9px",fontSize:"11px",fontWeight:700,textDecoration:"none",flexShrink:0,whiteSpace:"nowrap"}}>
               📱 WhatsApp
             </a>
