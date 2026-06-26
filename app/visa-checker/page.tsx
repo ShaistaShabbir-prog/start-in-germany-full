@@ -4,81 +4,92 @@ import { useState } from "react";
 const IN = '"Inter",ui-sans-serif,system-ui,sans-serif';
 const PD = '"Playfair Display",Georgia,serif';
 
-type VisaResult = { visa: string; desc: string; link: string; color: string };
+type Step = { q: string; opts: {label:string;value:string}[] };
 
-function recommend(eu: string, purpose: string, offer: string, degree: string, salary: number): VisaResult {
-  if (eu === "eu") return { visa: "🇪🇺 No visa needed", desc: "As an EU/EEA citizen you have the right to work and live in Germany without a visa. Register at the local Bürgeramt within 3 months.", link: "https://www.bamf.de", color: "#059669" };
-  if (purpose === "study") return { visa: "🎓 Student Visa (§16b AufenthG)", desc: "For studying at a German university. Requires: admission letter, proof of funds (€11,208/year), language certificate, health insurance.", link: "https://www.bamf.de/EN/Themen/MigrationAufenthalt/ZuwandererDrittstaaten/Bildung/Studium/studium-node.html", color: "#1D4ED8" };
-  if (purpose === "family") return { visa: "👨‍👩‍👧 Family Reunification Visa", desc: "Join a spouse/parent who is a German resident. Requires: proof of relationship, sponsor's income proof, health insurance, basic German (A1 for spouse).", link: "https://www.bamf.de/EN/Themen/MigrationAufenthalt/ZuwandererDrittstaaten/Familie/familie-node.html", color: "#7C3AED" };
-  if (purpose === "jobsearch") return { visa: "🔍 Chancenkarte / Job Seeker Visa", desc: "Search for work in Germany for up to 1 year. Requires: recognised degree + 2 years experience + German/English B1 + €12,000 in savings.", link: "https://www.bamf.de/EN/Themen/MigrationAufenthalt/ZuwandererDrittstaaten/chancenkarte.html", color: "#D97706" };
-  if (offer === "yes" && degree === "yes" && salary >= 45300) return { visa: "💎 EU Blue Card", desc: `With your salary of €${salary.toLocaleString()}/yr and a recognised degree + job offer, you qualify for the EU Blue Card — fastest path to permanent residence (21-33 months).`, link: "https://www.make-it-in-germany.com/en/visa-residence/types/eu-blue-card", color: "#0D9488" };
-  if (offer === "yes" && degree === "yes") return { visa: "👷 Skilled Worker Visa", desc: "You have a job offer and recognised degree. Apply for a Skilled Worker Visa (Fachkräftevisum). Recognition of foreign qualifications may be required.", link: "https://www.make-it-in-germany.com/en/visa-residence/types/skilled-workers-with-vocational-training", color: "#7C3AED" };
-  return { visa: "📋 Job Seeker Visa / Chancenkarte", desc: "Without a job offer yet, consider the Job Seeker Visa (6 months) to look for work in Germany, or the Chancenkarte if you meet the points threshold.", link: "https://www.bamf.de", color: "#6B7280" };
+const STEPS: Step[] = [
+  { q:"Are you an EU/EEA citizen?",            opts:[{label:"Yes",value:"eu"},{label:"No",value:"non_eu"}] },
+  { q:"What is your main purpose?",            opts:[{label:"Work",value:"work"},{label:"Study",value:"study"},{label:"Family reunification",value:"family"},{label:"Job search",value:"job_search"}] },
+  { q:"Do you have a job offer in Germany?",   opts:[{label:"Yes — with contract",value:"yes"},{label:"No — still searching",value:"no"}] },
+  { q:"Is your degree officially recognised?", opts:[{label:"Yes",value:"yes"},{label:"No / Not yet",value:"no"}] },
+  { q:"What is your expected monthly salary?", opts:[{label:"Under €2,500",value:"low"},{label:"€2,500–€4,500",value:"mid"},{label:"Over €4,500",value:"high"}] },
+];
+
+interface Visa { name:string; desc:string; minSalary?:number; link:string; color:string; }
+
+function recommend(answers: string[]): Visa {
+  const [nationality,purpose,jobOffer,degreeRecog,salary] = answers;
+  if(nationality==="eu") return {name:"No visa needed",desc:"As an EU/EEA citizen you have freedom of movement. Just register (Anmeldung) within 3 months.",link:"https://www.bamf.de",color:"#22c55e"};
+  if(purpose==="study") return {name:"Student Visa (§16b AufenthG)",desc:"For enrolled students at German universities. Requires: university admission letter + proof of funds (€11,208/year).",link:"https://www.make-it-in-germany.com/en/visa-residence/types/studying",color:"#3b82f6"};
+  if(purpose==="family") return {name:"Family Reunification (§27–36 AufenthG)",desc:"To join a spouse, parent, or child in Germany. Requires: proof of relationship + sponsor's residence permit.",link:"https://www.bamf.de/EN/Themen/MigrationAufenthalt/ZuwandererDrittstaaten/Familie/familie-node.html",color:"#ec4899"};
+  if(purpose==="job_search") return {name:"Chancenkarte / Job Seeker Visa",desc:"1-year opportunity card to search for work. Requires: degree + German/English B1 + 1yr experience + €12,000 savings.",link:"https://www.make-it-in-germany.com/en/visa-residence/types/opportunity-card",color:"#f59e0b"};
+  if(salary==="high" && degreeRecog==="yes") return {name:"EU Blue Card (§18g AufenthG)",desc:"Premium work visa for qualified professionals. Requires: recognised degree + job offer ≥ €45,300/year (2026).",link:"https://www.make-it-in-germany.com/en/visa-residence/types/eu-blue-card",color:"#7c3aed"};
+  return {name:"Skilled Worker Visa (§18a/18b AufenthG)",desc:"For qualified professionals with or without university degree. Requires: job offer + recognised qualifications.",link:"https://www.make-it-in-germany.com/en/visa-residence/skilled-workers",color:"#0d9488"};
 }
 
-export default function VisaCheckerPage() {
-  const [step, setStep] = useState(0);
-  const [answers, setAnswers] = useState({ eu:"", purpose:"", offer:"", degree:"", salary: 45000 });
-  const [result, setResult] = useState<VisaResult | null>(null);
+export default function VisaCheckerPage(){
+  const [step,setStep]=useState(-1);
+  const [answers,setAnswers]=useState<string[]>([]);
+  const [result,setResult]=useState<Visa|null>(null);
 
-  const steps = [
-    { q: "Are you an EU/EEA citizen?", key: "eu", opts: [["yes","✅ Yes — EU/EEA citizen"],["no","❌ No — non-EU"]] },
-    { q: "What is your main purpose in Germany?", key: "purpose", opts: [["work","💼 Work"],["study","🎓 Study"],["family","👨‍👩‍👧 Join family"],["jobsearch","🔍 Job search"]] },
-    { q: "Do you have a German job offer?", key: "offer", opts: [["yes","✅ Yes, I have an offer"],["no","❌ Not yet"]] },
-    { q: "Do you have a university degree?", key: "degree", opts: [["yes","✅ Yes"],["no","❌ No"]] },
-  ];
-
-  const current = steps[step];
-  const isDone = result !== null;
-
-  const choose = (val: string) => {
-    const newAns = { ...answers, [current.key]: val };
-    setAnswers(newAns);
-    if (step < steps.length - 1) {
-      setStep(s => s + 1);
-    } else {
-      setResult(recommend(newAns.eu, newAns.purpose, newAns.offer, newAns.degree, newAns.salary));
-    }
+  const start=()=>{setStep(0);setAnswers([]);setResult(null);};
+  const answer=(val:string)=>{
+    const next=[...answers,val];
+    if(step+1>=STEPS.length){setResult(recommend(next));setAnswers(next);setStep(-2);}
+    else{setAnswers(next);setStep(step+1);}
   };
+  const reset=()=>{setStep(-1);setAnswers([]);setResult(null);};
 
-  const reset = () => { setStep(0); setAnswers({ eu:"",purpose:"",offer:"",degree:"",salary:45000 }); setResult(null); };
-
-  return (
-    <div style={{ background:"#F9FAFB", minHeight:"100vh" }}>
-      <div style={{ background:"#0B1D3A", padding:"60px 1.5rem 40px" }}>
-        <div style={{ maxWidth:700, margin:"0 auto" }}>
-          <h1 style={{ fontFamily:PD, fontSize:"clamp(2rem,4vw,3rem)", fontWeight:900, color:"#fff", marginBottom:10 }}>🧭 Visa Eligibility Checker</h1>
-          <p style={{ color:"rgba(255,255,255,.6)", fontSize:16 }}>Answer 4 questions → get your recommended German visa type</p>
+  return(
+    <div style={{background:"#f9fafb",minHeight:"100vh"}}>
+      <div style={{background:"#0B1D3A",padding:"60px 1.5rem 40px"}}>
+        <div style={{maxWidth:680,margin:"0 auto"}}>
+          <h1 style={{fontFamily:PD,fontSize:"clamp(1.8rem,4vw,2.8rem)",fontWeight:900,color:"#fff",marginBottom:8}}>🗺️ Visa Eligibility Checker</h1>
+          <p style={{color:"rgba(255,255,255,.6)",fontSize:15}}>Answer 5 questions — we recommend the best visa route for you.</p>
         </div>
       </div>
-      <div style={{ maxWidth:700, margin:"0 auto", padding:"3rem 1.5rem" }}>
-        {!isDone ? (
-          <div style={{ background:"#fff", borderRadius:20, padding:32, boxShadow:"0 4px 24px rgba(0,0,0,.08)" }}>
-            <div style={{ display:"flex", gap:6, marginBottom:24 }}>
-              {steps.map((_,i) => <div key={i} style={{ flex:1, height:4, borderRadius:4, background:i<=step?"#DC2626":"#E5E7EB", transition:"background .3s" }} />)}
+      <div style={{maxWidth:680,margin:"0 auto",padding:"3rem 1.5rem"}}>
+        {step===-1&&!result&&(
+          <div style={{textAlign:"center"}}>
+            <div style={{fontSize:"4rem",marginBottom:16}}>🌍</div>
+            <h2 style={{fontFamily:PD,fontSize:24,fontWeight:800,color:"#0B1D3A",marginBottom:8}}>Find your visa route</h2>
+            <p style={{color:"#6b7280",fontSize:15,marginBottom:24}}>Takes 30 seconds. Based on official BAMF / Make it in Germany criteria.</p>
+            <button onClick={start} style={{padding:"14px 36px",borderRadius:14,background:"#DC2626",color:"#fff",border:"none",fontWeight:800,fontSize:16,cursor:"pointer",fontFamily:IN}}>Start →</button>
+          </div>
+        )}
+        {step>=0&&step<STEPS.length&&(
+          <div style={{background:"#fff",borderRadius:24,padding:36,boxShadow:"0 4px 24px rgba(0,0,0,.08)"}}>
+            <div style={{display:"flex",gap:6,marginBottom:24}}>
+              {STEPS.map((_,i)=><div key={i} style={{flex:1,height:4,borderRadius:4,background:i<=step?"#DC2626":"#e5e7eb"}}/>)}
             </div>
-            <h2 style={{ fontFamily:PD, fontSize:"1.4rem", fontWeight:800, color:"#0B1D3A", marginBottom:20 }}>Question {step+1}/{steps.length}: {current.q}</h2>
-            <div style={{ display:"flex", flexDirection:"column", gap:10 }}>
-              {current.opts.map(([val,label]) => (
-                <button key={val} onClick={() => choose(val)}
-                  style={{ padding:"14px 20px", borderRadius:12, border:"1.5px solid #E5E7EB", background:"#fff", textAlign:"left", fontSize:15, cursor:"pointer", fontFamily:IN, fontWeight:600, color:"#0B1D3A", transition:"all .15s" }}
-                  onMouseOver={e => { (e.target as HTMLElement).style.borderColor="#DC2626"; (e.target as HTMLElement).style.background="#FEF2F2"; }}
-                  onMouseOut={e => { (e.target as HTMLElement).style.borderColor="#E5E7EB"; (e.target as HTMLElement).style.background="#fff"; }}>
-                  {label}
+            <div style={{fontSize:12,fontWeight:700,color:"#DC2626",textTransform:"uppercase",letterSpacing:".08em",marginBottom:6}}>Question {step+1} of {STEPS.length}</div>
+            <h2 style={{fontFamily:PD,fontSize:22,fontWeight:800,color:"#0B1D3A",marginBottom:20}}>{STEPS[step].q}</h2>
+            <div style={{display:"flex",flexDirection:"column",gap:10}}>
+              {STEPS[step].opts.map(o=>(
+                <button key={o.value} onClick={()=>answer(o.value)}
+                  style={{padding:"14px 18px",borderRadius:12,border:"2px solid #e5e7eb",background:"#fff",textAlign:"left",cursor:"pointer",fontSize:15,fontWeight:600,color:"#374151",fontFamily:IN,transition:"all .15s"}}
+                  onMouseEnter={e=>{(e.target as any).style.borderColor="#DC2626";(e.target as any).style.color="#DC2626";}}
+                  onMouseLeave={e=>{(e.target as any).style.borderColor="#e5e7eb";(e.target as any).style.color="#374151";}}>
+                  {o.label}
                 </button>
               ))}
             </div>
           </div>
-        ) : (
-          <div style={{ background:"#fff", borderRadius:20, padding:32, boxShadow:"0 4px 24px rgba(0,0,0,.08)" }}>
-            <div style={{ fontSize:36, marginBottom:12 }}>🎉</div>
-            <h2 style={{ fontFamily:PD, fontSize:"1.6rem", fontWeight:900, color:result.color, marginBottom:8 }}>{result.visa}</h2>
-            <p style={{ color:"#374151", lineHeight:1.75, marginBottom:20 }}>{result.desc}</p>
-            <div style={{ display:"flex", gap:10, flexWrap:"wrap" }}>
-              <a href={result.link} target="_blank" rel="noopener" style={{ padding:"11px 20px", borderRadius:12, background:"#DC2626", color:"#fff", textDecoration:"none", fontWeight:700, fontSize:14 }}>📖 Official guide →</a>
-              <button onClick={reset} style={{ padding:"11px 20px", borderRadius:12, border:"1.5px solid #E5E7EB", background:"#fff", cursor:"pointer", fontWeight:700, fontSize:14, color:"#374151", fontFamily:IN }}>↩ Start over</button>
+        )}
+        {result&&(
+          <div style={{background:"#fff",borderRadius:24,padding:36,boxShadow:"0 4px 24px rgba(0,0,0,.08)"}}>
+            <div style={{fontSize:12,fontWeight:700,color:result.color,textTransform:"uppercase",letterSpacing:".08em",marginBottom:6}}>Recommended visa</div>
+            <h2 style={{fontFamily:PD,fontSize:22,fontWeight:800,color:"#0B1D3A",marginBottom:10}}>{result.name}</h2>
+            <p style={{color:"#6b7280",fontSize:15,lineHeight:1.75,marginBottom:20}}>{result.desc}</p>
+            <div style={{display:"flex",gap:10,flexWrap:"wrap"}}>
+              <a href={result.link} target="_blank" rel="noopener"
+                style={{padding:"11px 22px",borderRadius:12,background:result.color,color:"#fff",textDecoration:"none",fontWeight:700,fontSize:14}}>
+                Official guide ↗
+              </a>
+              <button onClick={reset} style={{padding:"11px 22px",borderRadius:12,border:"1.5px solid #e5e7eb",background:"#fff",cursor:"pointer",fontSize:14,fontWeight:600,color:"#374151",fontFamily:IN}}>
+                Start again
+              </button>
             </div>
-            <p style={{ fontSize:12, color:"#9CA3AF", marginTop:16 }}>⚠️ This is indicative guidance only. Always verify with BAMF or an immigration lawyer.</p>
+            <p style={{fontSize:12,color:"#9ca3af",marginTop:16}}>⚠ This is a guide only. Visa requirements change. Always verify with the German embassy or BAMF.</p>
           </div>
         )}
       </div>
