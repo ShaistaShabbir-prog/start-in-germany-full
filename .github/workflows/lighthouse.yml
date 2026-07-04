@@ -1,4 +1,5 @@
-name: Lighthouse CI
+# DISABLED — replaced by ci.yml
+# name: Lighthouse CI
 on:
   push:
     branches: [main]
