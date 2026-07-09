@@ -25,8 +25,8 @@ export default function Footer(){
               {["🇵🇰","🇮🇳","🇧🇩","🇦🇫"].map(f=><span key={f} style={{fontSize:"22px"}}>{f}</span>)}
             </div>
             {/* WhatsApp CTA */}
-            <a href={WA} target="_blank" rel="noopener noreferrer" style={{display:"inline-flex",alignItems:"center",gap:"8px",padding:"10px 16px",borderRadius:"10px",background:"#25D366",color:"#fff",textDecoration:"none",fontSize:"13px",fontWeight:700,boxShadow:"0 3px 10px rgba(37,211,102,.3)"}}>
-              💬 WhatsApp: [CONTACT FORM]
+            <a href="https://wa.me/4915906171828?text=Hi%20VisaVista!%20I%20need%20help%20with%20my%20visa." target="_blank" rel="noopener noreferrer" style={{display:"inline-flex",alignItems:"center",gap:"8px",padding:"10px 16px",borderRadius:"10px",background:"#25D366",color:"#fff",textDecoration:"none",fontSize:"13px",fontWeight:700,boxShadow:"0 3px 10px rgba(37,211,102,.3)"}}>
+              💬 WhatsApp
             </a>
           </div>
 

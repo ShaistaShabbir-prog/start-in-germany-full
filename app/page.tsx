@@ -578,7 +578,7 @@ export default function Home() {
                 📅 Book free consultation
               </Link>
               <div style={{display:"flex",gap:"10px"}}>
-                {[{l:"✉️ Email",h:"/contact"},{l:"💬 WhatsApp",h:"/contact?text=Hi%20VisaVista!"},{l:"❓ FAQ",h:"/service"}].map(c=>(
+                {[{l:"✉️ Email",h:"/contact"},{l:"💬 WhatsApp",h:"https://wa.me/4915906171828?text=Hi%20VisaVista!%20I%20need%20help%20with%20my%20visa."},{l:"❓ FAQ",h:"/service"}].map(c=>(
                   <Link key={c.l} href={c.h} className="ch-btn" style={{flex:1,justifyContent:"center",padding:"10px 12px",fontSize:"12.5px"}}>{c.l}</Link>
                 ))}
               </div>

@@ -40,7 +40,7 @@ export default function ContactPage(){
             <div style={{width:"60px",height:"4px",background:"#DC2626",borderRadius:"2px",margin:"14px 0 28px"}}/>
 
             {[
-              {icon:"💬",title:"WhatsApp (Fastest)",desc:"Typically responds within 2–4 hours. Send us a message in Urdu, Hindi, Bengali or English.",cta:"Open WhatsApp",href:WA,color:"#25D366",bg:"#F0FFF4",border:"#6EE7B7"},
+              {icon:"💬",title:"WhatsApp (Fastest)",desc:"Typically responds within 2–4 hours. Send us a message in Urdu, Hindi, Bengali or English.",cta:"Open WhatsApp",href:"https://wa.me/4915906171828?text=Hi%20VisaVista!%20I%20need%20visa%20help.",color:"#25D366",bg:"#F0FFF4",border:"#6EE7B7"},
               {icon:"✉️",title:"Email",desc:"For detailed questions or document sharing. Response within 24 hours.",cta:"Email us",href:"mailto:vistavisa7@gmail.com",color:"#1D4ED8",bg:"#EFF6FF",border:"#BFDBFE"},
               {icon:"📅",title:"Book a free consultation",desc:"30-minute 1-on-1 call with an immigration expert in your language.",cta:"Book free call",href:"/consultancy",color:"#DC2626",bg:"#FEF2F2",border:"#FCA5A5"},
             ].map(c=>(
@@ -91,7 +91,7 @@ export default function ContactPage(){
                 </div>
                 <div style={{marginBottom:"14px"}}>
                   <label style={lbl}>WhatsApp number (with country code)</label>
-                  <input style={inp} placeholder="[PHONE HIDDEN]" value={form.whatsapp} onChange={e=>setForm({...form,whatsapp:e.target.value})}/>
+                  <input style={inp} placeholder="+4915906171828" value={form.whatsapp} onChange={e=>setForm({...form,whatsapp:e.target.value})}/>
                 </div>
                 <div style={{display:"grid",gridTemplateColumns:"1fr 1fr",gap:"14px",marginBottom:"14px"}}>
                   <div>
