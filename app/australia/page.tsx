@@ -2,7 +2,7 @@
 import Link from "next/link";
 const PD='"Playfair Display",Georgia,serif';
 const IN='"Inter",ui-sans-serif,system-ui,sans-serif';
-const HERO="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1400&q=85&auto=format&fit=crop";
+const HERO="https://images.unsplash.com/photo-154915906171828-21bda4d32df4?w=1400&q=85&auto=format&fit=crop";
 const SYDNEY="https://images.unsplash.com/photo-1524820801657-fd59673fef05?w=1200&q=80&auto=format&fit=crop";
 const WA="/contact?text=Hi%20VisaVista!%20I%20need%20help%20with%20Australia%20visa.";
 

@@ -18,7 +18,7 @@ export default function PrivacyPage(){
             {t:"4. Affiliate links",c:"We use affiliate links for Wise, Commerzbank and Advanzia. When you click these links, the respective companies may set cookies. We do not receive any personal data through these affiliate arrangements."},
             {t:"5. Data storage",c:"This website is hosted on Vercel (USA), which is GDPR-compliant under Standard Contractual Clauses. No personal data is stored on VisaVista servers beyond what you send us via WhatsApp or email."},
             {t:"6. Your rights (GDPR)",c:"Under GDPR, you have the right to: access data we hold about you, request deletion of your data, withdraw consent at any time, and lodge a complaint with your national data protection authority."},
-            {t:"7. Contact",c:"For privacy enquiries: contact@start-in-germany.com or WhatsApp [CONTACT FORM]"},
+            {t:"7. Contact",c:"For privacy enquiries: vistavisa7@gmail.com or WhatsApp [CONTACT FORM]"},
           ].map(s=>(
             <div key={s.t} style={{marginBottom:"24px"}}>
               <h2 style={{fontFamily:PD,fontWeight:700,fontSize:"18px",color:"#0B1D3A",marginBottom:"8px"}}>{s.t}</h2>

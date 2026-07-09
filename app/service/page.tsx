@@ -24,7 +24,7 @@ export default function ServicePage() {
         <div style={{display:"grid",gridTemplateColumns:"repeat(3,1fr)",gap:"24px",marginBottom:"60px"}}>
           {[
             {icon:"📅",title:"Book a consultation",desc:"Free 30-minute call with a certified immigration expert in your language. No obligation, no cost.",cta:"Book free call",href:"/consultancy",color:"#FEF2F2",border:"#FCA5A5",ctaColor:"btn-primary"},
-            {icon:"✉️",title:"Email us",desc:"Email us at contact@start-in-germany.com — we respond to every email within 24 hours, 7 days a week.",cta:"Send an email",href:"mailto:contact@start-in-germany.com",color:"#EFF6FF",border:"#BFDBFE",ctaColor:"btn-secondary"},
+            {icon:"✉️",title:"Email us",desc:"Email us at vistavisa7@gmail.com — we respond to every email within 24 hours, 7 days a week.",cta:"Send an email",href:"mailto:vistavisa7@gmail.com",color:"#EFF6FF",border:"#BFDBFE",ctaColor:"btn-secondary"},
             {icon:"💬",title:"WhatsApp",desc:"For quick questions, send us a WhatsApp message. We typically respond within 2–4 hours during business hours.",cta:"Message on WhatsApp",href:"https://wa.me/4915901234567",color:"#ECFDF5",border:"#6EE7B7",ctaColor:"btn-secondary"},
           ].map(c=>(
             <div key={c.title} className="card" style={{background:c.color,borderColor:c.border,textAlign:"center",display:"flex",flexDirection:"column"}}>
@@ -90,7 +90,7 @@ export default function ServicePage() {
           <p style={{color:"rgba(255,255,255,.65)",fontSize:"16px",marginBottom:"28px",maxWidth:"520px",margin:"0 auto 28px"}}>Book a free 30-min consultation and get personalised answers in Urdu, Hindi, Bengali or English.</p>
           <div style={{display:"flex",gap:"14px",justifyContent:"center",flexWrap:"wrap"}}>
             <Link href="/consultancy" className="btn btn-primary">📅 Book free consultation</Link>
-            <a href="mailto:contact@start-in-germany.com" className="btn btn-ghost-light">✉️ Email us directly</a>
+            <a href="mailto:vistavisa7@gmail.com" className="btn btn-ghost-light">✉️ Email us directly</a>
           </div>
         </div>
       </div>

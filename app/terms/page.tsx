@@ -31,7 +31,7 @@ export default function TermsPage() {
 
         <section>
           <h2 style={{fontSize:"1.125rem",fontWeight:800,marginBottom:".5rem"}}>5. Contact</h2>
-          <p>For inquiries: <a href="mailto:contact@start-in-germany.com" style={{color:"#DC2626"}}>contact@start-in-germany.com</a></p>
+          <p>For inquiries: <a href="mailto:vistavisa7@gmail.com" style={{color:"#DC2626"}}>vistavisa7@gmail.com</a></p>
           <p>WhatsApp: <a href="/contact" style={{color:"#DC2626"}}>[CONTACT FORM]</a></p>
         </section>
 

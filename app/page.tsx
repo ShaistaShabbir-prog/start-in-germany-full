@@ -14,19 +14,19 @@ const IMG = {
   students:  "https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=1400&q=85&auto=format&fit=crop", // diverse students
   germany:   "https://images.unsplash.com/photo-1467269204594-9661b134dd2b?w=900&q=80&auto=format&fit=crop",   // Brandenburg Gate Berlin verified
   italy:     "https://images.unsplash.com/photo-1552832230-c0197dd311b5?w=900&q=80&auto=format&fit=crop",   // Rome Colosseum
-  sweden:    "https://images.unsplash.com/photo-1509356843151-3e7d96241e11?w=900&q=80&auto=format&fit=crop",// Stockholm
+  sweden:    "https://images.unsplash.com/photo-154915906171828-3e7d96241e11?w=900&q=80&auto=format&fit=crop",// Stockholm
   uk:        "https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?w=900&q=80&auto=format&fit=crop",// London
-  consult:   "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=1200&q=85&auto=format&fit=crop",// consultation
+  consult:   "https://images.unsplash.com/photo-164915906171828-757bb62b4baf?w=1200&q=85&auto=format&fit=crop",// consultation
   city2:     "https://images.unsplash.com/photo-1587330979470-3595ac045ab0?w=1200&q=85&auto=format&fit=crop",  // Frankfurt skyline verified
   office:    "https://images.unsplash.com/photo-1497366216548-37526070297c?w=1200&q=85&auto=format&fit=crop",// modern office
   canada:    "https://images.unsplash.com/photo-1517935706615-2717063c2225?w=900&q=80&auto=format&fit=crop",   // Toronto verified
-  australia: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=900&q=80&auto=format&fit=crop",  // Sydney Opera House verified
-  switzerland:"https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=900&q=80&auto=format&fit=crop", // Swiss Alps verified
+  australia: "https://images.unsplash.com/photo-154915906171828-21bda4d32df4?w=900&q=80&auto=format&fit=crop",  // Sydney Opera House verified
+  switzerland:"https://images.unsplash.com/photo-154915906171828-21bda4d32df4?w=900&q=80&auto=format&fit=crop", // Swiss Alps verified
   netherlands:"https://images.unsplash.com/photo-1512470876302-972faa2aa9a4?w=900&q=80&auto=format&fit=crop", // Amsterdam canals verified
   usa:       "https://images.unsplash.com/photo-1485738422979-f5c462d49f74?w=900&q=80&auto=format&fit=crop",  // New York verified
   france:    "https://images.unsplash.com/photo-1499856871958-5b9357976b82?w=900&q=80&auto=format&fit=crop",  // Paris Eiffel verified
   malaysia:  "https://images.unsplash.com/photo-1596422846543-75c6fc197f07?w=900&q=80&auto=format&fit=crop",
-  china:     "https://images.unsplash.com/photo-1508804185872-d7badad00f7d?w=900&q=80&auto=format&fit=crop",
+  china:     "https://images.unsplash.com/photo-154915906171828-d7badad00f7d?w=900&q=80&auto=format&fit=crop",
 };
 
 export default function Home() {
@@ -186,7 +186,7 @@ export default function Home() {
                 ) : (
                   <form onSubmit={handleEmailSub} style={{display:"flex",gap:"6px"}}>
                     <input type="email" value={email} onChange={e=>setEmail(e.target.value)}
-                      placeholder="your@email.com" required
+                      placeholder="vistavisa7@gmail.com" required
                       style={{flex:1,padding:"9px 10px",border:"1.5px solid #E5E7EB",borderRadius:"8px",fontSize:"12px",fontFamily:IN,outline:"none",minWidth:0}}
                     />
                     <button type="submit" disabled={emailSub==="loading"}

@@ -41,7 +41,7 @@ export default function ContactPage(){
 
             {[
               {icon:"💬",title:"WhatsApp (Fastest)",desc:"Typically responds within 2–4 hours. Send us a message in Urdu, Hindi, Bengali or English.",cta:"Open WhatsApp",href:WA,color:"#25D366",bg:"#F0FFF4",border:"#6EE7B7"},
-              {icon:"✉️",title:"Email",desc:"For detailed questions or document sharing. Response within 24 hours.",cta:"Email us",href:"mailto:contact@start-in-germany.com",color:"#1D4ED8",bg:"#EFF6FF",border:"#BFDBFE"},
+              {icon:"✉️",title:"Email",desc:"For detailed questions or document sharing. Response within 24 hours.",cta:"Email us",href:"mailto:vistavisa7@gmail.com",color:"#1D4ED8",bg:"#EFF6FF",border:"#BFDBFE"},
               {icon:"📅",title:"Book a free consultation",desc:"30-minute 1-on-1 call with an immigration expert in your language.",cta:"Book free call",href:"/consultancy",color:"#DC2626",bg:"#FEF2F2",border:"#FCA5A5"},
             ].map(c=>(
               <div key={c.title} style={{background:c.bg,border:`1.5px solid ${c.border}`,borderRadius:"16px",padding:"18px 20px",marginBottom:"14px",display:"flex",gap:"14px",alignItems:"flex-start"}}>
@@ -86,7 +86,7 @@ export default function ContactPage(){
                   </div>
                   <div>
                     <label style={lbl}>Email address *</label>
-                    <input required type="email" style={inp} placeholder="user@example.com" value={form.email} onChange={e=>setForm({...form,email:e.target.value})}/>
+                    <input required type="email" style={inp} placeholder="vistavisa7@gmail.com" value={form.email} onChange={e=>setForm({...form,email:e.target.value})}/>
                   </div>
                 </div>
                 <div style={{marginBottom:"14px"}}>

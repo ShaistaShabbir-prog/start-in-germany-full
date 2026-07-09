@@ -66,7 +66,7 @@ export default function Footer(){
               <a key={l.l} href={l.href} target={l.ext?"_blank":undefined} rel={l.ext?"noopener noreferrer":undefined} style={{display:"block",fontSize:"13.5px",color:"rgba(255,255,255,.5)",textDecoration:"none",marginBottom:"8px"}}>{l.l}</a>
             ))}
             <div style={{marginTop:"12px",fontSize:"12.5px",color:"rgba(255,255,255,.35)"}}>
-              ✉️ <a href="mailto:contact@start-in-germany.com" style={{color:"#FCD34D",textDecoration:"none"}}>contact@start-in-germany.com</a>
+              ✉️ <a href="mailto:vistavisa7@gmail.com" style={{color:"#FCD34D",textDecoration:"none"}}>vistavisa7@gmail.com</a>
             </div>
           </div>
         </div>
