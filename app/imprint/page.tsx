@@ -14,7 +14,7 @@ export default function ImprintPage(){
           <p style={{fontSize:"13.5px",color:"#6B7280",lineHeight:1.75,marginBottom:"24px"}}>This website is operated as an independent information and consultancy service. It is not affiliated with any government body, embassy, or official immigration authority.</p>
           {[
             ["Responsible for content (§55 RStV / TMG)","VisaVista — Shaista Shabbir"],
-            ["Email","contact@start-in-germany.com"],
+            ["Email","vistavisa7@gmail.com"],
             ["WhatsApp","[CONTACT FORM]"],
             ["Disclaimer","The content on this website is for informational purposes only and does not constitute legal advice. Immigration laws change frequently — always verify requirements directly with official sources."],
             ["Liability for content","We make every effort to keep information accurate and up to date. However, we accept no liability for the completeness, accuracy, or timeliness of the content provided."],
