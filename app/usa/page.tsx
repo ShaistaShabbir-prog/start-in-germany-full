@@ -113,6 +113,50 @@ export default function UsaPage() {
           </div>
         )}
       </div>
+    
+
+{/* ── VISIT VISA SECTION ── */}
+<section style={{background:"#FFFBF0",borderTop:"3px solid #1D4ED8",padding:"4rem 0"}}>
+  <div style={{...sec}}>
+    <span style={{...eye,color:"#1D4ED8"}}>🇺🇸 Visit / Tourist Visa</span>
+    <h2 style={{fontFamily:PD,fontSize:"clamp(1.6rem,3vw,2.3rem)",fontWeight:800,color:"#0B1D3A",lineHeight:1.2,marginBottom:"8px"}}>US B1/B2 Tourist & Business Visa</h2>
+    <div style={{...bar,background:"#1D4ED8"}}/>
+    <p style={{fontSize:"15px",color:"#6B7280",marginBottom:"2rem",maxWidth:"640px"}}>Tourism, family visits, business — up to 6 months per entry</p>
+    <div style={{display:"flex",gap:"1rem",flexWrap:"wrap",marginBottom:"2.5rem"}}>
+      {[{label:"Duration",value:"Up to 6 months per visit",icon:"📅"},{label:"Visa Fee",value:"$185 (non-refundable MRV fee)",icon:"💳"},{label:"Processing",value:"4–16 weeks",icon:"⏱️"}].map(function(s){return <div key={s.label} style={{background:"#fff",border:"1.5px solid #E5E7EB",borderRadius:"12px",padding:"1rem 1.5rem",minWidth:"160px",flex:"1"}}><div style={{fontSize:"1.4rem",marginBottom:"4px"}}>{s.icon}</div><div style={{fontSize:"11px",color:"#9CA3AF",textTransform:"uppercase",letterSpacing:"0.08em",marginBottom:"2px"}}>{s.label}</div><div style={{fontSize:"15px",fontWeight:700,color:"#0B1D3A"}}>{s.value}</div></div>;})}
     </div>
+    <div style={{display:"grid",gridTemplateColumns:"minmax(0,1fr) minmax(0,1fr)",gap:"2rem",alignItems:"start"}}>
+      <div style={{background:"#fff",border:"1.5px solid #E5E7EB",borderRadius:"16px",padding:"1.5rem"}}>
+        <h3 style={{fontFamily:PD,fontWeight:700,fontSize:"1.1rem",color:"#0B1D3A",marginBottom:"1rem"}}>📋 Required Documents (from Pakistan)</h3>
+        <ul style={{padding:0,margin:0}}>
+              <CI key="0">DS-160 online application form</CI>
+              <CI key="1">Valid Pakistani passport</CI>
+              <CI key="2">MRV fee payment receipt</CI>
+              <CI key="3">2x2 inch photo (white background)</CI>
+              <CI key="4">Bank statements (6 months, clear regular income)</CI>
+              <CI key="5">Employment letter with salary details</CI>
+              <CI key="6">Property and assets proof in Pakistan</CI>
+              <CI key="7">Previous travel history / old visas</CI>
+              <CI key="8">In-person interview at US Embassy Islamabad or Consulate Karachi/Lahore</CI>
+        </ul>
+      </div>
+      <div style={{display:"flex",flexDirection:"column",gap:"1rem"}}>
+        <div style={{background:"#FEF3C7",border:"1.5px solid #FCD34D",borderRadius:"16px",padding:"1.5rem"}}>
+          <div style={{fontWeight:700,fontSize:"13px",color:"#92400E",marginBottom:"8px"}}>💡 Important Tip for Pakistanis</div>
+          <p style={{fontSize:"13px",color:"#78350F",lineHeight:1.6,margin:0}}>Interview at US Embassy Islamabad is mandatory. Previous US/UK/Schengen visas greatly help. Demonstrate strong ties to Pakistan — job, property, dependents.</p>
+        </div>
+        <a href="https://pk.usembassy.gov/visas/" target="_blank" rel="noopener noreferrer"
+          style={{display:"flex",alignItems:"center",justifyContent:"center",gap:"8px",padding:"14px 24px",
+            borderRadius:"12px",background:"#1D4ED8",color:"#fff",fontWeight:700,fontSize:"15px",
+            textDecoration:"none",fontFamily:IN}}>🌐 Official 🇺🇸 Visa Application →</a>
+        <a href={WA} target="_blank" rel="noopener noreferrer"
+          style={{display:"flex",alignItems:"center",justifyContent:"center",gap:"8px",padding:"14px 24px",
+            borderRadius:"12px",background:"#25D366",color:"#fff",fontWeight:700,fontSize:"15px",
+            textDecoration:"none",fontFamily:IN}}>💬 Need visa help? WhatsApp us →</a>
+      </div>
+    </div>
+  </div>
+</section>
+</div>
   );
 }
